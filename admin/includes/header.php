@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | <?php echo SITE_NAME; ?></title>
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo SITE_PATH; ?>/assets/css/style.css">
     <style>
         /* Admin specific tweaks */
         .admin-sidebar {
@@ -45,7 +45,7 @@ require_once __DIR__ . '/../../config.php';
             <a href="dashboard.php" class="admin-nav-item active">Dashboard</a>
             <a href="#" class="admin-nav-item">Pages</a>
             <a href="#" class="admin-nav-item">Settings</a>
-            <a href="<?php echo SITE_URL; ?>" class="admin-nav-item" style="margin-top: 2rem;">View Site</a>
+            <a href="<?php echo SITE_PATH; ?>/" class="admin-nav-item" style="margin-top: 2rem;">View Site</a>
             <a href="logout.php" class="admin-nav-item" style="color: var(--secondary);">Logout</a>
         </nav>
     </div>
