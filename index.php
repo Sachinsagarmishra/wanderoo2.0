@@ -11,7 +11,7 @@ include_once 'includes/header.php';
 
         <div class="hero-content">
             <div class="social-proof">
-                <img src="<?php echo SITE_PATH; ?>/assets/img/ratedby.png" alt="Rated by Tourists" style="height: 40px; width: auto;">
+                <img src="<?php echo SITE_PATH; ?>/assets/img/ratedby.png" alt="Rated by Tourists">
             </div>
 
             <h1 class="hero-title">Your Dream Holiday<br> <span class="playfair italic">Perfectly Planned</span></h1>
