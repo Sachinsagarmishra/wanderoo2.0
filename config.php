@@ -7,18 +7,16 @@
 // Site Information
 define('SITE_NAME', 'Wanderoo');
 
-// Dynamic Path Detection (Works for both root and subdirectories)
-$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
-$host = $_SERVER['HTTP_HOST'];
-$script_name = $_SERVER['SCRIPT_NAME'];
-$base_dir = str_replace(basename($script_name), '', $script_name);
+// Dynamic Path Detection
+$script_name = $_SERVER['SCRIPT_NAME']; // e.g. /index.php or /folder/index.php
+$base_dir = rtrim(dirname($script_name), '/\\');
 
-// If we are in the admin folder, we need to go one level up for the site root
-if (strpos($base_dir, '/admin/') !== false) {
-    $base_dir = str_replace('admin/', '', $base_dir);
+// If we are inside the admin folder, we need to go up one level to find the root
+if (strpos($script_name, '/admin/') !== false) {
+    $base_dir = rtrim(dirname($base_dir), '/\\');
 }
 
-define('SITE_PATH', rtrim($base_dir, '/'));
+define('SITE_PATH', $base_dir);
 
 // Database Credentials
 define('DB_HOST', 'localhost');
