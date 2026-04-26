@@ -27,16 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+    // Package Slider Auto-slide (Mobile)
+    const packageGrid = document.querySelector('.packages-grid');
+    if (packageGrid && window.innerWidth <= 768) {
+        let index = 0;
+        const cards = document.querySelectorAll('.package-card');
+        const dots = document.querySelectorAll('.dot');
+        
+        setInterval(() => {
+            index = (index + 1) % (cards.length - 2); // Only slide through first 3 on mobile if others are hidden
+            packageGrid.scrollTo({
+                left: cards[index].offsetLeft - 20,
+                behavior: 'smooth'
+            });
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }, 3000);
+    }
