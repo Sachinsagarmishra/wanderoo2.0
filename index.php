@@ -11,7 +11,15 @@ include_once 'includes/header.php';
 
         <div class="hero-content">
             <div class="social-proof">
-                <img src="<?php echo SITE_PATH; ?>/assets/img/ratedby.png" alt="Rated by Tourists">
+                <div class="avatar-group">
+                    <img src="https://i.pravatar.cc/100?u=1" alt="User">
+                    <img src="https://i.pravatar.cc/100?u=2" alt="User">
+                    <img src="https://i.pravatar.cc/100?u=3" alt="User">
+                </div>
+                <div class="rating">
+                    ★★★★★
+                </div>
+                <div class="trusted-text">Trusted by 400+ happy Tourists</div>
             </div>
 
             <h1 class="hero-title">Your Dream Holiday<br> <span class="playfair italic">Perfectly Planned</span></h1>
