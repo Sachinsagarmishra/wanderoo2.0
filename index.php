@@ -6,7 +6,7 @@ include_once 'includes/header.php';
 
 <main>
     <section class="hero">
-        <img src="<?php echo SITE_URL; ?>/assets/img/hero-bg.webp" alt="Travel Destination" class="hero-bg">
+        <img src="<?php echo SITE_PATH; ?>/assets/img/hero-bg.webp" alt="Travel Destination" class="hero-bg">
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
