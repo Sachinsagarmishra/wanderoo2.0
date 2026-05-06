@@ -53,7 +53,7 @@ include_once 'includes/header.php';
         </div>
     </section>
 
-    <!-- USE CASES -->
+    <!-- SOLUTIONS -->
     <section class="use-cases" id="solutions">
         <div class="use-cases-header">
             <div class="section-label">Solutions</div>
@@ -62,25 +62,33 @@ include_once 'includes/header.php';
         </div>
         <div class="use-grid">
             <div class="use-card">
-                <div class="use-icon">🏆</div>
+                <div class="use-icon">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/empolyee.png" alt="Employee">
+                </div>
                 <h3>Employee Incentives</h3>
                 <p>Reward top performers with curated travel experiences that drive retention and loyalty.</p>
                 <span class="tag">For HR & People Teams</span>
             </div>
             <div class="use-card">
-                <div class="use-icon">🤝</div>
+                <div class="use-icon">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dealer.png" alt="Dealer">
+                </div>
                 <h3>Dealer & Distributor Trips</h3>
                 <p>Motivate your channel partners with incentive travel tied to sales milestones.</p>
                 <span class="tag">For Sales Leaders</span>
             </div>
             <div class="use-card">
-                <div class="use-icon">🎯</div>
+                <div class="use-icon">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/leadership.png" alt="Leadership">
+                </div>
                 <h3>Leadership Offsites</h3>
                 <p>Retreats designed for strategy, alignment, and executive team bonding.</p>
                 <span class="tag">For CXOs & Admins</span>
             </div>
             <div class="use-card">
-                <div class="use-icon">🎓</div>
+                <div class="use-icon">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/college.png" alt="College">
+                </div>
                 <h3>College & MBA Trips</h3>
                 <p>Immersive international experiences for student cohorts and campus leaders.</p>
                 <span class="tag">For Institutions</span>

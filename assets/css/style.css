@@ -201,6 +201,20 @@ p {
 }
 .stat-card:hover { transform: translateX(-10px); }
 
+.use-icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.use-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
 .stat-icon {
     width: 54px; height: 54px; border-radius: 14px;
     background: rgba(249,115,22,0.05);
@@ -240,8 +254,13 @@ p {
     .hero-badge { margin-bottom: 24px; }
     .hero-stats { display: none; }
     
-    body, p, .hero p { font-size: 16px !important; } /* 16px on mobile */
+    body, p, .hero p { font-size: 16px !important; }
     
+    .use-cases-header { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 40px; }
+    .use-cases-header .section-sub { text-align: left; }
+    .use-grid { grid-template-columns: 1fr; }
+    .use-card { padding: 30px 24px; }
+
     .trust-logos { gap: 20px; }
     .trust-logo img { height: 20px; }
 }
