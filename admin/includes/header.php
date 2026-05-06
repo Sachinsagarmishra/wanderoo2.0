@@ -14,7 +14,7 @@ require_once __DIR__ . '/../../config.php';
     <div class="admin-layout">
         <aside class="admin-sidebar">
             <div class="sidebar-logo">
-                Wanderoo Admin
+                Wander<span>oo</span> Admin
             </div>
             <nav class="admin-nav">
                 <a href="dashboard.php" class="nav-item active">Dashboard</a>

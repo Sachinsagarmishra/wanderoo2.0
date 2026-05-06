@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config.php';
-$pageTitle = isset($pageTitle) ? $pageTitle . " | " . SITE_NAME : SITE_NAME;
-$pageDesc = isset($pageDesc) ? $pageDesc : "A premium PHP-based website with custom admin panel.";
+$pageTitle = isset($pageTitle) ? $pageTitle . " | " . SITE_NAME : SITE_NAME . " — Incentive Travel Platform";
+$pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform - Motivate employees, energise dealers, and retain your best people.";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,27 +14,44 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "A premium PHP-based website with cus
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?php echo SITE_PATH; ?>/assets/img/favicon.png">
     
-    <!-- Google Fonts & Styles -->
-    <link rel="stylesheet" href="<?php echo SITE_PATH; ?>/assets/css/style.css?v=1.2">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="<?php echo SITE_PATH; ?>/assets/css/style.css?v=<?php echo time(); ?>">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <a href="<?php echo SITE_PATH; ?>/" class="logo">
-                <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo_Logo.png" alt="Wanderoo Logo">
-            </a>
-            
-            <nav class="nav-glass">
-                <a href="<?php echo SITE_PATH; ?>/" class="active">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Destinations <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                <a href="#">Contact Us</a>
-                <a href="#">Blogs</a>
-            </nav>
 
-            <div class="header-actions">
-                <a href="#" class="btn-enquire">Enquire Now</a>
-                <div class="mobile-toggle">☰</div>
-            </div>
-        </div>
-    </header>
+<!-- Mobile Menu Overlay -->
+<div class="mobile-nav-overlay" id="mobileMenu">
+  <div class="close-menu" onclick="toggleMenu()">✕</div>
+  <a href="#destinations" onclick="toggleMenu()">Destinations</a>
+  <a href="#solutions" onclick="toggleMenu()">Solutions</a>
+  <a href="#case-studies" onclick="toggleMenu()">Case Studies</a>
+  <a href="#how" onclick="toggleMenu()">How It Works</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <button class="nav-cta" style="margin-top: 20px;">Get Proposal →</button>
+</div>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-logo">Wander<span>oo</span></div>
+    <ul class="nav-links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-cta">Get Proposal →</button>
+      <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+}
+</script>

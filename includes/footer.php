@@ -1,28 +1,71 @@
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 class="logo"><?php echo SITE_NAME; ?></h3>
-                <p>Building modern experiences with PHP and MySQL. Scalable, secure, and beautiful.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <p><a href="#">Privacy Policy</a></p>
-                <p><a href="#">Terms of Service</a></p>
-                <p><a href="#">Contact Support</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Newsletter</h3>
-                <p>Subscribe to stay updated with our latest news.</p>
-                <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                    <input type="email" placeholder="Email" style="background: var(--surface-light); border: 1px solid var(--border); padding: 0.5rem; border-radius: 0.4rem; color: var(--text); outline: none; flex: 1;">
-                    <button class="btn btn-primary" style="padding: 0.5rem 1rem;">Go</button>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; <?php echo date('Y'); ?> <?php echo SITE_NAME; ?>. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="<?php echo SITE_PATH; ?>/assets/js/main.js"></script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">Wander<span>oo</span></div>
+      <p>India's leading B2B incentive travel platform — turning performance into experiences.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Destinations</h4>
+        <ul>
+          <li><a href="#">Singapore</a></li>
+          <li><a href="#">Thailand</a></li>
+          <li><a href="#">Bali</a></li>
+          <li><a href="#">Goa</a></li>
+          <li><a href="#">Himachal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#">Employee Incentives</a></li>
+          <li><a href="#">Dealer Trips</a></li>
+          <li><a href="#">Leadership Offsites</a></li>
+          <li><a href="#">College Trips</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <?php echo date('Y'); ?> Wanderoo. All rights reserved.</p>
+    <p>Reward. Travel. Repeat.</p>
+  </div>
+</footer>
+
+<script>
+  // Tab switching
+  function switchTab(tab, btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const intlGrid = document.getElementById('dest-intl');
+    const domGrid = document.getElementById('dest-dom');
+    
+    if (intlGrid && domGrid) {
+        intlGrid.style.display = tab === 'intl' ? 'grid' : 'none';
+        domGrid.style.display = tab === 'dom' ? 'grid' : 'none';
+    }
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+  });
+</script>
 </body>
 </html>
