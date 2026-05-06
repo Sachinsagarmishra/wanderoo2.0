@@ -166,7 +166,7 @@ p {
     min-height: 80vh;
     display: flex;
     align-items: center;
-    padding: 90px 60px 50px;
+    padding: 90px 60px 65px;
     position: relative;
     overflow: hidden;
     background: url('../img/hero.png') no-repeat center center;
@@ -212,7 +212,7 @@ p {
 
 .hero h1 {
     font-family: var(--font-display);
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -2px;
@@ -303,7 +303,6 @@ p {
 .trust-logos img {
     height: 28px;
     width: auto;
-    filter: grayscale(1) opacity(0.6);
     transition: all 0.3s ease;
 }
 
@@ -327,7 +326,7 @@ p {
     background: #FFFFFF;
     border: 1px solid var(--border);
     padding: 24px 32px;
-    border-radius: 20px;
+    border-radius: 15px;
     min-width: 240px;
     display: flex;
     align-items: center;
