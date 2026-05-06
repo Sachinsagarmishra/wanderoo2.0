@@ -56,42 +56,46 @@ include_once 'includes/header.php';
     <!-- SOLUTIONS -->
     <section class="use-cases" id="solutions">
         <div class="use-cases-header">
-            <div class="section-label">Solutions</div>
-            <div class="section-title">Built for every<br>corporate use case</div>
-            <p class="section-sub">From HR incentives to dealer trips — we handle the complexity so you can focus on performance.</p>
+            <div class="header-left">
+                <div class="section-label">Solutions</div>
+                <div class="section-title">Built for every<br>corporate use case</div>
+            </div>
+            <div class="header-right">
+                <p class="section-sub">From HR incentives to dealer trips — we handle the complexity so you can focus on performance.</p>
+            </div>
         </div>
         <div class="use-grid">
-            <div class="use-card">
+            <div class="use-card theme-orange">
                 <div class="use-icon">
                     <img src="<?php echo SITE_PATH; ?>/assets/img/logos/empolyee.png" alt="Employee">
                 </div>
                 <h3>Employee Incentives</h3>
                 <p>Reward top performers with curated travel experiences that drive retention and loyalty.</p>
-                <span class="tag">For HR & People Teams</span>
+                <span class="tag">FOR HR & PEOPLE TEAMS</span>
             </div>
-            <div class="use-card">
+            <div class="use-card theme-green">
                 <div class="use-icon">
                     <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dealer.png" alt="Dealer">
                 </div>
                 <h3>Dealer & Distributor Trips</h3>
                 <p>Motivate your channel partners with incentive travel tied to sales milestones.</p>
-                <span class="tag">For Sales Leaders</span>
+                <span class="tag">FOR SALES LEADERS</span>
             </div>
-            <div class="use-card">
+            <div class="use-card theme-purple">
                 <div class="use-icon">
                     <img src="<?php echo SITE_PATH; ?>/assets/img/logos/leadership.png" alt="Leadership">
                 </div>
                 <h3>Leadership Offsites</h3>
                 <p>Retreats designed for strategy, alignment, and executive team bonding.</p>
-                <span class="tag">For CXOs & Admins</span>
+                <span class="tag">FOR CXOS & ADMINS</span>
             </div>
-            <div class="use-card">
+            <div class="use-card theme-blue">
                 <div class="use-icon">
                     <img src="<?php echo SITE_PATH; ?>/assets/img/logos/college.png" alt="College">
                 </div>
                 <h3>College & MBA Trips</h3>
                 <p>Immersive international experiences for student cohorts and campus leaders.</p>
-                <span class="tag">For Institutions</span>
+                <span class="tag">FOR INSTITUTIONS</span>
             </div>
         </div>
     </section>
