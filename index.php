@@ -98,7 +98,7 @@ include_once 'includes/header.php';
             <!-- 4. Annual Team Offsites -->
             <div class="use-card theme-blue">
                 <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/annual.png" alt="Annual">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/college.png" alt="Annual">
                 </div>
                 <h3>Annual Team Offsites</h3>
                 <p>Bring teams together through immersive retreats that strengthen culture and alignment.</p>
@@ -248,72 +248,60 @@ include_once 'includes/header.php';
 
     <!-- WHY WANDEROO -->
     <section class="why">
-        <div class="why-header">
-            <div class="section-label">Why Wanderoo</div>
-            <div class="section-title">We solve the real<br>problems of corporate travel</div>
-            <p class="section-sub">Because fragmented vendors, opaque pricing, and generic rewards are costing you more than you think.</p>
-        </div>
-        <div class="why-grid">
-            <div class="problem-solution">
-                <div class="ps-row">
-                    <div class="ps-problem">
-                        <div class="ps-label">❌ Problem</div>
-                        <p>Too many vendors, too much coordination</p>
+        <div class="why-container">
+            <!-- Left: Title & Subtext -->
+            <div class="why-left">
+                <div class="section-label">Why Wanderoo</div>
+                <h2 class="section-title">We solve the real<br>problems of corporate travel</h2>
+                <p class="section-sub">Because fragmented vendors, opaque pricing, and generic rewards are costing you more than you think.</p>
+                <img src="<?php echo SITE_PATH; ?>/assets/img/arrow.png" alt="Decorative Arrow" class="why-arrow">
+            </div>
+            
+            <!-- Center: Comparison Card -->
+            <div class="why-center">
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <div class="comp-col-label problem">❌ PROBLEM</div>
+                        <div class="comp-col-label wanderoo">✅ WANDEROO</div>
                     </div>
-                    <div class="ps-solution">
-                        <div class="ps-label">✅ Wanderoo</div>
-                        <p>One platform, one point of contact</p>
+                    <div class="comparison-row">
+                        <div class="comp-problem">Too many vendors, too much coordination</div>
+                        <div class="comp-wanderoo">One platform, one point of contact</div>
                     </div>
-                </div>
-                <div class="ps-row">
-                    <div class="ps-problem">
-                        <div class="ps-label">❌ Problem</div>
-                        <p>Time-consuming trip planning</p>
+                    <div class="comparison-row">
+                        <div class="comp-problem">Time-consuming trip planning</div>
+                        <div class="comp-wanderoo">Done-for-you itineraries, ready in 48h</div>
                     </div>
-                    <div class="ps-solution">
-                        <div class="ps-label">✅ Wanderoo</div>
-                        <p>Done-for-you itineraries, ready in 48h</p>
+                    <div class="comparison-row">
+                        <div class="comp-problem">Generic rewards with low engagement</div>
+                        <div class="comp-wanderoo">Experience-driven travel that employees remember</div>
                     </div>
-                </div>
-                <div class="ps-row">
-                    <div class="ps-problem">
-                        <div class="ps-label">❌ Problem</div>
-                        <p>Generic rewards with low engagement</p>
-                    </div>
-                    <div class="ps-solution">
-                        <div class="ps-label">✅ Wanderoo</div>
-                        <p>Experience-driven travel that employees remember</p>
-                    </div>
-                </div>
-                <div class="ps-row">
-                    <div class="ps-problem">
-                        <div class="ps-label">❌ Problem</div>
-                        <p>Budget confusion and hidden costs</p>
-                    </div>
-                    <div class="ps-solution">
-                        <div class="ps-label">✅ Wanderoo</div>
-                        <p>Transparent per-person pricing, always</p>
+                    <div class="comparison-row">
+                        <div class="comp-problem">Budget confusion and hidden costs</div>
+                        <div class="comp-wanderoo">Transparent per-person pricing, always</div>
                     </div>
                 </div>
             </div>
+
+            <!-- Right: Metrics Stack -->
             <div class="why-right">
-                <div class="metric-card">
+                <div class="metric-card theme-orange">
                     <div class="metric-icon">📈</div>
-                    <div>
+                    <div class="metric-content">
                         <div class="metric-num">35<span>%</span></div>
                         <div class="metric-desc">Average performance boost post incentive trips</div>
                     </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card theme-purple">
                     <div class="metric-icon">⏱️</div>
-                    <div>
+                    <div class="metric-content">
                         <div class="metric-num">48<span>h</span></div>
                         <div class="metric-desc">Custom itinerary delivered to your inbox</div>
                     </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card theme-green">
                     <div class="metric-icon">💰</div>
-                    <div>
+                    <div class="metric-content">
                         <div class="metric-num">20<span>%</span></div>
                         <div class="metric-desc">Average savings vs. booking independently</div>
                     </div>
