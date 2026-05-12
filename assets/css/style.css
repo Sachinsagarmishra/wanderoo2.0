@@ -1562,7 +1562,7 @@ p {
 
 /* ── NORTH AI PLANNER ── */
 .ai-planner-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
     background: #061A14;
     text-align: center;
 }
@@ -1664,4 +1664,17 @@ p {
         width: 100%;
         max-width: 300px;
     }
+}
+
+/* ── SCROLL REVEAL ANIMATIONS ── */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
 }

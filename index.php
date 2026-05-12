@@ -55,7 +55,7 @@ include_once 'includes/header.php';
     </section>
 
     <!-- SOLUTIONS -->
-    <section class="use-cases" id="solutions">
+    <section class="use-cases reveal-section" id="solutions">
         <div class="use-cases-header">
             <div class="header-left">
                 <div class="section-label">Solutions</div>
@@ -110,7 +110,7 @@ include_once 'includes/header.php';
     </section>
 
     <!-- WORKATION CATEGORIES GRID -->
-    <section class="category-section" id="destinations">
+    <section class="category-section reveal-section" id="destinations">
         <div class="category-grid">
             <!-- 01 SOUTH EAST ASIA (Large Card) -->
             <div class="cat-card cat-large" style="background-image: url('assets/img/cat-sea.png');">
@@ -171,7 +171,7 @@ include_once 'includes/header.php';
     </section>
 
     <!-- WHY WANDEROO -->
-    <section class="why">
+    <section class="why reveal-section">
         <div class="why-container">
             <!-- Left: Title & Subtext -->
             <div class="why-left">
@@ -236,7 +236,7 @@ include_once 'includes/header.php';
     </section>
 
     <!-- CASE STUDIES -->
-    <section id="case-studies">
+    <section id="case-studies" class="reveal-section">
         <div class="case-header-main">
             <div class="section-label">Case Studies</div>
             <h2 class="section-title">Real results from<br>real companies</h2>
@@ -370,7 +370,7 @@ include_once 'includes/header.php';
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="how" id="how">
+    <section class="how reveal-section" id="how">
         <div class="how-header">
             <div class="section-label">How It Works</div>
             <h2 class="section-title">From idea to journey<br>in 4 steps</h2>
@@ -432,7 +432,7 @@ include_once 'includes/header.php';
 
 
     <!-- NORTH AI PLANNER -->
-    <section class="ai-planner-section">
+    <section class="ai-planner-section reveal-section">
         <div class="planner-container">
             <div class="section-label" style="text-align:center; color: var(--amber);">Investment Planner</div>
             <h2 class="section-title" style="color: #FFFFFF;">Get Your Estimate<br>In Seconds.</h2>
