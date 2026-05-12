@@ -9,7 +9,8 @@ include_once 'includes/header.php';
         <div class="hero-content">
             <div class="hero-badge">☆ INDIA'S #1 INCENTIVE TRAVEL PLATFORM</div>
             <h1>Make Performance<br><span class="accent">Worth Chasing</span></h1>
-            <p>Incentive travel programs that motivate employees, energise dealers, and retain your best people — planned and executed end-to-end.</p>
+            <p>Incentive travel programs that motivate employees, energise dealers, and retain your best people —
+                planned and executed end-to-end.</p>
             <div class="hero-actions">
                 <button class="btn-primary">Plan a Trip →</button>
                 <button class="btn-secondary">View Destinations</button>
@@ -32,14 +33,14 @@ include_once 'includes/header.php';
             <div class="stat-card">
                 <div class="stat-icon purple">✈️</div>
                 <div class="stat-info">
-                    <div class="num">500<span>+</span></div>
-                    <div class="label">Trips Executed</div>
+                    <div class="num">98<span>%</span></div>
+                    <div class="label">Retention</div>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon green">👥</div>
                 <div class="stat-info">
-                    <div class="num">48<span>k</span></div>
+                    <div class="num">15<span>k</span></div>
                     <div class="label">Happy Travellers</div>
                 </div>
             </div>
@@ -61,7 +62,8 @@ include_once 'includes/header.php';
                 <div class="section-title">Built for every<br>corporate use case</div>
             </div>
             <div class="header-right">
-                <p class="section-sub">From HR incentives to dealer trips — we handle the complexity so you can focus on performance.</p>
+                <p class="section-sub">From HR incentives to dealer trips — we handle the complexity so you can focus on
+                    performance.</p>
             </div>
         </div>
         <div class="use-grid">
@@ -74,7 +76,7 @@ include_once 'includes/header.php';
                 <p>Retreats designed for strategy, alignment, and executive team bonding.</p>
                 <span class="tag">FOR CXOS & ADMINS</span>
             </div>
-            
+
             <!-- 2. Dealer & Distributor Trips -->
             <div class="use-card theme-green">
                 <div class="use-icon">
@@ -123,7 +125,9 @@ include_once 'includes/header.php';
         <!-- International -->
         <div id="dest-intl" class="dest-grid">
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner sg">🏙️</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner sg">🏙️</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Incentive · Offsite</div>
                     <h3>Singapore</h3>
@@ -136,7 +140,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner th">🌴</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner th">🌴</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Incentive · Beach</div>
                     <h3>Thailand</h3>
@@ -149,7 +155,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner my">🌇</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner my">🌇</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Incentive · Culture</div>
                     <h3>Malaysia</h3>
@@ -162,7 +170,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner mu">🏝️</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner mu">🏝️</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Luxury · Incentive</div>
                     <h3>Mauritius</h3>
@@ -175,7 +185,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner sl">🌿</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner sl">🌿</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Adventure · Offsite</div>
                     <h3>Sri Lanka</h3>
@@ -188,7 +200,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner bali">🌺</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner bali">🌺</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Incentive · Wellness</div>
                     <h3>Bali, Indonesia</h3>
@@ -205,7 +219,9 @@ include_once 'includes/header.php';
         <!-- Domestic -->
         <div id="dest-dom" class="dest-grid" style="display:none;">
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner hp">⛰️</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner hp">⛰️</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Adventure · Offsite</div>
                     <h3>Himachal Pradesh</h3>
@@ -218,7 +234,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner goa">🌊</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner goa">🌊</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Incentive · Beach</div>
                     <h3>Goa</h3>
@@ -231,7 +249,9 @@ include_once 'includes/header.php';
                 </div>
             </div>
             <div class="dest-card">
-                <div class="dest-img"><div class="dest-img-inner raj">🏰</div></div>
+                <div class="dest-img">
+                    <div class="dest-img-inner raj">🏰</div>
+                </div>
                 <div class="dest-body">
                     <div class="dest-tag">Luxury · Culture</div>
                     <h3>Rajasthan</h3>
@@ -253,10 +273,11 @@ include_once 'includes/header.php';
             <div class="why-left">
                 <div class="section-label">Why Wanderoo</div>
                 <h2 class="section-title">We solve the real<br>problems of corporate travel</h2>
-                <p class="section-sub">Because fragmented vendors, opaque pricing, and generic rewards are costing you more than you think.</p>
+                <p class="section-sub">Because fragmented vendors, opaque pricing, and generic rewards are costing you
+                    more than you think.</p>
                 <img src="<?php echo SITE_PATH; ?>/assets/img/arrow.png" alt="Decorative Arrow" class="why-arrow">
             </div>
-            
+
             <!-- Center: Comparison Card -->
             <div class="why-center">
                 <div class="comparison-card">
@@ -295,14 +316,14 @@ include_once 'includes/header.php';
                 <div class="metric-card theme-purple">
                     <div class="metric-icon">⏱️</div>
                     <div class="metric-content">
-                        <div class="metric-num">48<span>h</span></div>
+                        <div class="metric-num">12<span>h</span></div>
                         <div class="metric-desc">Custom itinerary delivered to your inbox</div>
                     </div>
                 </div>
                 <div class="metric-card theme-green">
                     <div class="metric-icon">💰</div>
                     <div class="metric-content">
-                        <div class="metric-num">20<span>%</span></div>
+                        <div class="metric-num">30<span>%</span></div>
                         <div class="metric-desc">Average savings vs. booking independently</div>
                     </div>
                 </div>
@@ -312,16 +333,21 @@ include_once 'includes/header.php';
 
     <!-- CASE STUDIES -->
     <section id="case-studies">
-        <div>
+        <div class="case-header-main">
             <div class="section-label">Case Studies</div>
-            <div class="section-title">Real results from<br>real companies</div>
-            <p class="section-sub" style="margin-bottom: 56px;">See how leading brands use Wanderoo to drive performance through experience.</p>
+            <h2 class="section-title">Real results from<br>real companies</h2>
+            <p class="section-sub">See how leading brands use Wanderoo to drive performance through experience.</p>
         </div>
         <div class="case-grid">
+            <!-- CRED -->
             <div class="case-card">
                 <div class="case-header">
-                    <div class="case-client">CRED</div>
-                    <div class="case-dest-badge">🇹🇭 Thailand</div>
+                    <div class="case-client">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/cred.svg" alt="CRED">
+                    </div>
+                    <div class="case-dest-badge badge-orange">
+                        <span>🇹🇭</span> Thailand
+                    </div>
                 </div>
                 <div class="case-type">Sales Incentive Trip · 120 Employees</div>
                 <div class="case-stats">
@@ -339,13 +365,20 @@ include_once 'includes/header.php';
                     </div>
                 </div>
                 <div class="case-outcome">
-                    <strong>Outcome:</strong> Post-trip engagement scores hit an all-time high. Sales team exceeded Q3 targets by 30%.
+                    <strong>Outcome</strong>
+                    Post-trip engagement scores hit an all-time high. Sales team exceeded Q3 targets by 30%.
                 </div>
             </div>
+
+            <!-- ISB -->
             <div class="case-card">
                 <div class="case-header">
-                    <div class="case-client">ISB</div>
-                    <div class="case-dest-badge">🏔️ Uttarakhand</div>
+                    <div class="case-client">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/isb.svg" alt="ISB">
+                    </div>
+                    <div class="case-dest-badge badge-green">
+                        <span>🏔️</span> Uttarakhand
+                    </div>
                 </div>
                 <div class="case-type">Leadership Retreat · Senior Faculty</div>
                 <div class="case-stats">
@@ -363,13 +396,20 @@ include_once 'includes/header.php';
                     </div>
                 </div>
                 <div class="case-outcome">
-                    <strong>Outcome:</strong> Full strategy realignment achieved. Faculty returned energised with a clear institutional roadmap.
+                    <strong>Outcome</strong>
+                    Full strategy realignment achieved. Faculty returned energised with a clear institutional roadmap.
                 </div>
             </div>
+
+            <!-- TATA -->
             <div class="case-card">
                 <div class="case-header">
-                    <div class="case-client">TATA</div>
-                    <div class="case-dest-badge">🇸🇬 Singapore</div>
+                    <div class="case-client">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/tata.svg" alt="TATA">
+                    </div>
+                    <div class="case-dest-badge badge-red">
+                        <span>🇸🇬</span> Singapore
+                    </div>
                 </div>
                 <div class="case-type">Dealer Incentive Trip · Top Distributors</div>
                 <div class="case-stats">
@@ -387,13 +427,20 @@ include_once 'includes/header.php';
                     </div>
                 </div>
                 <div class="case-outcome">
-                    <strong>Outcome:</strong> Dealer network strengthened significantly. Repeat order rates jumped 45% in the quarter following.
+                    <strong>Outcome</strong>
+                    Dealer network strengthened significantly. Repeat order rates jumped 45% in the quarter following.
                 </div>
             </div>
+
+            <!-- Razorpay -->
             <div class="case-card">
                 <div class="case-header">
-                    <div class="case-client">Razorpay</div>
-                    <div class="case-dest-badge">🌺 Bali</div>
+                    <div class="case-client">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/razorpay.svg" alt="Razorpay">
+                    </div>
+                    <div class="case-dest-badge badge-purple">
+                        <span>🌺</span> Bali
+                    </div>
                 </div>
                 <div class="case-type">Annual All-Hands · Full Team</div>
                 <div class="case-stats">
@@ -411,7 +458,8 @@ include_once 'includes/header.php';
                     </div>
                 </div>
                 <div class="case-outcome">
-                    <strong>Outcome:</strong> Flawless execution for 350 pax. Zero logistics issues. Team voted it the best all-hands ever.
+                    <strong>Outcome</strong>
+                    Flawless execution for 350 pax. Zero logistics issues. Team voted it the best all-hands ever.
                 </div>
             </div>
         </div>
@@ -422,7 +470,8 @@ include_once 'includes/header.php';
         <div class="how-header">
             <div class="section-label">How It Works</div>
             <div class="section-title">From idea to journey<br>in 4 steps</div>
-            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your people.</p>
+            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your
+                people.</p>
         </div>
         <div class="how-steps">
             <div class="how-step">
@@ -504,8 +553,11 @@ include_once 'includes/header.php';
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="section-label" style="text-align:center;">Ready to Start?</div>
-        <div class="section-title">Plan your next incentive<br>trip in <em style="font-style:normal;background:linear-gradient(135deg,var(--amber),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">48 hours</em></div>
-        <p class="section-sub">Tell us your goal and we'll send you a fully designed itinerary with transparent pricing — no commitment required.</p>
+        <div class="section-title">Plan your next incentive<br>trip in <em
+                style="font-style:normal;background:linear-gradient(135deg,var(--amber),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">48
+                hours</em></div>
+        <p class="section-sub">Tell us your goal and we'll send you a fully designed itinerary with transparent pricing
+            — no commitment required.</p>
         <div class="final-cta-actions">
             <button class="btn-primary" style="font-size:16px;padding:16px 36px;">Get Your Proposal →</button>
             <button class="btn-secondary" style="font-size:16px;padding:16px 36px;">Talk to an Expert</button>
