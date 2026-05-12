@@ -22,11 +22,11 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
 <!-- Mobile Menu Overlay -->
 <div class="mobile-nav-overlay" id="mobileMenu">
   <div class="close-menu" onclick="toggleMenu()">✕</div>
-  <a href="#destinations" onclick="toggleMenu()">Destinations</a>
-  <a href="#solutions" onclick="toggleMenu()">Solutions</a>
-  <a href="#case-studies" onclick="toggleMenu()">Case Studies</a>
-  <a href="#how" onclick="toggleMenu()">How It Works</a>
-  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="<?php echo SITE_PATH; ?>/index.php#destinations" onclick="toggleMenu()">Destinations</a>
+  <a href="<?php echo SITE_PATH; ?>/index.php#solutions" onclick="toggleMenu()">Solutions</a>
+  <a href="<?php echo SITE_PATH; ?>/index.php#case-studies" onclick="toggleMenu()">Case Studies</a>
+  <a href="<?php echo SITE_PATH; ?>/index.php#how" onclick="toggleMenu()">How It Works</a>
+  <a href="<?php echo SITE_PATH; ?>/about.php" onclick="toggleMenu()">About Us</a>
   <button class="nav-cta" style="margin-top: 20px;">Get Proposal →</button>
 </div>
 
@@ -35,11 +35,11 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
   <div class="nav-container">
     <div class="nav-logo">Wander<span>oo</span></div>
     <ul class="nav-links">
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#solutions">Solutions</a></li>
-      <li><a href="#case-studies">Case Studies</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index.php#destinations">Destinations</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index.php#solutions">Solutions</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index.php#case-studies">Case Studies</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index.php#how">How It Works</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/about.php">About Us</a></li>
     </ul>
     <div class="nav-actions">
       <button class="nav-cta">Get Proposal →</button>

@@ -1,0 +1,182 @@
+<?php
+$pageTitle = "About Us";
+include_once 'includes/header.php';
+?>
+
+<main>
+    <!-- ABOUT HERO -->
+    <section class="about-hero reveal-section">
+        <div class="about-hero-container">
+            <div class="about-hero-content">
+                <div class="section-label">ABOUT US</div>
+                <h1>Redefining corporate<br>travel as a <span class="accent">performance<br>advantage.</span></h1>
+                <p>Wanderoo helps ambitious companies turn performance into unforgettable experiences. We design and execute incentive travel programs that motivate people, strengthen relationships, and drive real business impact.</p>
+                <button class="btn-watch-story">
+                    <span class="play-icon">▶</span> Watch Our Story
+                </button>
+            </div>
+            <div class="about-hero-image">
+                <img src="assets/img/about-hero.png" alt="Luxury Resort">
+                <div class="about-trust-badge">
+                    <div class="badge-icon">⭐</div>
+                    <p>Trusted by leading brands across India and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar-section reveal-section">
+        <div class="stats-bar-container">
+            <div class="stat-item">
+                <div class="stat-icon-circle theme-orange">✈️</div>
+                <div class="stat-text">
+                    <h3>500+</h3>
+                    <p>Trips Executed</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon-circle theme-green">👥</div>
+                <div class="stat-text">
+                    <h3>48K+</h3>
+                    <p>Happy Travellers</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon-circle theme-purple">🏢</div>
+                <div class="stat-text">
+                    <h3>250+</h3>
+                    <p>Enterprise Clients</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon-circle theme-blue">⭐</div>
+                <div class="stat-text">
+                    <h3>4.9/5</h3>
+                    <p>Average Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section reveal-section">
+        <div class="mission-container">
+            <div class="mission-left">
+                <div class="section-label">OUR STORY</div>
+                <h2>Built on experience.<br>Driven by purpose.</h2>
+                <p>Wanderoo was born out of a simple belief – that recognition should be more than just a token. It should be an experience people remember for a lifetime.</p>
+                <p>What started as a small team of travel enthusiasts and strategy thinkers is now India's trusted incentive travel partner for high-performing teams and forward-thinking companies.</p>
+            </div>
+            <div class="mission-right">
+                <div class="mission-card">
+                    <div class="m-icon orange">🎯</div>
+                    <div class="m-content">
+                        <h4>Our Mission</h4>
+                        <p>To make performance recognition more meaningful through seamless, well-crafted travel experiences.</p>
+                    </div>
+                </div>
+                <div class="mission-card">
+                    <div class="m-icon green">👁️</div>
+                    <div class="m-content">
+                        <h4>Our Vision</h4>
+                        <p>To be the most trusted incentive travel platform for enterprises in India and APAC.</p>
+                    </div>
+                </div>
+                <div class="mission-card">
+                    <div class="m-icon purple">🛡️</div>
+                    <div class="m-content">
+                        <h4>Our Promise</h4>
+                        <p>End-to-end execution. Zero hassle. Maximum impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section class="founder-section reveal-section">
+        <div class="founder-container">
+            <div class="founder-image">
+                <img src="assets/img/founder.png" alt="Ankit Agrawal">
+            </div>
+            <div class="founder-content">
+                <div class="section-label">FROM THE FOUNDER</div>
+                <h3>Travel has the power to inspire,<br>connect and transform.</h3>
+                <p>At Wanderoo, we don't just plan trips – we craft experiences that motivate people, build stronger teams, and drive performance.</p>
+                <p>Our goal is simple: to take the complexity out of corporate travel and deliver moments that leave a lasting impact.</p>
+                <div class="founder-signature-block">
+                    <div class="f-info">
+                        <strong>Ankit Agrawal</strong>
+                        <span>Founder & CEO, Wanderoo</span>
+                    </div>
+                    <img src="assets/img/signature.png" alt="Signature" class="signature-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+            <div class="founder-quote">
+                <div class="quote-icon">“</div>
+                <p>We believe every high-performance team deserves experiences that reward their hard work and fuel their next milestone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose-section reveal-section">
+        <div class="why-choose-header">
+            <div class="section-label">WHY COMPANIES CHOOSE WANDEROO</div>
+            <h2>We go beyond travel.<br>We drive outcomes.</h2>
+        </div>
+        <div class="why-choose-grid">
+            <div class="choice-card">
+                <div class="c-icon">🏆</div>
+                <h4>Performance-First Approach</h4>
+                <p>Every trip is designed to inspire, motivate and reward performance.</p>
+            </div>
+            <div class="choice-card">
+                <div class="c-icon">🤝</div>
+                <h4>End-to-End Execution</h4>
+                <p>From planning to on-ground support – we handle everything.</p>
+            </div>
+            <div class="choice-card">
+                <div class="c-icon">💎</div>
+                <h4>Curated Experiences</h4>
+                <p>Handpicked destinations, hotels and activities that create lasting impact.</p>
+            </div>
+            <div class="choice-card">
+                <div class="c-icon">✨</div>
+                <h4>Transparent & Reliable</h4>
+                <p>Clear pricing, no surprises, and 24/7 support you can count on.</p>
+            </div>
+            <div class="choice-card">
+                <div class="c-icon">👤</div>
+                <h4>Trusted by Leaders</h4>
+                <p>Preferred partner for India's top-performing teams and enterprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section reveal-section">
+        <div class="exp-container">
+            <div class="exp-image">
+                <img src="assets/img/team-terrace.png" alt="Team Experience">
+            </div>
+            <div class="exp-content">
+                <div class="section-label">20 YEARS OF EXPERIENCE</div>
+                <h2>Two decades of creating<br>moments that matter.</h2>
+                <p>With 20+ years of combined experience in travel, events, and employee engagement, our leadership team brings strategy, creativity, and execution excellence to every program we deliver.</p>
+                <ul class="exp-list">
+                    <li>Deep industry expertise</li>
+                    <li>Strong vendor & partner network</li>
+                    <li>Passionate team of travel & experience experts</li>
+                </ul>
+            </div>
+            <div class="exp-badge">
+                <div class="badge-num">20+</div>
+                <div class="badge-text">Years of combined<br>industry experience</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<?php include_once 'includes/footer.php'; ?>
