@@ -795,7 +795,7 @@ p {
 
 .comp-wanderoo {
     color: var(--text-main);
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 .comp-problem::before {
@@ -1105,13 +1105,12 @@ p {
 }
 
 .how-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
 }
 
 .how-header .section-sub {
     margin: 0 auto;
-    max-width: 600px;
 }
 
 .how-steps-container {
@@ -1280,7 +1279,7 @@ p {
 
 .cat-card {
     position: relative;
-    border-radius: 32px;
+    border-radius: 22px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
