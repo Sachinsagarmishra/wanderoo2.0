@@ -1260,7 +1260,7 @@ p {
 
 /* ── CATEGORY GRID ── */
 .category-section {
-    padding: 80px 60px;
+    padding: 10px 60px 50px 60px;
     background: #FFFFFF;
 }
 
@@ -1300,11 +1300,13 @@ p {
 .cat-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
     z-index: 1;
 }
 
-.cat-header-top, .cat-body, .cat-footer {
+.cat-header-top,
+.cat-body,
+.cat-footer {
     position: relative;
     z-index: 2;
 }
@@ -1409,7 +1411,7 @@ p {
     .category-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cat-card {
         min-height: 500px;
     }
@@ -1419,20 +1421,20 @@ p {
     .category-section {
         padding: 40px 20px;
     }
-    
+
     .cat-title {
         font-size: 42px;
     }
-    
+
     .cat-small .cat-title {
         font-size: 32px;
     }
-    
+
     .cat-card {
         padding: 30px;
         min-height: 400px;
     }
-    
+
     .cat-footer {
         padding: 15px 30px;
         margin: 0 -30px -30px;

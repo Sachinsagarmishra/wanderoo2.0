@@ -112,8 +112,8 @@ include_once 'includes/header.php';
     <!-- WORKATION CATEGORIES GRID -->
     <section class="category-section" id="destinations">
         <div class="category-grid">
-            <!-- 01 REMOTE FIRST (Large Card) -->
-            <div class="cat-card cat-large" style="background-image: url('assets/img/cat-remote.png');">
+            <!-- 01 SOUTH EAST ASIA (Large Card) -->
+            <div class="cat-card cat-large" style="background-image: url('assets/img/cat-sea.png');">
                 <div class="cat-overlay"></div>
                 <div class="cat-header-top">
                     <div class="cat-index">01</div>
@@ -121,18 +121,18 @@ include_once 'includes/header.php';
                 </div>
                 <div class="cat-body">
                     <div class="cat-label">FOR</div>
-                    <h2 class="cat-title">Remote-<br>first</h2>
-                    <p class="cat-desc">When the only IRL is once a year, make it the one they'll talk about for years.</p>
+                    <h2 class="cat-title">South East<br>Asia</h2>
+                    <p class="cat-desc">The ultimate blend of tropical retreats, vibrant street food, and high-energy cities for team bonding.</p>
                 </div>
                 <div class="cat-footer">
-                    <div class="cat-meta">5 DAYS · 20 TO 60 PAX · HYBRID FORMAT</div>
+                    <div class="cat-meta">5 TO 7 DAYS · 20 TO 100 PAX · FLIGHTS & VISAS HANDLED</div>
                     <a href="#" class="cat-open">OPEN →</a>
                 </div>
             </div>
 
             <div class="cat-right-stack">
-                <!-- 02 DOMESTIC CLOSE (Small Card) -->
-                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-domestic.png');">
+                <!-- 02 EUROPE (Small Card) -->
+                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-europe.png');">
                     <div class="cat-overlay"></div>
                     <div class="cat-header-top">
                         <div class="cat-index">02</div>
@@ -140,17 +140,17 @@ include_once 'includes/header.php';
                     </div>
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
-                        <h2 class="cat-title">Domestic · Close</h2>
-                        <p class="cat-desc">Out of the office, into the wild, and back home before Monday.</p>
+                        <h2 class="cat-title">Europe</h2>
+                        <p class="cat-desc">Old-world charm meets modern work culture. From Swiss Alps to Mediterranean escapes.</p>
                     </div>
                     <div class="cat-footer">
-                        <div class="cat-meta">2 TO 4 DAYS · 40 TO 150 PAX · 9 DESTINATIONS</div>
+                        <div class="cat-meta">7 TO 10 DAYS · 15 TO 40 PAX · LUXURY STAYS</div>
                         <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
 
-                <!-- 03 INTERNATIONAL (Small Card) -->
-                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-international.png');">
+                <!-- 03 DOMESTIC (Small Card) -->
+                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-domestic.png');">
                     <div class="cat-overlay"></div>
                     <div class="cat-header-top">
                         <div class="cat-index">03</div>
@@ -158,11 +158,11 @@ include_once 'includes/header.php';
                     </div>
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
-                        <h2 class="cat-title">International</h2>
-                        <p class="cat-desc">Some years deserve a passport-stamp moment.</p>
+                        <h2 class="cat-title">Domestic</h2>
+                        <p class="cat-desc">Uncover the gems closer to home. Mountain retreats, coastal escapes, and heritage stays.</p>
                     </div>
                     <div class="cat-footer">
-                        <div class="cat-meta">5 TO 7 DAYS · 20 TO 60 PAX · VISAS HANDLED</div>
+                        <div class="cat-meta">3 TO 5 DAYS · 30 TO 200 PAX · 12 DESTINATIONS</div>
                         <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
