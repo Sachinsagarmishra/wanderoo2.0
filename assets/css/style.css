@@ -1685,7 +1685,7 @@ p {
 
 /* Hero */
 .about-hero {
-    padding: 80px 60px;
+    padding: 50px 60px;
     background: #FFFFFF;
 }
 
@@ -1839,7 +1839,7 @@ p {
 
 /* Mission */
 .mission-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
     background: #F8FAFC;
 }
 
@@ -1914,7 +1914,7 @@ p {
 
 /* Founder */
 .founder-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
     background: #FFFFFF;
 }
 
@@ -2000,7 +2000,7 @@ p {
 
 /* Why Choose */
 .why-choose-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
     background: #FFFFFF;
     text-align: center;
 }
@@ -2057,7 +2057,7 @@ p {
 
 /* Experience */
 .experience-section {
-    padding: 100px 60px 150px;
+    padding: 50px 60px 100px;
     background: #FFFFFF;
 }
 
