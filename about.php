@@ -127,27 +127,27 @@ include_once 'includes/header.php';
             <h2>We go beyond travel.<br>We drive outcomes.</h2>
         </div>
         <div class="why-choose-grid">
-            <div class="choice-card">
+            <div class="choice-card theme-orange">
                 <div class="c-icon">🏆</div>
                 <h4>Performance-First Approach</h4>
                 <p>Every trip is designed to inspire, motivate and reward performance.</p>
             </div>
-            <div class="choice-card">
+            <div class="choice-card theme-green">
                 <div class="c-icon">🤝</div>
                 <h4>End-to-End Execution</h4>
                 <p>From planning to on-ground support – we handle everything.</p>
             </div>
-            <div class="choice-card">
+            <div class="choice-card theme-purple">
                 <div class="c-icon">💎</div>
                 <h4>Curated Experiences</h4>
                 <p>Handpicked destinations, hotels and activities that create lasting impact.</p>
             </div>
-            <div class="choice-card">
+            <div class="choice-card theme-blue">
                 <div class="c-icon">✨</div>
                 <h4>Transparent & Reliable</h4>
                 <p>Clear pricing, no surprises, and 24/7 support you can count on.</p>
             </div>
-            <div class="choice-card">
+            <div class="choice-card theme-rose">
                 <div class="c-icon">👤</div>
                 <h4>Trusted by Leaders</h4>
                 <p>Preferred partner for India's top-performing teams and enterprises.</p>

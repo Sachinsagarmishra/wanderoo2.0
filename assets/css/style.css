@@ -2029,22 +2029,37 @@ p {
     background: #FFFFFF;
     border: 1px solid #F1F5F9;
     transition: all 0.3s ease;
+    text-align: left;
 }
 
 .choice-card:hover {
-    border-color: var(--orange);
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
+
+.choice-card.theme-orange { background: #FFF7ED; border-color: #FFEDD5; }
+.choice-card.theme-green { background: #F0FDF4; border-color: #DCFCE7; }
+.choice-card.theme-purple { background: #FAF5FF; border-color: #EDE9FE; }
+.choice-card.theme-blue { background: #F0F9FF; border-color: #E0F2FE; }
+.choice-card.theme-rose { background: #FFF1F2; border-color: #FFE4E6; }
 
 .choice-card .c-icon {
     font-size: 32px;
     margin-bottom: 20px;
     display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .choice-card h4 {
     font-family: var(--font-display);
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 12px;
 }
 
