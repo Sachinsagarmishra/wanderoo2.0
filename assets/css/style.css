@@ -1562,9 +1562,11 @@ p {
 
 /* ── NORTH AI PLANNER ── */
 .ai-planner-section {
-    padding: 50px 60px;
-    background: #061A14;
+    padding: 100px 60px;
+    background: url('../img/investment-planner.png') no-repeat center center;
+    background-size: cover;
     text-align: center;
+    position: relative;
 }
 
 .planner-container {
@@ -1603,8 +1605,8 @@ p {
 
 .btn-planner-outline {
     background: transparent;
-    color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 16px 32px;
     border-radius: 50px;
     font-size: 14px;
@@ -1615,8 +1617,8 @@ p {
 }
 
 .btn-planner-outline:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: var(--text-main);
 }
 
 .planner-suggestions {
@@ -1630,23 +1632,23 @@ p {
 .suggestion-chip {
     padding: 14px 28px;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-main);
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .suggestion-chip:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.3);
-    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--text-main);
 }
 
 .planner-footer-text {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-muted);
 }
 
 @media (max-width: 768px) {

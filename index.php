@@ -121,7 +121,8 @@ include_once 'includes/header.php';
                 <div class="cat-body">
                     <div class="cat-label">FOR</div>
                     <h2 class="cat-title">South East<br>Asia</h2>
-                    <p class="cat-desc">The ultimate blend of tropical retreats, vibrant street food, and high-energy cities for team bonding.</p>
+                    <p class="cat-desc">The ultimate blend of tropical retreats, vibrant street food, and high-energy
+                        cities for team bonding.</p>
                 </div>
                 <div class="cat-footer">
                     <div class="cat-meta">5 TO 7 DAYS · 20 TO 100 PAX · FLIGHTS & VISAS HANDLED</div>
@@ -140,7 +141,8 @@ include_once 'includes/header.php';
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
                         <h2 class="cat-title">Europe</h2>
-                        <p class="cat-desc">Old-world charm meets modern work culture. From Swiss Alps to Mediterranean escapes.</p>
+                        <p class="cat-desc">Old-world charm meets modern work culture. From Swiss Alps to Mediterranean
+                            escapes.</p>
                     </div>
                     <div class="cat-footer">
                         <div class="cat-meta">7 TO 10 DAYS · 15 TO 40 PAX · LUXURY STAYS</div>
@@ -158,7 +160,8 @@ include_once 'includes/header.php';
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
                         <h2 class="cat-title">Domestic</h2>
-                        <p class="cat-desc">Uncover the gems closer to home. Mountain retreats, coastal escapes, and heritage stays.</p>
+                        <p class="cat-desc">Uncover the gems closer to home. Mountain retreats, coastal escapes, and
+                            heritage stays.</p>
                     </div>
                     <div class="cat-footer">
                         <div class="cat-meta">3 TO 5 DAYS · 30 TO 200 PAX · 12 DESTINATIONS</div>
@@ -269,7 +272,8 @@ include_once 'includes/header.php';
                 </div>
                 <div class="case-outcome">
                     <strong>Outcome</strong>
-                    Improved cross-team collaboration for logistics and ops. Post-trip productivity metrics showed a 25% steady rise.
+                    Improved cross-team collaboration for logistics and ops. Post-trip productivity metrics showed a 25%
+                    steady rise.
                 </div>
             </div>
 
@@ -331,7 +335,8 @@ include_once 'includes/header.php';
                 </div>
                 <div class="case-outcome">
                     <strong>Outcome</strong>
-                    Incentivized the top distributor network across India. Resulted in a 40% jump in festive season inventory.
+                    Incentivized the top distributor network across India. Resulted in a 40% jump in festive season
+                    inventory.
                 </div>
             </div>
 
@@ -342,7 +347,7 @@ include_once 'includes/header.php';
                         <img src="<?php echo SITE_PATH; ?>/assets/img/logos/isb.svg" alt="ISB">
                     </div>
                     <div class="case-dest-badge badge-purple">
-                        <span>🏔️</span> Uttarakhand
+                        <span>🏔️</span> Sri Lanka
                     </div>
                 </div>
                 <div class="case-type">Leadership Retreat · Senior Faculty</div>
@@ -373,7 +378,8 @@ include_once 'includes/header.php';
         <div class="how-header">
             <div class="section-label">How It Works</div>
             <h2 class="section-title">From idea to journey<br>in 4 steps</h2>
-            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your people.</p>
+            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your
+                people.</p>
         </div>
         <div class="how-steps-container">
             <div class="how-step theme-orange">
@@ -434,9 +440,10 @@ include_once 'includes/header.php';
     <section class="ai-planner-section reveal-section">
         <div class="planner-container">
             <div class="section-label" style="text-align:center; color: var(--amber);">Investment Planner</div>
-            <h2 class="section-title" style="color: #FFFFFF;">Get Your Estimate<br>In Seconds.</h2>
-            <p class="section-sub" style="color: rgba(255,255,255,0.7); margin: 0 auto 40px; max-width: 700px;">
-                Ask <strong>North AI</strong> for a personalized estimate with venue recommendations, or use the manual planner for a quick indicative range across our popular destinations.
+            <h2 class="section-title" style="color: var(--text-main);">Get Your Estimate<br>In Seconds.</h2>
+            <p class="section-sub" style="color: var(--text-muted); margin: 0 auto 40px; max-width: 700px;">
+                Ask <strong>North AI</strong> for a personalized estimate with venue recommendations, or use the manual
+                planner for a quick indicative range across our popular destinations.
             </p>
 
             <div class="planner-actions">
