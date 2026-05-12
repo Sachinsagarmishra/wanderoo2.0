@@ -469,30 +469,58 @@ include_once 'includes/header.php';
     <section class="how" id="how">
         <div class="how-header">
             <div class="section-label">How It Works</div>
-            <div class="section-title">From idea to journey<br>in 4 steps</div>
-            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your
-                people.</p>
+            <h2 class="section-title">From idea to journey<br>in 4 steps</h2>
+            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your people.</p>
         </div>
-        <div class="how-steps">
-            <div class="how-step">
-                <div class="step-num">1</div>
-                <h3>Tell us your goal</h3>
-                <p>Share your team size, budget, destination preference, and what you want to achieve.</p>
+        <div class="how-steps-container">
+            <div class="how-step theme-orange">
+                <div class="step-badge">1</div>
+                <div class="step-icon-box">
+                    <div class="step-icon">🎯</div>
+                </div>
+                <div class="step-text">
+                    <h3>Tell us your goal</h3>
+                    <p>Share your team size, budget, destination preference, and what you want to achieve.</p>
+                </div>
             </div>
-            <div class="how-step">
-                <div class="step-num">2</div>
-                <h3>We design your trip</h3>
-                <p>Our experts craft a custom itinerary — flights, hotels, activities, and logistics.</p>
+
+            <div class="step-arrow">→</div>
+
+            <div class="how-step theme-green">
+                <div class="step-badge">2</div>
+                <div class="step-icon-box">
+                    <div class="step-icon">🗺️</div>
+                </div>
+                <div class="step-text">
+                    <h3>We design your trip</h3>
+                    <p>Our experts craft a custom itinerary — flights, hotels, activities, and logistics.</p>
+                </div>
             </div>
-            <div class="how-step">
-                <div class="step-num">3</div>
-                <h3>You approve & relax</h3>
-                <p>Review the proposal, make tweaks, and give the go-ahead. We handle the rest.</p>
+
+            <div class="step-arrow">→</div>
+
+            <div class="how-step theme-purple">
+                <div class="step-badge">3</div>
+                <div class="step-icon-box">
+                    <div class="step-icon">🤝</div>
+                </div>
+                <div class="step-text">
+                    <h3>You approve & relax</h3>
+                    <p>Review the proposal, make tweaks, and give the go-ahead. We handle the rest.</p>
+                </div>
             </div>
-            <div class="how-step">
-                <div class="step-num">4</div>
-                <h3>End-to-end execution</h3>
-                <p>From airport transfers to farewell dinner — every detail managed by our team on the ground.</p>
+
+            <div class="step-arrow">→</div>
+
+            <div class="how-step theme-blue">
+                <div class="step-badge">4</div>
+                <div class="step-icon-box">
+                    <div class="step-icon">✈️</div>
+                </div>
+                <div class="step-text">
+                    <h3>End-to-end execution</h3>
+                    <p>From airport transfers to farewell dinner — every detail managed by our team on the ground.</p>
+                </div>
             </div>
         </div>
     </section>
