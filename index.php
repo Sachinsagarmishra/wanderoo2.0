@@ -431,17 +431,32 @@ include_once 'includes/header.php';
 
 
 
-    <!-- FINAL CTA -->
-    <section class="final-cta">
-        <div class="section-label" style="text-align:center;">Ready to Start?</div>
-        <div class="section-title">Plan your next incentive<br>trip in <em
-                style="font-style:normal;background:linear-gradient(135deg,var(--amber),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">48
-                hours</em></div>
-        <p class="section-sub">Tell us your goal and we'll send you a fully designed itinerary with transparent pricing
-            — no commitment required.</p>
-        <div class="final-cta-actions">
-            <button class="btn-primary" style="font-size:16px;padding:16px 36px;">Get Your Proposal →</button>
-            <button class="btn-secondary" style="font-size:16px;padding:16px 36px;">Talk to an Expert</button>
+    <!-- NORTH AI PLANNER -->
+    <section class="ai-planner-section">
+        <div class="planner-container">
+            <div class="section-label" style="text-align:center; color: var(--amber);">Investment Planner</div>
+            <h2 class="section-title" style="color: #FFFFFF;">Get Your Estimate<br>In Seconds.</h2>
+            <p class="section-sub" style="color: rgba(255,255,255,0.7); margin: 0 auto 40px; max-width: 700px;">
+                Ask <strong>North AI</strong> for a personalized estimate with venue recommendations, or use the manual planner for a quick indicative range across our popular destinations.
+            </p>
+
+            <div class="planner-actions">
+                <button class="btn-planner-primary">
+                    <span class="ai-icon">✨</span> ASK NORTH AI
+                </button>
+                <button class="btn-planner-outline">
+                    MANUAL CALCULATOR
+                </button>
+            </div>
+
+            <div class="planner-suggestions">
+                <div class="suggestion-chip">50-person offsite</div>
+                <div class="suggestion-chip">Leadership retreat</div>
+                <div class="suggestion-chip">200-person conference</div>
+                <div class="suggestion-chip">Team workation</div>
+            </div>
+
+            <p class="planner-footer-text">Pick a mode above, or click a suggestion to ask North AI directly</p>
         </div>
     </section>
 </main>
