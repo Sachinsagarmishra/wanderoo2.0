@@ -109,157 +109,61 @@ include_once 'includes/header.php';
         </div>
     </section>
 
-    <!-- DESTINATIONS -->
-    <section id="destinations">
-        <div class="destinations-header">
-            <div>
-                <div class="section-label">Destinations</div>
-                <div class="section-title">Where will you<br>reward them next?</div>
+    <!-- WORKATION CATEGORIES GRID -->
+    <section class="category-section" id="destinations">
+        <div class="category-grid">
+            <!-- 01 REMOTE FIRST (Large Card) -->
+            <div class="cat-card cat-large" style="background-image: url('assets/img/cat-remote.png');">
+                <div class="cat-overlay"></div>
+                <div class="cat-header-top">
+                    <div class="cat-index">01</div>
+                    <div class="cat-circle-btn">→</div>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-label">FOR</div>
+                    <h2 class="cat-title">Remote-<br>first</h2>
+                    <p class="cat-desc">When the only IRL is once a year, make it the one they'll talk about for years.</p>
+                </div>
+                <div class="cat-footer">
+                    <div class="cat-meta">5 DAYS · 20 TO 60 PAX · HYBRID FORMAT</div>
+                    <a href="#" class="cat-open">OPEN →</a>
+                </div>
             </div>
-            <div class="tab-group">
-                <button class="tab active" onclick="switchTab('intl', this)">🌍 International</button>
-                <button class="tab" onclick="switchTab('dom', this)">🇮🇳 Domestic</button>
-            </div>
-        </div>
 
-        <!-- International -->
-        <div id="dest-intl" class="dest-grid">
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner sg">🏙️</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Incentive · Offsite</div>
-                    <h3>Singapore</h3>
-                    <div class="dest-meta">5D/4N · Group activities · City + Gardens</div>
-                    <div class="dest-price">₹65,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
+            <div class="cat-right-stack">
+                <!-- 02 DOMESTIC CLOSE (Small Card) -->
+                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-domestic.png');">
+                    <div class="cat-overlay"></div>
+                    <div class="cat-header-top">
+                        <div class="cat-index">02</div>
+                        <div class="cat-circle-btn">→</div>
+                    </div>
+                    <div class="cat-body">
+                        <div class="cat-label">FOR</div>
+                        <h2 class="cat-title">Domestic · Close</h2>
+                        <p class="cat-desc">Out of the office, into the wild, and back home before Monday.</p>
+                    </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">2 TO 4 DAYS · 40 TO 150 PAX · 9 DESTINATIONS</div>
+                        <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner th">🌴</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Incentive · Beach</div>
-                    <h3>Thailand</h3>
-                    <div class="dest-meta">5D/4N · Beach + Team Activities</div>
-                    <div class="dest-price">₹45,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
-                    </div>
-                </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner my">🌇</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Incentive · Culture</div>
-                    <h3>Malaysia</h3>
-                    <div class="dest-meta">4D/3N · City + Jungle + Beaches</div>
-                    <div class="dest-price">₹38,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
-                    </div>
-                </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner mu">🏝️</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Luxury · Incentive</div>
-                    <h3>Mauritius</h3>
-                    <div class="dest-meta">6D/5N · Luxury Beach Resort</div>
-                    <div class="dest-price">₹90,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
-                    </div>
-                </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner sl">🌿</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Adventure · Offsite</div>
-                    <h3>Sri Lanka</h3>
-                    <div class="dest-meta">5D/4N · Culture + Beach + Tea Hills</div>
-                    <div class="dest-price">₹42,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
-                    </div>
-                </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner bali">🌺</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Incentive · Wellness</div>
-                    <h3>Bali, Indonesia</h3>
-                    <div class="dest-meta">5D/4N · Temples + Beach + Retreats</div>
-                    <div class="dest-price">₹48,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Domestic -->
-        <div id="dest-dom" class="dest-grid" style="display:none;">
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner hp">⛰️</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Adventure · Offsite</div>
-                    <h3>Himachal Pradesh</h3>
-                    <div class="dest-meta">4D/3N · Mountains + Adventure + Bonding</div>
-                    <div class="dest-price">₹18,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
+                <!-- 03 INTERNATIONAL (Small Card) -->
+                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-international.png');">
+                    <div class="cat-overlay"></div>
+                    <div class="cat-header-top">
+                        <div class="cat-index">03</div>
+                        <div class="cat-circle-btn">→</div>
                     </div>
-                </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner goa">🌊</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Incentive · Beach</div>
-                    <h3>Goa</h3>
-                    <div class="dest-meta">3D/2N · Beach + Nightlife + Team Activities</div>
-                    <div class="dest-price">₹14,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
+                    <div class="cat-body">
+                        <div class="cat-label">FOR</div>
+                        <h2 class="cat-title">International</h2>
+                        <p class="cat-desc">Some years deserve a passport-stamp moment.</p>
                     </div>
-                </div>
-            </div>
-            <div class="dest-card">
-                <div class="dest-img">
-                    <div class="dest-img-inner raj">🏰</div>
-                </div>
-                <div class="dest-body">
-                    <div class="dest-tag">Luxury · Culture</div>
-                    <h3>Rajasthan</h3>
-                    <div class="dest-meta">5D/4N · Heritage Hotels + Desert Safari</div>
-                    <div class="dest-price">₹22,000 <span>/ person onwards</span></div>
-                    <div class="dest-actions">
-                        <button class="dest-btn primary">View Itinerary</button>
-                        <button class="dest-btn outline">Customize</button>
+                    <div class="cat-footer">
+                        <div class="cat-meta">5 TO 7 DAYS · 20 TO 60 PAX · VISAS HANDLED</div>
+                        <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
             </div>
