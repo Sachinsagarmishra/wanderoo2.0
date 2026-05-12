@@ -429,58 +429,7 @@ include_once 'includes/header.php';
         </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing">
-        <div class="pricing-header">
-            <div class="section-label">Pricing</div>
-            <div class="section-title">Transparent pricing.<br>No surprises.</div>
-            <p class="section-sub">Per-person pricing with everything included. Custom quote in 24 hours.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="pricing-tier">Budget</div>
-                <div class="pricing-price">₹14k+</div>
-                <div class="pricing-note">per person, domestic</div>
-                <ul class="pricing-features">
-                    <li>Domestic destinations</li>
-                    <li>Comfortable 3★ hotels</li>
-                    <li>Curated group activities</li>
-                    <li>Ground transfers included</li>
-                    <li>Dedicated trip manager</li>
-                </ul>
-                <button class="pricing-btn outline">Get Quote</button>
-            </div>
-            <div class="pricing-card featured">
-                <div class="featured-badge">Most Popular</div>
-                <div class="pricing-tier">Premium</div>
-                <div class="pricing-price">₹45k+</div>
-                <div class="pricing-note">per person, international</div>
-                <ul class="pricing-features">
-                    <li>Southeast Asia destinations</li>
-                    <li>4★ hotels & resorts</li>
-                    <li>Custom team experiences</li>
-                    <li>Flights + all transfers</li>
-                    <li>24/7 on-ground support</li>
-                    <li>Photography & content</li>
-                </ul>
-                <button class="pricing-btn primary">Get Quote →</button>
-            </div>
-            <div class="pricing-card">
-                <div class="pricing-tier">Luxury</div>
-                <div class="pricing-price">₹90k+</div>
-                <div class="pricing-note">per person, luxury international</div>
-                <ul class="pricing-features">
-                    <li>Mauritius, Maldives & more</li>
-                    <li>5★ luxury resorts</li>
-                    <li>Private experiences & charters</li>
-                    <li>Business class flights</li>
-                    <li>Dedicated concierge team</li>
-                    <li>Custom gifting & branding</li>
-                </ul>
-                <button class="pricing-btn outline">Get Quote</button>
-            </div>
-        </div>
-    </section>
+
 
     <!-- FINAL CTA -->
     <section class="final-cta">

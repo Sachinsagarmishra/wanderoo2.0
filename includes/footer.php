@@ -1,11 +1,11 @@
 <!-- FOOTER -->
-<footer>
-  <div class="footer-top">
+<footer class="site-footer">
+  <div class="footer-container">
     <div class="footer-brand">
       <div class="nav-logo">Wander<span>oo</span></div>
       <p>India's leading B2B incentive travel platform — turning performance into experiences.</p>
     </div>
-    <div class="footer-links">
+    <div class="footer-links-grid">
       <div class="footer-col">
         <h4>Destinations</h4>
         <ul>
@@ -34,11 +34,19 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-icon">in</a>
+          <a href="#" class="social-icon">ig</a>
+          <a href="#" class="social-icon">fb</a>
+          <a href="#" class="social-icon">yt</a>
+        </div>
+        <div class="footer-copyright">
+          © <?php echo date('Y'); ?> Wanderoo. All rights reserved.
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© <?php echo date('Y'); ?> Wanderoo. All rights reserved.</p>
-    <p>Reward. Travel. Repeat.</p>
   </div>
 </footer>
 
