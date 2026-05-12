@@ -65,22 +65,7 @@ include_once 'includes/header.php';
             </div>
         </div>
         <div class="use-grid">
-            <div class="use-card theme-orange">
-                <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/empolyee.png" alt="Employee">
-                </div>
-                <h3>Employee Incentives</h3>
-                <p>Reward top performers with curated travel experiences that drive retention and loyalty.</p>
-                <span class="tag">FOR HR & PEOPLE TEAMS</span>
-            </div>
-            <div class="use-card theme-green">
-                <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dealer.png" alt="Dealer">
-                </div>
-                <h3>Dealer & Distributor Trips</h3>
-                <p>Motivate your channel partners with incentive travel tied to sales milestones.</p>
-                <span class="tag">FOR SALES LEADERS</span>
-            </div>
+            <!-- 1. Leadership Offsites -->
             <div class="use-card theme-purple">
                 <div class="use-icon">
                     <img src="<?php echo SITE_PATH; ?>/assets/img/logos/leadership.png" alt="Leadership">
@@ -89,13 +74,35 @@ include_once 'includes/header.php';
                 <p>Retreats designed for strategy, alignment, and executive team bonding.</p>
                 <span class="tag">FOR CXOS & ADMINS</span>
             </div>
+            
+            <!-- 2. Dealer & Distributor Trips -->
+            <div class="use-card theme-green">
+                <div class="use-icon">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dealer.png" alt="Dealer">
+                </div>
+                <h3>Dealer & Distributor Trips</h3>
+                <p>Motivate your channel partners with incentive travel tied to sales milestones.</p>
+                <span class="tag">FOR SALES LEADERS</span>
+            </div>
+
+            <!-- 3. Employee Incentives -->
+            <div class="use-card theme-orange">
+                <div class="use-icon">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/empolyee.png" alt="Employee">
+                </div>
+                <h3>Employee Incentives</h3>
+                <p>Reward top performers with curated travel experiences that drive retention and loyalty.</p>
+                <span class="tag">FOR HR & PEOPLE TEAMS</span>
+            </div>
+
+            <!-- 4. Annual Team Offsites -->
             <div class="use-card theme-blue">
                 <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/college.png" alt="College">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/annual.png" alt="Annual">
                 </div>
-                <h3>College & MBA Trips</h3>
-                <p>Immersive international experiences for student cohorts and campus leaders.</p>
-                <span class="tag">FOR INSTITUTIONS</span>
+                <h3>Annual Team Offsites</h3>
+                <p>Bring teams together through immersive retreats that strengthen culture and alignment.</p>
+                <span class="tag">FOR PEOPLE OPS</span>
             </div>
         </div>
     </section>
