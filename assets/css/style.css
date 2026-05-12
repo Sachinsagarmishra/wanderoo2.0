@@ -1100,7 +1100,7 @@ p {
 
 /* ── HOW IT WORKS ── */
 .how {
-    padding: 5px 60px;
+    padding: 5px 60px 60px;
     background: #FFFFFF;
 }
 
@@ -1544,7 +1544,7 @@ p {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .footer-links-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1554,7 +1554,7 @@ p {
     .site-footer {
         padding: 60px 20px 30px;
     }
-    
+
     .footer-links-grid {
         grid-template-columns: 1fr;
     }
@@ -1653,13 +1653,14 @@ p {
     .ai-planner-section {
         padding: 80px 20px;
     }
-    
+
     .planner-actions {
         flex-direction: column;
         align-items: center;
     }
-    
-    .btn-planner-primary, .btn-planner-outline {
+
+    .btn-planner-primary,
+    .btn-planner-outline {
         width: 100%;
         max-width: 300px;
     }
