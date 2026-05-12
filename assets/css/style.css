@@ -1239,7 +1239,7 @@ p {
 
 @media (max-width: 768px) {
     .how {
-        padding: 60px 20px;
+        padding: 0px 20px 40px 20px;
     }
 
     .how-header {

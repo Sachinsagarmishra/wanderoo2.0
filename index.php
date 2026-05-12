@@ -19,11 +19,10 @@ include_once 'includes/header.php';
             <div class="hero-trust">
                 <p>Trusted by teams at</p>
                 <div class="trust-logos">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/cred.svg" alt="CRED">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/tata.svg" alt="TATA">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dunzo.svg" alt="Dunzo">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/tata1mg.svg" alt="Tata 1mg">
+                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/videocon.svg" alt="Videocon">
                     <img src="<?php echo SITE_PATH; ?>/assets/img/logos/isb.svg" alt="ISB">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/byjus.svg" alt="BYJU'S">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/razorpay.svg" alt="RAZORPAY">
                 </div>
             </div>
         </div>
@@ -243,34 +242,96 @@ include_once 'includes/header.php';
             <p class="section-sub">See how leading brands use Wanderoo to drive performance through experience.</p>
         </div>
         <div class="case-grid">
-            <!-- CRED -->
+            <!-- Dunzo -->
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/cred.svg" alt="CRED">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dunzo.svg" alt="Dunzo">
                     </div>
                     <div class="case-dest-badge badge-orange">
                         <span>🇹🇭</span> Thailand
                     </div>
                 </div>
-                <div class="case-type">Sales Incentive Trip · 120 Employees</div>
+                <div class="case-type">Growth Team Offsite · 80 Employees</div>
                 <div class="case-stats">
                     <div>
-                        <div class="case-stat-num">120</div>
+                        <div class="case-stat-num">80</div>
                         <div class="case-stat-label">Employees</div>
+                    </div>
+                    <div>
+                        <div class="case-stat-num">4<span>D</span></div>
+                        <div class="case-stat-label">Duration</div>
+                    </div>
+                    <div>
+                        <div class="case-stat-num">+25<span>%</span></div>
+                        <div class="case-stat-label">Efficiency</div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <strong>Outcome</strong>
+                    Improved cross-team collaboration for logistics and ops. Post-trip productivity metrics showed a 25% steady rise.
+                </div>
+            </div>
+
+            <!-- Tata 1mg -->
+            <div class="case-card">
+                <div class="case-header">
+                    <div class="case-client">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/tata1mg.svg" alt="Tata 1mg">
+                    </div>
+                    <div class="case-dest-badge badge-green">
+                        <span>🌿</span> Rishikesh
+                    </div>
+                </div>
+                <div class="case-type">Product Design Retreat · 60 Employees</div>
+                <div class="case-stats">
+                    <div>
+                        <div class="case-stat-num">60</div>
+                        <div class="case-stat-label">Designers</div>
+                    </div>
+                    <div>
+                        <div class="case-stat-num">3<span>D</span></div>
+                        <div class="case-stat-label">Duration</div>
+                    </div>
+                    <div>
+                        <div class="case-stat-num">98<span>%</span></div>
+                        <div class="case-stat-label">Creative Output</div>
+                    </div>
+                </div>
+                <div class="case-outcome">
+                    <strong>Outcome</strong>
+                    The design team finalized the new app UI in record time. 98% satisfaction score on retreat quality.
+                </div>
+            </div>
+
+            <!-- Videocon -->
+            <div class="case-card">
+                <div class="case-header">
+                    <div class="case-client">
+                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/videocon.svg" alt="Videocon">
+                    </div>
+                    <div class="case-dest-badge badge-red">
+                        <span>🇸🇬</span> Singapore
+                    </div>
+                </div>
+                <div class="case-type">Sales Incentive Trip · 150 Employees</div>
+                <div class="case-stats">
+                    <div>
+                        <div class="case-stat-num">150</div>
+                        <div class="case-stat-label">Distributors</div>
                     </div>
                     <div>
                         <div class="case-stat-num">5<span>D</span></div>
                         <div class="case-stat-label">Duration</div>
                     </div>
                     <div>
-                        <div class="case-stat-num">+30<span>%</span></div>
-                        <div class="case-stat-label">Performance Lift</div>
+                        <div class="case-stat-num">+40<span>%</span></div>
+                        <div class="case-stat-label">Sales Boost</div>
                     </div>
                 </div>
                 <div class="case-outcome">
                     <strong>Outcome</strong>
-                    Post-trip engagement scores hit an all-time high. Sales team exceeded Q3 targets by 30%.
+                    Incentivized the top distributor network across India. Resulted in a 40% jump in festive season inventory.
                 </div>
             </div>
 
@@ -280,7 +341,7 @@ include_once 'includes/header.php';
                     <div class="case-client">
                         <img src="<?php echo SITE_PATH; ?>/assets/img/logos/isb.svg" alt="ISB">
                     </div>
-                    <div class="case-dest-badge badge-green">
+                    <div class="case-dest-badge badge-purple">
                         <span>🏔️</span> Uttarakhand
                     </div>
                 </div>
@@ -302,68 +363,6 @@ include_once 'includes/header.php';
                 <div class="case-outcome">
                     <strong>Outcome</strong>
                     Full strategy realignment achieved. Faculty returned energised with a clear institutional roadmap.
-                </div>
-            </div>
-
-            <!-- TATA -->
-            <div class="case-card">
-                <div class="case-header">
-                    <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/tata.svg" alt="TATA">
-                    </div>
-                    <div class="case-dest-badge badge-red">
-                        <span>🇸🇬</span> Singapore
-                    </div>
-                </div>
-                <div class="case-type">Dealer Incentive Trip · Top Distributors</div>
-                <div class="case-stats">
-                    <div>
-                        <div class="case-stat-num">200</div>
-                        <div class="case-stat-label">Dealers</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">6<span>D</span></div>
-                        <div class="case-stat-label">Duration</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">+45<span>%</span></div>
-                        <div class="case-stat-label">Repeat Orders</div>
-                    </div>
-                </div>
-                <div class="case-outcome">
-                    <strong>Outcome</strong>
-                    Dealer network strengthened significantly. Repeat order rates jumped 45% in the quarter following.
-                </div>
-            </div>
-
-            <!-- Razorpay -->
-            <div class="case-card">
-                <div class="case-header">
-                    <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/razorpay.svg" alt="Razorpay">
-                    </div>
-                    <div class="case-dest-badge badge-purple">
-                        <span>🌺</span> Bali
-                    </div>
-                </div>
-                <div class="case-type">Annual All-Hands · Full Team</div>
-                <div class="case-stats">
-                    <div>
-                        <div class="case-stat-num">350</div>
-                        <div class="case-stat-label">Employees</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">5<span>D</span></div>
-                        <div class="case-stat-label">Duration</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">4.9<span>★</span></div>
-                        <div class="case-stat-label">Avg. Rating</div>
-                    </div>
-                </div>
-                <div class="case-outcome">
-                    <strong>Outcome</strong>
-                    Flawless execution for 350 pax. Zero logistics issues. Team voted it the best all-hands ever.
                 </div>
             </div>
         </div>
