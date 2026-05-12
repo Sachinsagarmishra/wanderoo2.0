@@ -1562,7 +1562,7 @@ p {
 
 /* ── NORTH AI PLANNER ── */
 .ai-planner-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
     background: url('../img/investment-planner.png') no-repeat center center;
     background-size: cover;
     text-align: center;
@@ -1582,11 +1582,11 @@ p {
 }
 
 .btn-planner-primary {
-    background: #FFBD82;
-    color: #061A14;
+    background: #f97315;
+    color: #ffffff;
     border: none;
-    padding: 16px 32px;
-    border-radius: 50px;
+    padding: 12px 28px;
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -1607,8 +1607,8 @@ p {
     background: transparent;
     color: var(--text-main);
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 16px 32px;
-    border-radius: 50px;
+    padding: 12px 28px;
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -1630,8 +1630,8 @@ p {
 }
 
 .suggestion-chip {
-    padding: 14px 28px;
-    border-radius: 50px;
+    padding: 12px 28px;
+    border-radius: 8px;
     background: rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(0, 0, 0, 0.1);
     color: var(--text-main);
