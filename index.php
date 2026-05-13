@@ -7,7 +7,7 @@ include_once 'includes/header.php';
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">☆ INDIA'S #1 INCENTIVE TRAVEL PLATFORM</div>
+            <div class="hero-badge">INDIA'S #1 INCENTIVE TRAVEL PLATFORM</div>
             <h1>Make Performance<br><span class="accent">Worth Chasing</span></h1>
             <p>Incentive travel programs that motivate employees, energise dealers, and retain your best people —
                 planned and executed end-to-end.</p>
