@@ -210,28 +210,32 @@ include_once 'includes/header.php';
 
     <!-- WHY OUR DESTINATIONS -->
     <section class="why-dest-section reveal-section">
-        <div class="section-container">
-            <h2 class="section-title centered">Why Our Destinations Deliver More</h2>
-            <div class="why-dest-grid">
-                <div class="why-dest-item">
-                    <div class="w-icon theme-orange"><i class="fa-solid fa-chess-knight"></i></div>
-                    <h4>Strategic Selection</h4>
-                    <p>We choose destinations that inspire, engage and motivate.</p>
-                </div>
-                <div class="why-dest-item">
-                    <div class="w-icon theme-green"><i class="fa-solid fa-route"></i></div>
-                    <h4>Seamless Logistics</h4>
-                    <p>End-to-end planning and on-ground execution.</p>
-                </div>
-                <div class="why-dest-item">
-                    <div class="w-icon theme-purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h4>Exclusive Experiences</h4>
-                    <p>Unique activities and access beyond the usual.</p>
-                </div>
-                <div class="why-dest-item">
-                    <div class="w-icon theme-amber"><i class="fa-solid fa-chart-line"></i></div>
-                    <h4>Measurable Impact</h4>
-                    <p>Trips designed to drive performance and strengthen relationships.</p>
+        <div class="section-container why-dest-flex">
+            <div class="why-dest-left">
+                <h2 class="why-title">Why Our Destinations Deliver More</h2>
+            </div>
+            <div class="why-dest-right">
+                <div class="why-dest-grid">
+                    <div class="why-dest-item">
+                        <div class="w-icon bg-orange"><i class="fa-solid fa-chess-knight"></i></div>
+                        <h4>Strategic Selection</h4>
+                        <p>We choose destinations that inspire, engage and motivate.</p>
+                    </div>
+                    <div class="why-dest-item">
+                        <div class="w-icon bg-green"><i class="fa-solid fa-route"></i></div>
+                        <h4>Seamless Logistics</h4>
+                        <p>End-to-end planning and on-ground execution.</p>
+                    </div>
+                    <div class="why-dest-item">
+                        <div class="w-icon bg-purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h4>Exclusive Experiences</h4>
+                        <p>Unique activities and access beyond the usual.</p>
+                    </div>
+                    <div class="why-dest-item">
+                        <div class="w-icon bg-yellow"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4>Measurable Impact</h4>
+                        <p>Trips designed to drive performance and strengthen relationships.</p>
+                    </div>
                 </div>
             </div>
         </div>
