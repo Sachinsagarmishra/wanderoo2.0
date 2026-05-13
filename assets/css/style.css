@@ -1233,7 +1233,7 @@ p {
 @media (max-width: 1200px) {
     .how-steps-container {
         flex-direction: column;
-        gap: 30px;
+        gap: 15px;
     }
 
     .step-arrow {
@@ -1676,6 +1676,13 @@ p {
     .btn-planner-outline {
         width: 100%;
         max-width: 300px;
+    }
+
+    .suggestion-chip {
+        flex: 1 1 calc(50% - 15px);
+        padding: 12px 15px;
+        font-size: 13px;
+        text-align: center;
     }
 }
 
