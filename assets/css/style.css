@@ -1288,7 +1288,7 @@ p {
 
 /* ── CATEGORY GRID ── */
 .category-section {
-    padding: 10px 60px 50px 60px;
+    padding: 50px 60px;
     background: #FFFFFF;
 }
 
@@ -2462,7 +2462,7 @@ p {
 /* ── DESTINATIONS PAGE ── */
 
 .dest-hero {
-    padding: 80px 60px;
+    padding: 50px 60px;
     background: #FFFFFF;
 }
 
@@ -2692,7 +2692,7 @@ p {
 
 /* Handpicked Section */
 .handpicked-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
 }
 
 .handpicked-header {
@@ -2810,7 +2810,7 @@ p {
 
 /* Why Dest Redesign */
 .why-dest-section {
-    padding: 100px 60px;
+    padding: 50px 60px;
     background: #FFFFFF;
 }
 
@@ -2916,6 +2916,10 @@ p {
     100% { transform: translateX(-50%); }
 }
 
+.partner-logos-section {
+    padding: 50px 60px;
+}
+
 .partner-tabs {
     display: flex;
     justify-content: center;
@@ -2994,7 +2998,7 @@ p {
 
 /* Dest CTA */
 .dest-cta-section {
-    padding: 50px 60px 100px;
+    padding: 50px 60px;
 }
 
 .dest-cta-card {
