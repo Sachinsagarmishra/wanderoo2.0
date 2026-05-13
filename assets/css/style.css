@@ -1823,8 +1823,7 @@ p {
 
 /* Stats Bar */
 .stats-bar-section {
-    padding: 0px 60px 80px;
-    background: #FFFBF9;
+    background: #ffffff;
 }
 
 .stats-bar-container {
@@ -1836,8 +1835,6 @@ p {
     padding: 30px;
     border-radius: 30px;
     background: #FFFFFF;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .stat-item {
@@ -1861,10 +1858,25 @@ p {
     font-size: 26px;
 }
 
-.stat-icon-circle.theme-orange { background: #FFF7ED; color: #F97316; }
-.stat-icon-circle.theme-green { background: #F0FDF4; color: #22C55E; }
-.stat-icon-circle.theme-purple { background: #F5F3FF; color: #8B5CF6; }
-.stat-icon-circle.theme-amber { background: #FFFBEB; color: #F59E0B; }
+.stat-icon-circle.theme-orange {
+    background: #FFF7ED;
+    color: #F97316;
+}
+
+.stat-icon-circle.theme-green {
+    background: #F0FDF4;
+    color: #22C55E;
+}
+
+.stat-icon-circle.theme-purple {
+    background: #F5F3FF;
+    color: #8B5CF6;
+}
+
+.stat-icon-circle.theme-amber {
+    background: #FFFBEB;
+    color: #F59E0B;
+}
 
 .stat-text h3 {
     font-family: var(--font-display);
@@ -1886,7 +1898,7 @@ p {
 /* Mission */
 .mission-section {
     padding: 50px 60px;
-    background: #F8FAFC;
+    background: #ffffff;
 }
 
 .mission-container {
