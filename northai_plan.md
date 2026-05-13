@@ -15,7 +15,11 @@ This document serves as the master blueprint for building **North AI**, the prem
 *   **JS**: Handle opening/closing, state management, and API calls.
 
 ### The Brain (The Intelligence)
-*   **LLM Provider**: Gemini 1.5 Pro (recommended for speed and context window).
+*   **LLM Provider**: Gemini 1.5 Flash (Recommended Free Tier).
+*   **Free/Low-Cost Options**:
+    *   **Google AI Studio**: Gemini 1.5 Flash (Free up to 15 RPM).
+    *   **Groq Cloud**: Llama 3 / Mixtral (Free during Beta, ultra-fast).
+    *   **Hugging Face**: Free Inference API for open-source models.
 *   **RAG System**:
     *   **Context Source**: `about.php`, `destinations.php`, `index.php`.
     *   **Retrieval Logic**: AI must cross-reference the user query against the "Destinations" database before answering.
