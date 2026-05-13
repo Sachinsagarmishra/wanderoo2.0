@@ -335,8 +335,8 @@ p {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 24px 32px;
-    min-width: 240px;
+    padding: 14px 14px;
+    min-width: 130px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -1758,7 +1758,7 @@ p {
 .about-hero-image img {
     width: 100%;
     border-radius: 24px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
 }
 
 .about-trust-badge {
@@ -1768,7 +1768,7 @@ p {
     background: #FFFFFF;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     gap: 15px;
@@ -1903,9 +1903,20 @@ p {
     flex-shrink: 0;
 }
 
-.m-icon.orange { background: #FFF7ED; color: #F97316; }
-.m-icon.green { background: #F0FDF4; color: #22C55E; }
-.m-icon.purple { background: #FAF5FF; color: #A855F7; }
+.m-icon.orange {
+    background: #FFF7ED;
+    color: #F97316;
+}
+
+.m-icon.green {
+    background: #F0FDF4;
+    color: #22C55E;
+}
+
+.m-icon.purple {
+    background: #FAF5FF;
+    color: #A855F7;
+}
 
 .mission-card h4 {
     font-family: var(--font-display);
@@ -2042,14 +2053,33 @@ p {
 
 .choice-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
-.choice-card.theme-orange { background: #FFF7ED; border-color: #FFEDD5; }
-.choice-card.theme-green { background: #F0FDF4; border-color: #DCFCE7; }
-.choice-card.theme-purple { background: #FAF5FF; border-color: #EDE9FE; }
-.choice-card.theme-blue { background: #F0F9FF; border-color: #E0F2FE; }
-.choice-card.theme-rose { background: #FFF1F2; border-color: #FFE4E6; }
+.choice-card.theme-orange {
+    background: #FFF7ED;
+    border-color: #FFEDD5;
+}
+
+.choice-card.theme-green {
+    background: #F0FDF4;
+    border-color: #DCFCE7;
+}
+
+.choice-card.theme-purple {
+    background: #FAF5FF;
+    border-color: #EDE9FE;
+}
+
+.choice-card.theme-blue {
+    background: #F0F9FF;
+    border-color: #E0F2FE;
+}
+
+.choice-card.theme-rose {
+    background: #FFF1F2;
+    border-color: #FFE4E6;
+}
 
 .choice-card .c-icon {
     font-size: 32px;
@@ -2062,7 +2092,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .choice-card h4 {
@@ -2140,7 +2170,7 @@ p {
     background: #FFFFFF;
     padding: 40px;
     border-radius: 24px;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -2160,51 +2190,60 @@ p {
 
 /* Mobile Responsiveness */
 @media (max-width: 1100px) {
-    .about-hero-container, .mission-container, .founder-container, .exp-container {
+
+    .about-hero-container,
+    .mission-container,
+    .founder-container,
+    .exp-container {
         grid-template-columns: 1fr;
         gap: 60px;
     }
-    
+
     .founder-quote {
         position: static;
         transform: none;
         width: 100%;
         margin-top: 40px;
     }
-    
+
     .exp-badge {
         position: static;
         margin-top: 40px;
     }
-    
+
     .stats-bar-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .why-choose-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    .about-hero, .mission-section, .founder-section, .why-choose-section, .experience-section {
+
+    .about-hero,
+    .mission-section,
+    .founder-section,
+    .why-choose-section,
+    .experience-section {
         padding: 60px 20px;
     }
-    
+
     .about-hero-content h1 {
         font-size: 36px;
     }
-    
+
     .stats-bar-container {
         grid-template-columns: 1fr;
     }
-    
+
     .stat-item {
         border-right: none !important;
         border-bottom: 1px solid #F1F5F9;
         padding: 20px 0;
     }
-    
+
     .why-choose-grid {
         grid-template-columns: 1fr;
     }
