@@ -1862,6 +1862,9 @@ p {
         position: static;
         margin-top: 100px;
     }
+    .stats-bar-container {
+        margin-top: -100px;
+    }
 }
 
 /* Stats Bar */
