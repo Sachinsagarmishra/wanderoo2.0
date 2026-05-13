@@ -5,55 +5,62 @@ include_once 'includes/header.php';
 
 <main>
     <!-- ABOUT HERO -->
-    <section class="about-hero reveal-section">
+    <section class="about-hero reveal-section" style="background-image: url('assets/img/aboutusbg.png');">
         <div class="about-hero-container">
             <div class="about-hero-content">
-                <div class="section-label">ABOUT US</div>
-                <h1>Redefining corporate<br>travel as a <span class="accent">performance<br>advantage.</span></h1>
-                <p>Wanderoo helps ambitious companies turn performance into unforgettable experiences. We design and execute incentive travel programs that motivate people, strengthen relationships, and drive real business impact.</p>
-                <button class="btn-watch-story">
-                    <span class="play-icon">▶</span> Watch Our Story
-                </button>
+                <div class="section-label">ABOUT WANDEROO</div>
+                <h1>Redefining Corporate<br>Travel Into <span class="accent">Performance-Led<br>Experiences.</span></h1>
+                <p>We design incentive journeys that reward ambition, strengthen relationships, and drive measurable business outcomes across India and beyond.</p>
+                <div class="about-hero-actions">
+                    <button class="btn-primary"><i class="fa-solid fa-play"></i> Watch Our Story</button>
+                    <button class="btn-secondary">Our Journey →</button>
+                </div>
             </div>
-            <div class="about-hero-image">
-                <img src="assets/img/about-hero.png" alt="Luxury Resort">
-                <div class="about-trust-badge">
-                    <div class="badge-icon">⭐</div>
+
+            <div class="about-trust-card">
+                <div class="trust-card-header">
+                    <div class="badge-icon"><i class="fa-solid fa-star"></i></div>
                     <p>Trusted by leading brands across India and beyond.</p>
                 </div>
+                <div class="trust-card-logos">
+                    <img src="assets/img/logos/dunzo.svg" alt="Dunzo" class="trust-logo">
+                    <img src="assets/img/logos/tata1mg.svg" alt="TATA" class="trust-logo">
+                    <img src="assets/img/logos/videocon.svg" alt="Videocon" class="trust-logo">
+                    <img src="assets/img/logos/isb.svg" alt="ISB" class="trust-logo">
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- STATS BAR -->
-    <section class="stats-bar-section reveal-section">
-        <div class="stats-bar-container">
-            <div class="stat-item">
-                <div class="stat-icon-circle theme-orange"><i class="fa-solid fa-plane-up"></i></div>
-                <div class="stat-text">
-                    <h3>500+</h3>
-                    <p>Trips Executed</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon-circle theme-green"><i class="fa-solid fa-users"></i></div>
-                <div class="stat-text">
-                    <h3>48K+</h3>
-                    <p>Happy Travellers</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon-circle theme-purple"><i class="fa-solid fa-building"></i></div>
-                <div class="stat-text">
-                    <h3>250+</h3>
-                    <p>Enterprise Clients</p>
-                </div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-icon-circle theme-amber"><i class="fa-solid fa-star"></i></div>
-                <div class="stat-text">
-                    <h3>4.9/5</h3>
-                    <p>Average Rating</p>
+            <!-- STATS BAR INSIDE HERO -->
+            <div class="stats-bar-wrapper">
+                <div class="stats-bar-container">
+                    <div class="stat-item">
+                        <div class="stat-icon-circle theme-orange"><i class="fa-solid fa-plane-up"></i></div>
+                        <div class="stat-text">
+                            <h3>500+</h3>
+                            <p>Trips Executed</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon-circle theme-green"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-text">
+                            <h3>48K+</h3>
+                            <p>Happy Travellers</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon-circle theme-purple"><i class="fa-solid fa-building"></i></div>
+                        <div class="stat-text">
+                            <h3>250+</h3>
+                            <p>Enterprise Clients</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon-circle theme-amber"><i class="fa-solid fa-star"></i></div>
+                        <div class="stat-text">
+                            <h3>4.9/5</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
