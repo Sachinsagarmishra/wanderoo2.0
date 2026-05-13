@@ -600,6 +600,10 @@ p {
         font-size: 22px;
     }
 
+    .nav-logo img {
+        height: 28px;
+    }
+
     .nav-cta {
         padding: 8px 16px;
         font-size: 13px;
@@ -622,9 +626,10 @@ p {
     }
 
     .hero-badge {
+        padding: 0px;
         margin-top: 0px;
         font-size: 10px;
-        margin-bottom: 24px;
+        margin-bottom: 4px;
     }
 
     .hero-stats {
