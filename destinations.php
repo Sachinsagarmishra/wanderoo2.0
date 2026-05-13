@@ -257,16 +257,14 @@ include_once 'includes/header.php';
             </div>
             <div class="logo-grid-wrapper">
                 <div class="logo-grid">
-                    <img src="assets/img/logos/marriott.svg" alt="Marriott">
-                    <img src="assets/img/logos/hyatt.svg" alt="Hyatt">
-                    <img src="assets/img/logos/ritz.svg" alt="Ritz-Carlton">
-                    <img src="assets/img/logos/hilton.svg" alt="Hilton">
-                    <img src="assets/img/logos/ihg.svg" alt="IHG">
-                    <img src="assets/img/logos/sofitel.svg" alt="Sofitel">
-                    <img src="assets/img/logos/taj.svg" alt="Taj">
-                    <img src="assets/img/logos/westin.svg" alt="Westin">
-                    <img src="assets/img/logos/accor.svg" alt="Accor">
-                    <img src="assets/img/logos/shangri-la.svg" alt="Shangri-La">
+                    <img src="assets/img/logos/dunzo.svg" alt="Dunzo">
+                    <img src="assets/img/logos/tata1mg.svg" alt="TATA 1mg">
+                    <img src="assets/img/logos/videocon.svg" alt="Videocon">
+                    <img src="assets/img/logos/isb.svg" alt="ISB">
+                    <img src="assets/img/logos/dunzo.svg" alt="Dunzo">
+                    <img src="assets/img/logos/tata1mg.svg" alt="TATA 1mg">
+                    <img src="assets/img/logos/videocon.svg" alt="Videocon">
+                    <img src="assets/img/logos/isb.svg" alt="ISB">
                     <div class="more-badge">+10 More</div>
                 </div>
             </div>
