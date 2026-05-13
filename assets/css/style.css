@@ -1898,27 +1898,35 @@ p {
     gap: 20px;
 }
 
-.mission-card {
-    background: #FFFFFF;
-    padding: 30px;
-    border-radius: 16px;
+.mission-list {
     display: flex;
-    gap: 20px;
-    transition: transform 0.3s ease;
+    flex-direction: column;
 }
 
-.mission-card:hover {
-    transform: translateX(10px);
+.mission-item {
+    display: flex;
+    gap: 25px;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
-.mission-card .m-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+.mission-item:last-child {
+    border-bottom: none;
+}
+
+.mission-item:first-child {
+    padding-top: 0;
+}
+
+.mission-item .m-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 26px;
     flex-shrink: 0;
 }
 
@@ -1937,17 +1945,19 @@ p {
     color: #A855F7;
 }
 
-.mission-card h4 {
+.mission-item h4 {
     font-family: var(--font-display);
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-main);
 }
 
-.mission-card p {
-    font-size: 14px;
+.mission-item p {
+    font-size: 15px;
     color: var(--text-muted);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Founder */
@@ -2099,6 +2109,12 @@ p {
     background: #FFF1F2;
     border-color: #FFE4E6;
 }
+
+.choice-card.theme-orange .c-icon { color: #F97316; }
+.choice-card.theme-green .c-icon { color: #16A34A; }
+.choice-card.theme-purple .c-icon { color: #7C3AED; }
+.choice-card.theme-blue .c-icon { color: #0284C7; }
+.choice-card.theme-rose .c-icon { color: #E11D48; }
 
 .choice-card .c-icon {
     font-size: 32px;

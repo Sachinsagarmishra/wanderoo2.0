@@ -69,25 +69,33 @@ include_once 'includes/header.php';
                 <p>What started as a small team of travel enthusiasts and strategy thinkers is now India's trusted incentive travel partner for high-performing teams and forward-thinking companies.</p>
             </div>
             <div class="mission-right">
-                <div class="mission-card">
-                    <div class="m-icon orange">🎯</div>
-                    <div class="m-content">
-                        <h4>Our Mission</h4>
-                        <p>To make performance recognition more meaningful through seamless, well-crafted travel experiences.</p>
+                <div class="mission-list">
+                    <div class="mission-item">
+                        <div class="m-icon orange">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div class="m-content">
+                            <h4>Our Mission</h4>
+                            <p>To make performance recognition more meaningful through seamless, well-crafted travel experiences.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="mission-card">
-                    <div class="m-icon green">👁️</div>
-                    <div class="m-content">
-                        <h4>Our Vision</h4>
-                        <p>To be the most trusted incentive travel platform for enterprises in India and APAC.</p>
+                    <div class="mission-item">
+                        <div class="m-icon green">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div class="m-content">
+                            <h4>Our Vision</h4>
+                            <p>To be the most trusted incentive travel platform for enterprises in India and APAC.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="mission-card">
-                    <div class="m-icon purple">🛡️</div>
-                    <div class="m-content">
-                        <h4>Our Promise</h4>
-                        <p>End-to-end execution. Zero hassle. Maximum impact.</p>
+                    <div class="mission-item">
+                        <div class="m-icon purple">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="m-content">
+                            <h4>Our Promise</h4>
+                            <p>End-to-end execution. Zero hassle. Maximum impact.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,27 +136,27 @@ include_once 'includes/header.php';
         </div>
         <div class="why-choose-grid">
             <div class="choice-card theme-orange">
-                <div class="c-icon">🏆</div>
+                <div class="c-icon"><i class="fa-solid fa-trophy"></i></div>
                 <h4>Performance-First Approach</h4>
                 <p>Every trip is designed to inspire, motivate and reward performance.</p>
             </div>
             <div class="choice-card theme-green">
-                <div class="c-icon">🤝</div>
+                <div class="c-icon"><i class="fa-solid fa-handshake"></i></div>
                 <h4>End-to-End Execution</h4>
                 <p>From planning to on-ground support – we handle everything.</p>
             </div>
             <div class="choice-card theme-purple">
-                <div class="c-icon">💎</div>
+                <div class="c-icon"><i class="fa-solid fa-gem"></i></div>
                 <h4>Curated Experiences</h4>
                 <p>Handpicked destinations, hotels and activities that create lasting impact.</p>
             </div>
             <div class="choice-card theme-blue">
-                <div class="c-icon">✨</div>
+                <div class="c-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                 <h4>Transparent & Reliable</h4>
                 <p>Clear pricing, no surprises, and 24/7 support you can count on.</p>
             </div>
             <div class="choice-card theme-rose">
-                <div class="c-icon">👤</div>
+                <div class="c-icon"><i class="fa-solid fa-user-check"></i></div>
                 <h4>Trusted by Leaders</h4>
                 <p>Preferred partner for India's top-performing teams and enterprises.</p>
             </div>
