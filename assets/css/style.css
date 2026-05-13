@@ -2019,7 +2019,7 @@ p {
     gap: 30px;
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .f-info strong {
@@ -2039,12 +2039,12 @@ p {
 
 .founder-quote {
     position: absolute;
-    top: 50%;
+    top: 95%;
     right: 0;
     transform: translateY(-50%);
     width: 350px;
     background: #FFF7ED;
-    padding: 40px;
+    padding: 30px;
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -2130,11 +2130,25 @@ p {
     border-color: #FFE4E6;
 }
 
-.choice-card.theme-orange .c-icon { color: #F97316; }
-.choice-card.theme-green .c-icon { color: #16A34A; }
-.choice-card.theme-purple .c-icon { color: #7C3AED; }
-.choice-card.theme-blue .c-icon { color: #0284C7; }
-.choice-card.theme-rose .c-icon { color: #E11D48; }
+.choice-card.theme-orange .c-icon {
+    color: #F97316;
+}
+
+.choice-card.theme-green .c-icon {
+    color: #16A34A;
+}
+
+.choice-card.theme-purple .c-icon {
+    color: #7C3AED;
+}
+
+.choice-card.theme-blue .c-icon {
+    color: #0284C7;
+}
+
+.choice-card.theme-rose .c-icon {
+    color: #E11D48;
+}
 
 .choice-card .c-icon {
     font-size: 32px;
@@ -2251,7 +2265,7 @@ p {
     .founder-container,
     .exp-container {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 43px;
     }
 
     .founder-quote {
@@ -2276,6 +2290,11 @@ p {
 }
 
 @media (max-width: 600px) {
+    h2,
+    h3 {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+    }
 
     .about-hero,
     .mission-section,
