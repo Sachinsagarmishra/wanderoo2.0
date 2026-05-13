@@ -2,7 +2,9 @@
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <div class="nav-logo">Wander<span>oo</span></div>
+      <a href="<?php echo SITE_PATH; ?>/index.php" class="nav-logo">
+        <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo">
+      </a>
       <p>India's leading B2B incentive travel platform — turning performance into experiences.</p>
     </div>
     <div class="footer-links-grid">

@@ -74,6 +74,12 @@ p {
     color: var(--amber);
 }
 
+.nav-logo img {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     gap: 40px;

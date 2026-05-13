@@ -33,7 +33,9 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
 <!-- NAV -->
 <nav class="main-nav">
   <div class="nav-container">
-    <div class="nav-logo">Wander<span>oo</span></div>
+    <a href="<?php echo SITE_PATH; ?>/index.php" class="nav-logo">
+      <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo">
+    </a>
     <ul class="nav-links">
       <li><a href="<?php echo SITE_PATH; ?>/index.php#destinations">Destinations</a></li>
       <li><a href="<?php echo SITE_PATH; ?>/index.php#solutions">Solutions</a></li>
