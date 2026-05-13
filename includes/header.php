@@ -23,7 +23,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
 <!-- Mobile Menu Overlay -->
 <div class="mobile-nav-overlay" id="mobileMenu">
   <div class="close-menu" onclick="toggleMenu()">✕</div>
-  <a href="<?php echo SITE_PATH; ?>/index#destinations" onclick="toggleMenu()">Destinations</a>
+  <a href="<?php echo SITE_PATH; ?>/destinations" onclick="toggleMenu()">Destinations</a>
   <a href="<?php echo SITE_PATH; ?>/index#solutions" onclick="toggleMenu()">Solutions</a>
   <a href="<?php echo SITE_PATH; ?>/index#case-studies" onclick="toggleMenu()">Case Studies</a>
   <a href="<?php echo SITE_PATH; ?>/index#how" onclick="toggleMenu()">How It Works</a>
@@ -38,7 +38,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
       <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo">
     </a>
     <ul class="nav-links">
-      <li><a href="<?php echo SITE_PATH; ?>/index#destinations">Destinations</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/destinations" <?php echo ($pageTitle == "Explore Destinations") ? 'class="active"' : ''; ?>>Destinations</a></li>
       <li><a href="<?php echo SITE_PATH; ?>/index#solutions">Solutions</a></li>
       <li><a href="<?php echo SITE_PATH; ?>/index#case-studies">Case Studies</a></li>
       <li><a href="<?php echo SITE_PATH; ?>/index#how">How It Works</a></li>
