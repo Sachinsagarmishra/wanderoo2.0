@@ -116,7 +116,7 @@ include_once 'includes/header.php';
                 <div class="founder-signature-block">
                     <div class="f-info">
                         <strong>Himanshu Singla</strong>
-                        <span>Founder & CEO, Wanderoo</span>
+                        <span>Co-Founder, Wanderoo</span>
                     </div>
                 </div>
             </div>
