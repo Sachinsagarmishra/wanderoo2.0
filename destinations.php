@@ -28,74 +28,65 @@ include_once 'includes/header.php';
         </div>
     </section>
 
-    <!-- EXPLORE BY REGION -->
-    <section class="region-section reveal-section">
-        <div class="section-container">
-            <h2 class="section-title">Explore by Region</h2>
-            <div class="region-grid">
-                <!-- SE Asia -->
-                <div class="region-card">
-                    <div class="region-img">
-                        <img src="assets/img/regions/se-asia.png" alt="South East Asia">
-                        <div class="region-icon-float"><i class="fa-solid fa-palmtree"></i></div>
+    <!-- EXPLORE BY REGION (Bento Grid) -->
+    <section class="category-section reveal-section" id="destinations">
+        <h2 class="section-title centered" style="margin-bottom: 50px;">Explore by Region</h2>
+        <div class="category-grid">
+            <!-- 01 SOUTH EAST ASIA (Large Card) -->
+            <div class="cat-card cat-large" style="background-image: url('assets/img/cat-sea.png');">
+                <div class="cat-overlay"></div>
+                <div class="cat-header-top">
+                    <div class="cat-index">01</div>
+                    <div class="cat-circle-btn">→</div>
+                </div>
+                <div class="cat-body">
+                    <div class="cat-label">FOR</div>
+                    <h2 class="cat-title">South East<br>Asia</h2>
+                    <p class="cat-desc">The ultimate blend of tropical retreats, vibrant street food, and high-energy
+                        cities for team bonding.</p>
+                </div>
+                <div class="cat-footer">
+                    <div class="cat-meta">5 TO 7 DAYS · 20 TO 100 PAX · FLIGHTS & VISAS HANDLED</div>
+                    <a href="#" class="cat-open">OPEN →</a>
+                </div>
+            </div>
+
+            <div class="cat-right-stack">
+                <!-- 02 EUROPE (Small Card) -->
+                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-europe.png');">
+                    <div class="cat-overlay"></div>
+                    <div class="cat-header-top">
+                        <div class="cat-index">02</div>
+                        <div class="cat-circle-btn">→</div>
                     </div>
-                    <div class="region-info">
-                        <div class="region-header">
-                            <h3>South East Asia</h3>
-                            <a href="#" class="region-arrow">→</a>
-                        </div>
-                        <p>Tropical beaches, vibrant cultures, and world-class hospitality — perfect for high-impact incentive trips.</p>
-                        <div class="popular-tags">
-                            <span>Popular:</span>
-                            <a href="#">Thailand</a>
-                            <a href="#">Bali</a>
-                            <a href="#">Vietnam</a>
-                            <a href="#">Singapore</a>
-                        </div>
+                    <div class="cat-body">
+                        <div class="cat-label">FOR</div>
+                        <h2 class="cat-title">Europe</h2>
+                        <p class="cat-desc">Old-world charm meets modern work culture. From Swiss Alps to Mediterranean
+                            escapes.</p>
+                    </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">7 TO 10 DAYS · 15 TO 40 PAX · LUXURY STAYS</div>
+                        <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
 
-                <!-- Europe -->
-                <div class="region-card">
-                    <div class="region-img">
-                        <img src="assets/img/regions/europe.png" alt="Europe">
-                        <div class="region-icon-float"><i class="fa-solid fa-landmark"></i></div>
+                <!-- 03 DOMESTIC (Small Card) -->
+                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-domestic.png');">
+                    <div class="cat-overlay"></div>
+                    <div class="cat-header-top">
+                        <div class="cat-index">03</div>
+                        <div class="cat-circle-btn">→</div>
                     </div>
-                    <div class="region-info">
-                        <div class="region-header">
-                            <h3>Europe</h3>
-                            <a href="#" class="region-arrow">→</a>
-                        </div>
-                        <p>Timeless cities, rich history, and unforgettable experiences that inspire and reward.</p>
-                        <div class="popular-tags">
-                            <span>Popular:</span>
-                            <a href="#">Switzerland</a>
-                            <a href="#">Italy</a>
-                            <a href="#">France</a>
-                            <a href="#">Spain</a>
-                        </div>
+                    <div class="cat-body">
+                        <div class="cat-label">FOR</div>
+                        <h2 class="cat-title">Domestic</h2>
+                        <p class="cat-desc">Uncover the gems closer to home. Mountain retreats, coastal escapes, and
+                            heritage stays.</p>
                     </div>
-                </div>
-
-                <!-- Domestic -->
-                <div class="region-card">
-                    <div class="region-img">
-                        <img src="assets/img/regions/domestic.png" alt="Domestic">
-                        <div class="region-icon-float"><i class="fa-solid fa-mountain-sun"></i></div>
-                    </div>
-                    <div class="region-info">
-                        <div class="region-header">
-                            <h3>Domestic</h3>
-                            <a href="#" class="region-arrow">→</a>
-                        </div>
-                        <p>Incredible diversity, seamless connectivity, and experiences closer to home.</p>
-                        <div class="popular-tags">
-                            <span>Popular:</span>
-                            <a href="#">Goa</a>
-                            <a href="#">Kerala</a>
-                            <a href="#">Rajasthan</a>
-                            <a href="#">Himachal</a>
-                        </div>
+                    <div class="cat-footer">
+                        <div class="cat-meta">3 TO 5 DAYS · 30 TO 200 PAX · 12 DESTINATIONS</div>
+                        <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
             </div>
