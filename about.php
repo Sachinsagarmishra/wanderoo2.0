@@ -29,28 +29,28 @@ include_once 'includes/header.php';
     <section class="stats-bar-section reveal-section">
         <div class="stats-bar-container">
             <div class="stat-item">
-                <div class="stat-icon-circle theme-orange">✈️</div>
+                <div class="stat-icon-circle theme-orange"><i class="fa-solid fa-plane-up"></i></div>
                 <div class="stat-text">
                     <h3>500+</h3>
                     <p>Trips Executed</p>
                 </div>
             </div>
             <div class="stat-item">
-                <div class="stat-icon-circle theme-green">👥</div>
+                <div class="stat-icon-circle theme-green"><i class="fa-solid fa-users"></i></div>
                 <div class="stat-text">
                     <h3>48K+</h3>
                     <p>Happy Travellers</p>
                 </div>
             </div>
             <div class="stat-item">
-                <div class="stat-icon-circle theme-purple">🏢</div>
+                <div class="stat-icon-circle theme-purple"><i class="fa-solid fa-building"></i></div>
                 <div class="stat-text">
                     <h3>250+</h3>
                     <p>Enterprise Clients</p>
                 </div>
             </div>
             <div class="stat-item">
-                <div class="stat-icon-circle theme-blue">⭐</div>
+                <div class="stat-icon-circle theme-amber"><i class="fa-solid fa-star"></i></div>
                 <div class="stat-text">
                     <h3>4.9/5</h3>
                     <p>Average Rating</p>
