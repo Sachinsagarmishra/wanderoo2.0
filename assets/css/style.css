@@ -283,6 +283,8 @@ p {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-secondary:hover {
@@ -1763,7 +1765,7 @@ p {
     line-height: 1.1;
     margin: 25px 0;
     color: var(--text-main);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .about-hero-content h1 .accent {
@@ -1838,16 +1840,19 @@ p {
 .stats-bar-wrapper {
     width: 100%;
     position: absolute;
-    bottom: -140px;
+    bottom: -180px;
     left: 0;
 }
 
 @media (max-width: 1024px) {
     .about-hero {
-        padding: 80px 40px;
+        padding: 120px 40px 80px;
         min-height: auto;
     }
-    .about-hero-content h1 {
+    .about-hero-content {
+        margin-top: 40px;
+    }
+    .about-hero h1 {
         font-size: 44px;
     }
     .about-hero::before {
@@ -1855,7 +1860,7 @@ p {
     }
     .stats-bar-wrapper {
         position: static;
-        margin-top: 60px;
+        margin-top: 100px;
     }
 }
 

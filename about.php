@@ -13,22 +13,11 @@ include_once 'includes/header.php';
                 <p>We design incentive journeys that reward ambition, strengthen relationships, and drive measurable business outcomes across India and beyond.</p>
                 <div class="about-hero-actions">
                     <button class="btn-primary"><i class="fa-solid fa-play"></i> Watch Our Story</button>
-                    <button class="btn-secondary">Our Journey →</button>
+                    <a href="#founder" class="btn-secondary">Our Journey →</a>
                 </div>
             </div>
 
-            <div class="about-trust-card">
-                <div class="trust-card-header">
-                    <div class="badge-icon"><i class="fa-solid fa-star"></i></div>
-                    <p>Trusted by leading brands across India and beyond.</p>
-                </div>
-                <div class="trust-card-logos">
-                    <img src="assets/img/logos/dunzo.svg" alt="Dunzo" class="trust-logo">
-                    <img src="assets/img/logos/tata1mg.svg" alt="TATA" class="trust-logo">
-                    <img src="assets/img/logos/videocon.svg" alt="Videocon" class="trust-logo">
-                    <img src="assets/img/logos/isb.svg" alt="ISB" class="trust-logo">
-                </div>
-            </div>
+
 
             <!-- STATS BAR INSIDE HERO -->
             <div class="stats-bar-wrapper">
@@ -110,7 +99,7 @@ include_once 'includes/header.php';
     </section>
 
     <!-- FOUNDER SECTION -->
-    <section class="founder-section reveal-section">
+    <section id="founder" class="founder-section reveal-section">
         <div class="founder-container">
             <div class="founder-image">
                 <img src="assets/img/himanshu-cfounder.png" alt="Himanshu Singla">
