@@ -30,21 +30,21 @@ include_once 'includes/header.php';
         <!-- Floating stats -->
         <div class="hero-stats">
             <div class="stat-card">
-                <div class="stat-icon purple">✈️</div>
+                <div class="stat-icon purple"><i class="fa-solid fa-plane-departure"></i></div>
                 <div class="stat-info">
                     <div class="num">98<span>%</span></div>
                     <div class="label">Retention</div>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon green">👥</div>
+                <div class="stat-icon green"><i class="fa-solid fa-users"></i></div>
                 <div class="stat-info">
                     <div class="num">15<span>k</span></div>
                     <div class="label">Happy Travellers</div>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon blue">⭐</div>
+                <div class="stat-icon blue"><i class="fa-solid fa-star"></i></div>
                 <div class="stat-info">
                     <div class="num">4.9<span>★</span></div>
                     <div class="label">Avg. Rating</div>
@@ -188,8 +188,8 @@ include_once 'includes/header.php';
             <div class="why-center">
                 <div class="comparison-card">
                     <div class="comparison-header">
-                        <div class="comp-col-label problem">❌ PROBLEM</div>
-                        <div class="comp-col-label wanderoo">✅ WANDEROO</div>
+                        <div class="comp-col-label problem"><i class="fa-solid fa-circle-xmark"></i> PROBLEM</div>
+                        <div class="comp-col-label wanderoo"><i class="fa-solid fa-circle-check"></i> WANDEROO</div>
                     </div>
                     <div class="comparison-row">
                         <div class="comp-problem">Too many vendors, too much coordination</div>
@@ -213,21 +213,21 @@ include_once 'includes/header.php';
             <!-- Right: Metrics Stack -->
             <div class="why-right">
                 <div class="metric-card theme-orange">
-                    <div class="metric-icon">📈</div>
+                    <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="metric-content">
                         <div class="metric-num">35<span>%</span></div>
                         <div class="metric-desc">Average performance boost post incentive trips</div>
                     </div>
                 </div>
                 <div class="metric-card theme-purple">
-                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-icon"><i class="fa-solid fa-clock"></i></div>
                     <div class="metric-content">
                         <div class="metric-num">12<span>h</span></div>
                         <div class="metric-desc">Custom itinerary delivered to your inbox</div>
                     </div>
                 </div>
                 <div class="metric-card theme-green">
-                    <div class="metric-icon">💰</div>
+                    <div class="metric-icon"><i class="fa-solid fa-piggy-bank"></i></div>
                     <div class="metric-content">
                         <div class="metric-num">30<span>%</span></div>
                         <div class="metric-desc">Average savings vs. booking independently</div>
@@ -385,7 +385,7 @@ include_once 'includes/header.php';
             <div class="how-step theme-orange">
                 <div class="step-badge">1</div>
                 <div class="step-icon-box">
-                    <div class="step-icon">🎯</div>
+                    <div class="step-icon"><i class="fa-solid fa-bullseye"></i></div>
                 </div>
                 <div class="step-text">
                     <h3>Tell us your goal</h3>
@@ -398,7 +398,7 @@ include_once 'includes/header.php';
             <div class="how-step theme-green">
                 <div class="step-badge">2</div>
                 <div class="step-icon-box">
-                    <div class="step-icon">🗺️</div>
+                    <div class="step-icon"><i class="fa-solid fa-map-location-dot"></i></div>
                 </div>
                 <div class="step-text">
                     <h3>We design your trip</h3>
@@ -411,7 +411,7 @@ include_once 'includes/header.php';
             <div class="how-step theme-purple">
                 <div class="step-badge">3</div>
                 <div class="step-icon-box">
-                    <div class="step-icon">🤝</div>
+                    <div class="step-icon"><i class="fa-solid fa-handshake-simple"></i></div>
                 </div>
                 <div class="step-text">
                     <h3>You approve & relax</h3>
@@ -424,7 +424,7 @@ include_once 'includes/header.php';
             <div class="how-step theme-blue">
                 <div class="step-badge">4</div>
                 <div class="step-icon-box">
-                    <div class="step-icon">✈️</div>
+                    <div class="step-icon"><i class="fa-solid fa-plane-up"></i></div>
                 </div>
                 <div class="step-text">
                     <h3>End-to-end execution</h3>
@@ -448,7 +448,7 @@ include_once 'includes/header.php';
 
             <div class="planner-actions">
                 <button class="btn-planner-primary">
-                    <span class="ai-icon">✨</span> ASK NORTH AI
+                    <span class="ai-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span> ASK NORTH AI
                 </button>
                 <button class="btn-planner-outline">
                     MANUAL CALCULATOR
