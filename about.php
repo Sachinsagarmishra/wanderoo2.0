@@ -131,7 +131,7 @@ include_once 'includes/header.php';
     <section class="why-choose-section reveal-section">
         <div class="why-choose-header">
             <div class="section-label">WHY COMPANIES CHOOSE WANDEROO</div>
-            <h2>We go beyond travel.<br>We drive outcomes.</h2>
+            <h2>We go beyond travel. We drive outcomes.</h2>
         </div>
         <div class="why-choose-grid">
             <div class="choice-card theme-orange">
