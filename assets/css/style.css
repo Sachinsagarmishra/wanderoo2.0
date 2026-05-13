@@ -1470,8 +1470,9 @@ p {
 }
 
 .footer-brand .nav-logo {
+    display: inline-block;
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .footer-brand p {
@@ -1567,7 +1568,7 @@ p {
     }
 
     .footer-links-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
