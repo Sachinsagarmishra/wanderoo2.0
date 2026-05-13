@@ -168,19 +168,21 @@ include_once 'includes/header.php';
             <div class="exp-image">
                 <img src="assets/img/team-terrace.png" alt="Team Experience">
             </div>
-            <div class="exp-content">
-                <div class="section-label">20 YEARS OF EXPERIENCE</div>
-                <h2>Two decades of creating<br>moments that matter.</h2>
-                <p>With 20+ years of combined experience in travel, events, and employee engagement, our leadership team brings strategy, creativity, and execution excellence to every program we deliver.</p>
+            <div class="exp-content-wrapper">
+                <div class="exp-text-block">
+                    <div class="section-label">20 YEARS OF EXPERIENCE</div>
+                    <h2>Two decades of creating<br>moments that matter.</h2>
+                    <p>With 20+ years of combined experience in travel, events, and employee engagement, our leadership team brings excellence to every program.</p>
+                </div>
                 <ul class="exp-list">
-                    <li>Deep industry expertise</li>
-                    <li>Strong vendor & partner network</li>
-                    <li>Passionate team of travel & experience experts</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Deep industry expertise</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Strong vendor & partner network</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Passionate team of travel experts</li>
                 </ul>
-            </div>
-            <div class="exp-badge">
-                <div class="badge-num">20+</div>
-                <div class="badge-text">Years of combined<br>industry experience</div>
+                <div class="exp-badge">
+                    <div class="badge-num">20+</div>
+                    <div class="badge-text">Years of combined<br>industry experience</div>
+                </div>
             </div>
         </div>
     </section>

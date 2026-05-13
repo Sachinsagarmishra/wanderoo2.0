@@ -2185,78 +2185,111 @@ p {
     margin: 0;
 }
 
-/* Experience */
+/* Experience Section Redesign */
 .experience-section {
-    padding: 50px 60px 100px;
-    background: #FFFFFF;
+    padding: 100px 40px;
+    background: #FFFBF9;
 }
 
 .exp-container {
     max-width: 1400px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    display: flex;
+    background: #FFFFFF;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
     align-items: center;
-    position: relative;
+    padding: 10px;
+}
+
+.exp-image {
+    flex: 0 0 35%;
+    min-width: 300px;
+    height: 320px;
 }
 
 .exp-image img {
     width: 100%;
-    border-radius: 24px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+    display: block;
 }
 
-.exp-content h2 {
+.exp-content-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    gap: 40px;
+}
+
+.exp-text-block {
+    flex: 1.4;
+}
+
+.exp-text-block h2 {
     font-family: var(--font-display);
-    font-size: 40px;
-    margin-bottom: 25px;
+    font-size: 34px;
+    margin: 15px 0;
+    line-height: 1.2;
+    color: var(--text-main);
 }
 
-.exp-content p {
-    font-size: 16px;
+.exp-text-block p {
+    font-size: 14px;
     color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 30px;
+    max-width: 450px;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .exp-list {
+    flex: 1;
     list-style: none;
     padding: 0;
 }
 
 .exp-list li {
-    padding-left: 30px;
-    position: relative;
+    font-size: 14px;
+    font-weight: 700;
     margin-bottom: 15px;
-    font-size: 15px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-main);
 }
 
-.exp-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #F97316;
-    font-weight: 800;
+.exp-list i {
+    color: var(--amber);
+    font-size: 18px;
 }
 
 .exp-badge {
-    position: absolute;
-    bottom: -50px;
-    right: 60px;
-    background: #FFFFFF;
-    padding: 40px;
+    flex: 0 0 200px;
+    text-align: center;
+    padding: 20px;
+    background: #FFFAF8;
     border-radius: 24px;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    border: 1px solid rgba(249, 115, 22, 0.05);
 }
 
 .badge-num {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 800;
     color: var(--text-main);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.badge-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .badge-text {
