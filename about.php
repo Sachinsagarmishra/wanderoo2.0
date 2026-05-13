@@ -106,19 +106,18 @@ include_once 'includes/header.php';
     <section class="founder-section reveal-section">
         <div class="founder-container">
             <div class="founder-image">
-                <img src="assets/img/founder.png" alt="Ankit Agrawal">
+                <img src="assets/img/himanshu-cfounder.png" alt="Himanshu Singla">
             </div>
             <div class="founder-content">
                 <div class="section-label">FROM THE FOUNDER</div>
-                <h3>Travel has the power to inspire,<br>connect and transform.</h3>
-                <p>At Wanderoo, we don't just plan trips – we craft experiences that motivate people, build stronger teams, and drive performance.</p>
-                <p>Our goal is simple: to take the complexity out of corporate travel and deliver moments that leave a lasting impact.</p>
+                <h3>IIT-BHU Alumnus Disrupting<br>the Outdoors & Travel.</h3>
+                <p>Hailing from the small village of Mewat in Haryana and a proud B.Tech graduate from <strong>IIT-BHU Varanasi</strong>, Himanshu Singla brings a unique blend of corporate strategy and raw passion for the wilderness to Wanderoo.</p>
+                <p>After three years at OYO Rooms, he chose to trade the corporate ladder for the mighty Himalayas. Since 2014, his journey from solo treks to leading wilderness communities has been driven by one goal: to create experiences that are as resilient as they are unforgettable.</p>
                 <div class="founder-signature-block">
                     <div class="f-info">
-                        <strong>Ankit Agrawal</strong>
+                        <strong>Himanshu Singla</strong>
                         <span>Founder & CEO, Wanderoo</span>
                     </div>
-                    <img src="assets/img/signature.png" alt="Signature" class="signature-img" onerror="this.style.display='none'">
                 </div>
             </div>
             <div class="founder-quote">
