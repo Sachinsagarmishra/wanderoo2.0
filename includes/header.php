@@ -23,26 +23,26 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
 <!-- Mobile Menu Overlay -->
 <div class="mobile-nav-overlay" id="mobileMenu">
   <div class="close-menu" onclick="toggleMenu()">✕</div>
-  <a href="<?php echo SITE_PATH; ?>/index.php#destinations" onclick="toggleMenu()">Destinations</a>
-  <a href="<?php echo SITE_PATH; ?>/index.php#solutions" onclick="toggleMenu()">Solutions</a>
-  <a href="<?php echo SITE_PATH; ?>/index.php#case-studies" onclick="toggleMenu()">Case Studies</a>
-  <a href="<?php echo SITE_PATH; ?>/index.php#how" onclick="toggleMenu()">How It Works</a>
-  <a href="<?php echo SITE_PATH; ?>/about.php" onclick="toggleMenu()">About Us</a>
+  <a href="<?php echo SITE_PATH; ?>/index#destinations" onclick="toggleMenu()">Destinations</a>
+  <a href="<?php echo SITE_PATH; ?>/index#solutions" onclick="toggleMenu()">Solutions</a>
+  <a href="<?php echo SITE_PATH; ?>/index#case-studies" onclick="toggleMenu()">Case Studies</a>
+  <a href="<?php echo SITE_PATH; ?>/index#how" onclick="toggleMenu()">How It Works</a>
+  <a href="<?php echo SITE_PATH; ?>/about" onclick="toggleMenu()">About Us</a>
   <button class="nav-cta" style="margin-top: 20px;">Get Proposal →</button>
 </div>
 
 <!-- NAV -->
 <nav class="main-nav">
   <div class="nav-container">
-    <a href="<?php echo SITE_PATH; ?>/index.php" class="nav-logo">
+    <a href="<?php echo SITE_PATH; ?>/" class="nav-logo">
       <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo">
     </a>
     <ul class="nav-links">
-      <li><a href="<?php echo SITE_PATH; ?>/index.php#destinations">Destinations</a></li>
-      <li><a href="<?php echo SITE_PATH; ?>/index.php#solutions">Solutions</a></li>
-      <li><a href="<?php echo SITE_PATH; ?>/index.php#case-studies">Case Studies</a></li>
-      <li><a href="<?php echo SITE_PATH; ?>/index.php#how">How It Works</a></li>
-      <li><a href="<?php echo SITE_PATH; ?>/about.php">About Us</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index#destinations">Destinations</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index#solutions">Solutions</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index#case-studies">Case Studies</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/index#how">How It Works</a></li>
+      <li><a href="<?php echo SITE_PATH; ?>/about">About Us</a></li>
     </ul>
     <div class="nav-actions">
       <button class="nav-cta">Get Proposal →</button>

@@ -2,7 +2,7 @@
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <a href="<?php echo SITE_PATH; ?>/index.php" class="nav-logo">
+      <a href="<?php echo SITE_PATH; ?>/" class="nav-logo">
         <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo">
       </a>
       <p>India's leading B2B incentive travel platform — turning performance into experiences.</p>
@@ -30,9 +30,9 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">How It Works</a></li>
+          <li><a href="<?php echo SITE_PATH; ?>/about">About Us</a></li>
+          <li><a href="<?php echo SITE_PATH; ?>/index#case-studies">Case Studies</a></li>
+          <li><a href="<?php echo SITE_PATH; ?>/index#how">How It Works</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
