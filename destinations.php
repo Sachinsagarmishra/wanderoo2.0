@@ -250,8 +250,10 @@ include_once 'includes/header.php';
                 <button class="tab-btn">Experiences & Adventure</button>
                 <button class="tab-btn">Transportation</button>
             </div>
-            <div class="logo-grid-wrapper">
-                <div class="logo-grid">
+            
+            <div class="logo-marquee-wrapper">
+                <div class="logo-marquee-content">
+                    <!-- Logo set 1 -->
                     <img src="assets/img/logos/dunzo.svg" alt="Dunzo">
                     <img src="assets/img/logos/tata1mg.svg" alt="TATA 1mg">
                     <img src="assets/img/logos/videocon.svg" alt="Videocon">
@@ -260,9 +262,18 @@ include_once 'includes/header.php';
                     <img src="assets/img/logos/tata1mg.svg" alt="TATA 1mg">
                     <img src="assets/img/logos/videocon.svg" alt="Videocon">
                     <img src="assets/img/logos/isb.svg" alt="ISB">
-                    <div class="more-badge">+10 More</div>
+                    <!-- Logo set 2 -->
+                    <img src="assets/img/logos/dunzo.svg" alt="Dunzo">
+                    <img src="assets/img/logos/tata1mg.svg" alt="TATA 1mg">
+                    <img src="assets/img/logos/videocon.svg" alt="Videocon">
+                    <img src="assets/img/logos/isb.svg" alt="ISB">
+                    <img src="assets/img/logos/dunzo.svg" alt="Dunzo">
+                    <img src="assets/img/logos/tata1mg.svg" alt="TATA 1mg">
+                    <img src="assets/img/logos/videocon.svg" alt="Videocon">
+                    <img src="assets/img/logos/isb.svg" alt="ISB">
                 </div>
             </div>
+
             <div class="partner-footer">
                 <span class="p-line"></span>
                 <p>20+ global partners committed to delivering excellence</p>

@@ -2486,7 +2486,7 @@ p {
     line-height: 1.1;
     margin: 25px 0;
     color: var(--text-main);
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .dest-hero-left h1 .accent {
@@ -2885,9 +2885,35 @@ p {
 .bg-purple { background: #FAF5FF; color: #A855F7; }
 .bg-yellow { background: #FEFCE8; color: #EAB308; }
 
-/* Partner Logos */
-.partner-logos-section {
-    padding: 100px 60px;
+/* Partner Logos Marquee */
+.logo-marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 20px 0;
+    margin: 40px 0;
+}
+
+.logo-marquee-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 80px;
+    animation: scroll-marquee 40s linear infinite;
+}
+
+.logo-marquee-content img {
+    height: 35px;
+    filter: grayscale(1) opacity(0.6);
+    transition: all 0.3s;
+}
+
+.logo-marquee-content img:hover {
+    filter: grayscale(0) opacity(1);
+}
+
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .partner-tabs {
@@ -2895,7 +2921,7 @@ p {
     justify-content: center;
     gap: 30px;
     border-bottom: 1px solid #F1F5F9;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .tab-btn {
@@ -2993,31 +3019,64 @@ p {
     max-width: 600px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    .dest-hero {
+        padding: 60px 20px;
+    }
     .dest-hero-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
+        text-align: center;
     }
     .dest-hero-left h1 {
-        font-size: 40px;
+        font-size: 38px;
+        line-height: 1.1;
     }
-    .region-grid {
-        grid-template-columns: 1fr;
+    .dest-hero-left p {
+        font-size: 16px;
     }
-    .handpicked-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .dest-search-box {
+        margin: 0 auto;
+    }
+    .dest-hero-right {
+        width: 100%;
+    }
+    .hero-image-wrapper img {
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .hero-image-badge {
+        left: 15px;
+        bottom: 15px;
+        padding: 8px 15px;
+        font-size: 11px;
+    }
+    .badge-icon-bg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .handpicked-section {
+        padding: 60px 20px;
     }
     .dest-card-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
+    .d-img {
+        height: 220px;
+    }
+    
     .why-dest-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
+    .why-dest-item {
+        border-left: none;
+        padding: 0;
+    }
+    
     .dest-cta-card {
-        flex-direction: column;
-        text-align: center;
         padding: 40px 20px;
     }
 }
