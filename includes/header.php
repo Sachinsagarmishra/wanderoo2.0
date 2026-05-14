@@ -28,7 +28,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
   <a href="<?php echo SITE_PATH; ?>/index#case-studies" onclick="toggleMenu()">Case Studies</a>
   <a href="<?php echo SITE_PATH; ?>/index#how" onclick="toggleMenu()">How It Works</a>
   <a href="<?php echo SITE_PATH; ?>/about" onclick="toggleMenu()">About Us</a>
-  <button class="nav-cta" style="margin-top: 20px;">Get Proposal →</button>
+  <a href="https://wa.me/919113515462" target="_blank" class="nav-cta" style="margin-top: 20px;">Get Proposal →</a>
 </div>
 
 <!-- NAV -->
@@ -45,7 +45,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
       <li><a href="<?php echo SITE_PATH; ?>/about">About Us</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="nav-cta">Get Proposal →</button>
+      <a href="https://wa.me/919113515462" target="_blank" class="nav-cta">Get Proposal →</a>
       <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
     </div>
   </div>

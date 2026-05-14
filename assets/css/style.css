@@ -107,7 +107,7 @@ p {
 
 .nav-cta {
     background: var(--amber);
-    color: #fff;
+    color: #fff !important;
     border: none;
     padding: 12px 28px;
     border-radius: 8px;
@@ -116,6 +116,8 @@ p {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .nav-cta:hover {
@@ -3080,7 +3082,71 @@ p {
         padding: 0;
     }
     
+
     .dest-cta-card {
         padding: 40px 20px;
+    }
+}
+
+/* ── WHATSAPP FLOAT ── */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 60px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float i {
+    font-size: 30px;
+}
+
+.whatsapp-float span {
+    font-size: 15px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    margin-left: 10px;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.3s ease, margin 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: translateY(-5px) scale(1.05);
+    color: #fff;
+}
+
+.whatsapp-float:hover span {
+    max-width: 150px;
+    margin-left: 12px;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 25px;
+        right: 25px;
+        height: 55px;
+        width: 55px;
+        padding: 0;
+        border-radius: 50%;
+    }
+    .whatsapp-float i {
+        font-size: 26px;
+    }
+    .whatsapp-float span {
+        display: none;
     }
 }

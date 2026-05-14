@@ -33,7 +33,8 @@
           <li><a href="<?php echo SITE_PATH; ?>/about">About Us</a></li>
           <li><a href="<?php echo SITE_PATH; ?>/index#case-studies">Case Studies</a></li>
           <li><a href="<?php echo SITE_PATH; ?>/index#how">How It Works</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="https://wa.me/919113515462" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a></li>
+          <li><a href="tel:+919113515462"><i class="fa-solid fa-phone"></i> +91 91135 15462</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -96,5 +97,11 @@
     observer.observe(section);
   });
 </script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919113515462" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span>Chat with us</span>
+</a>
 </body>
 </html>
