@@ -1284,7 +1284,11 @@ p {
     }
 
     .step-text h3 {
-        font-size: 17px;
+        font-size: 18px !important;
+    }
+
+    .step-text p {
+        font-size: 18px !important;
     }
 }
 
