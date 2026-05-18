@@ -55,6 +55,50 @@ if (empty($user_message)) {
     exit;
 }
 
+// 1.5. Dynamic Background Lead Detection:
+// If the user's message contains both an email and a phone number, extract and save to database dynamically!
+$detected_email = '';
+$detected_phone = '';
+$detected_name = '';
+
+if (preg_match('/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/', $user_message, $email_matches)) {
+    $detected_email = $email_matches[0];
+}
+if (preg_match('/(?:\+?\d{1,3}[- ]?)?\d{10}/', $user_message, $phone_matches)) {
+    $detected_phone = $phone_matches[0];
+}
+
+if (!empty($detected_email) && !empty($detected_phone)) {
+    $cleaned_text = preg_replace('/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/', '', $user_message);
+    $cleaned_text = preg_replace('/(?:\+?\d{1,3}[- ]?)?\d{10}/', '', $cleaned_text);
+    $cleaned_text = preg_replace('/[^a-zA-Z\s]/', '', $cleaned_text);
+    $words = array_values(array_filter(array_map('trim', explode(' ', $cleaned_text))));
+    
+    $guess_name = '';
+    $ignore_words = ['and', 'for', 'the', 'pax', 'person', 'people', 'days', 'nights', 'shimla', 'malaysia', 'bali', 'phuket', 'goa', 'coorg', 'munnar', 'proposal', 'callback', 'quote', 'contact', 'details', 'my', 'name', 'is', 'email', 'phone', 'whatsapp', 'number'];
+    foreach ($words as $w) {
+        if (strlen($w) > 2 && !in_array(strtolower($w), $ignore_words)) {
+            $guess_name .= $w . ' ';
+        }
+    }
+    $detected_name = trim($guess_name);
+    if (empty($detected_name)) {
+        $detected_name = 'Chat User';
+    }
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO `captured_leads` (`name`, `email`, `phone`, `context`) VALUES (:name, :email, :phone, :context)");
+        $stmt->execute([
+            'name' => $detected_name,
+            'email' => $detected_email,
+            'phone' => $detected_phone,
+            'context' => "Dynamically captured from chat conversation: " . $user_message
+        ]);
+    } catch (PDOException $e) {
+        // Silently capture and log
+    }
+}
+
 // 2. Fetch API key and settings
 $api_key = trim(get_agent_setting('gemini_api_key'));
 if (empty($api_key)) {

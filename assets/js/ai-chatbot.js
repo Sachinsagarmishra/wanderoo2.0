@@ -165,11 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 chatHistory.push({ role: 'user', text: message });
                 chatHistory.push({ role: 'model', text: data.reply });
                 
-                // Check if reply requests a real proposal or details (Lead Capture trigger)
-                if (data.reply.toLowerCase().includes("proposal") || 
-                    data.reply.toLowerCase().includes("name, work email")) {
-                    appendLeadCaptureForm(message);
-                }
+                // Conversational flow - leads are captured dynamically in the background when user shares email and phone in text
+                // appendLeadCaptureForm is kept as an optional manual helper if they explicitly request it.
             } else {
                 appendMessageBubble("⚠️ Sorry, I encountered an issue processing your request. Please try again.", "agent");
             }
