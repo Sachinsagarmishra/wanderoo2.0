@@ -8,6 +8,41 @@ require_once __DIR__ . '/includes/header.php'; // Auth check triggers
 $success_msg = '';
 $error_msg = '';
 
+// Handle AJAX dynamic Captured Lead Deletion Actions
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    header('Content-Type: application/json');
+    if ($_POST['action'] === 'delete_lead' && isset($_POST['lead_id'])) {
+        $lead_id = intval($_POST['lead_id']);
+        try {
+            $stmt = $pdo->prepare("DELETE FROM `captured_leads` WHERE `id` = :id");
+            $stmt->execute(['id' => $lead_id]);
+            echo json_encode(['success' => true, 'message' => 'Lead successfully deleted from the database.']);
+            exit;
+        } catch (PDOException $e) {
+            http_response_code(500);
+            echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+            exit;
+        }
+    }
+    
+    if ($_POST['action'] === 'bulk_delete_leads' && isset($_POST['lead_ids'])) {
+        $lead_ids = array_map('intval', explode(',', $_POST['lead_ids']));
+        if (!empty($lead_ids)) {
+            try {
+                $placeholders = implode(',', array_fill(0, count($lead_ids), '?'));
+                $stmt = $pdo->prepare("DELETE FROM `captured_leads` WHERE `id` IN ($placeholders)");
+                $stmt->execute($lead_ids);
+                echo json_encode(['success' => true, 'message' => count($lead_ids) . ' leads successfully deleted from the database.']);
+                exit;
+            } catch (PDOException $e) {
+                http_response_code(500);
+                echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+                exit;
+            }
+        }
+    }
+}
+
 // Handle save settings form submit
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_agent_settings'])) {
     $keys_to_update = [
@@ -283,6 +318,234 @@ try {
             grid-template-columns: 1fr;
         }
     }
+    
+    /* Advanced Captured Leads Dashboard Styles */
+    .leads-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        background: var(--bg2);
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+    }
+    .search-box-container {
+        position: relative;
+        flex-grow: 1;
+        max-width: 400px;
+    }
+    .search-box-container i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--fg2);
+        font-size: 14px;
+    }
+    .leads-search-input {
+        width: 100%;
+        padding: 10px 12px 10px 38px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        color: var(--fg);
+        font-size: 13px;
+        outline: none;
+        transition: border 0.2s;
+    }
+    .leads-search-input:focus {
+        border-color: var(--accent);
+    }
+    
+    .bulk-action-banner {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(239, 68, 68, 0.08);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        padding: 12px 20px;
+        border-radius: 8px;
+        color: #ef4444;
+        font-size: 13px;
+        font-weight: 600;
+        width: 100%;
+        margin-bottom: 20px;
+        animation: fadeIn 0.2s ease;
+    }
+    
+    .btn-delete-lead {
+        background: none;
+        border: none;
+        color: #ef4444;
+        cursor: pointer;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: all 0.2s;
+    }
+    .btn-delete-lead:hover {
+        background: rgba(239, 68, 68, 0.1);
+    }
+    
+    .btn-bulk-delete {
+        background: #ef4444;
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+    }
+    .btn-bulk-delete:hover {
+        background: #dc2626;
+    }
+    
+    .leads-pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border);
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .pagination-info {
+        font-size: 12px;
+        color: var(--fg2);
+    }
+    .pagination-controls {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+    .page-link {
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        color: var(--fg);
+        font-size: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s;
+        text-decoration: none;
+    }
+    .page-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    .page-link.active {
+        background: var(--accent);
+        color: #ffffff;
+        border-color: var(--accent);
+    }
+    .page-link.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    
+    .lead-checkbox {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: var(--accent);
+    }
+
+    /* Beautiful Confirmation Modal Overlay */
+    .custom-modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 99999;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+    .custom-modal-overlay.show {
+        display: flex;
+        opacity: 1;
+    }
+    .custom-modal {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3), 0 10px 10px -5px rgba(0,0,0,0.2);
+        border-radius: 12px;
+        max-width: 420px;
+        width: 90%;
+        padding: 24px;
+        text-align: center;
+        transform: scale(0.95);
+        transition: transform 0.2s ease;
+    }
+    .custom-modal-overlay.show .custom-modal {
+        transform: scale(1);
+    }
+    .modal-icon {
+        font-size: 40px;
+        color: #ef4444;
+        margin-bottom: 15px;
+    }
+    .modal-title {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--fg);
+        margin-bottom: 8px;
+    }
+    .modal-text {
+        font-size: 13px;
+        color: var(--fg2);
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    .modal-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+    .btn-modal-cancel {
+        background: var(--bg2);
+        color: var(--fg);
+        border: 1px solid var(--border);
+        padding: 8px 18px;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 0.2s;
+    }
+    .btn-modal-cancel:hover {
+        background: var(--bg3);
+    }
+    .btn-modal-confirm {
+        background: #ef4444;
+        color: #ffffff;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 6px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 0.2s;
+    }
+    .btn-modal-confirm:hover {
+        background: #dc2626;
+    }
 </style>
 
 <div class="editor-container">
@@ -450,53 +713,432 @@ try {
 
     <!-- 4. LEADS TAB -->
     <div id="section-leads" class="editor-section">
+        <!-- Floating/Top Banner for Bulk Delete Actions -->
+        <div id="leads-bulk-banner" class="bulk-action-banner">
+            <div>
+                <i class="fa-solid fa-circle-exclamation"></i> 
+                <span id="selected-leads-count">0</span> leads selected for bulk actions.
+            </div>
+            <button type="button" class="btn-bulk-delete" onclick="confirmBulkDelete()">
+                <i class="fa-solid fa-trash-can"></i> Delete Selected Leads
+            </button>
+        </div>
+
         <div class="form-card">
-            <div class="form-card-title"><i class="fa-solid fa-id-card-clip" style="color: var(--accent);"></i> Captured Corporate Proposal Leads</div>
+            <div class="form-card-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;">
+                <span><i class="fa-solid fa-id-card-clip" style="color: var(--accent);"></i> Captured Corporate Proposal Leads</span>
+            </div>
             <p style="font-size: 13px; color: var(--fg2); margin-bottom: 20px;">Whenever a corporate planner uses North AI to calculate an offsite budget and requests a customized proposal, their contact details are logged here.</p>
+
+            <!-- Toolbar containing Search and Page Size Filter -->
+            <div class="leads-toolbar">
+                <div class="search-box-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="leads-search" class="leads-search-input" placeholder="Search by name, email, WhatsApp, or retreat details..." oninput="handleLeadsSearch()">
+                </div>
+                <div style="font-size: 13px; color: var(--fg2); display: flex; align-items: center; gap: 8px;">
+                    <span>Rows per page:</span>
+                    <select id="leads-limit" style="padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg); color: var(--fg); cursor: pointer;" onchange="changeLeadsLimit()">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Sleek Dynamic Alert Message Banner -->
+            <div id="leads-alert-success" class="alert alert-success" style="display: none; margin-bottom: 15px;"></div>
+            <div id="leads-alert-error" class="alert alert-danger" style="display: none; margin-bottom: 15px;"></div>
 
             <div style="overflow-x: auto;">
                 <table class="crud-table" style="width: 100%;">
                     <thead>
                         <tr>
+                            <th style="width: 40px; padding: 12px; text-align: center;">
+                                <input type="checkbox" id="select-all-leads" class="lead-checkbox" onchange="toggleSelectAllLeads(this)">
+                            </th>
                             <th style="padding: 12px; font-size: 12px;">Submitted Date</th>
                             <th style="padding: 12px; font-size: 12px;">Client Name</th>
                             <th style="padding: 12px; font-size: 12px;">Work Email</th>
                             <th style="padding: 12px; font-size: 12px;">WhatsApp Line</th>
                             <th style="padding: 12px; font-size: 12px;">Captured Context</th>
+                            <th style="padding: 12px; font-size: 12px; width: 60px; text-align: center;">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php if (empty($leads)): ?>
-                            <tr>
-                                <td colspan="5" style="text-align: center; color: var(--fg2); padding: 30px;">No leads captured yet. Enquiries will populate here dynamically.</td>
-                            </tr>
-                        <?php else: ?>
-                            <?php foreach ($leads as $l): ?>
-                                <tr>
-                                    <td style="padding: 12px; font-size: 12px; white-space: nowrap; color: var(--fg2);"><?php echo date('M d, Y h:i A', strtotime($l['created_at'])); ?></td>
-                                    <td style="padding: 12px; font-size: 13px; font-weight: 700; color: var(--fg);"><?php echo htmlspecialchars($l['name']); ?></td>
-                                    <td style="padding: 12px; font-size: 13px; color: var(--fg);"><a href="mailto:<?php echo htmlspecialchars($l['email']); ?>" style="color: var(--info); font-weight: 600; text-decoration: none;"><?php echo htmlspecialchars($l['email']); ?></a></td>
-                                    <td style="padding: 12px; font-size: 13px; color: var(--fg); font-weight: 600;"><?php echo htmlspecialchars($l['phone']); ?></td>
-                                    <td style="padding: 12px; font-size: 12px; color: var(--fg2); max-width: 300px;"><?php echo htmlspecialchars($l['context']); ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
+                    <tbody id="leads-table-body">
+                        <!-- Dynamic content populated via JavaScript -->
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Sleek Pagination Layout -->
+            <div class="leads-pagination">
+                <div class="pagination-info" id="leads-pagination-info">
+                    Showing 0 to 0 of 0 leads
+                </div>
+                <div class="pagination-controls" id="leads-pagination-controls">
+                    <!-- Dynamic page links -->
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Beautiful Custom Confirmation Modal Popups -->
+<div id="custom-confirm-modal" class="custom-modal-overlay">
+    <div class="custom-modal">
+        <div class="modal-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="modal-title" id="confirm-modal-title">Delete Lead?</div>
+        <div class="modal-text" id="confirm-modal-text">Are you sure you want to permanently delete this lead? This action cannot be undone.</div>
+        <div class="modal-actions">
+            <button type="button" class="btn-modal-cancel" onclick="closeConfirmModal()">No, Cancel</button>
+            <button type="button" class="btn-modal-confirm" id="confirm-modal-yes-btn">Yes, Delete</button>
+        </div>
+    </div>
+</div>
+
 <script>
+// Tab switcher section logic
 function switchSection(sectionId, btn) {
-    // Deactivate all tabs
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.editor-section').forEach(s => s.classList.remove('active'));
     
-    // Activate clicked tab
     btn.classList.add('active');
     document.getElementById('section-' + sectionId).classList.add('active');
+}
+
+// ----------------- LEADS DASHBOARD SCRIPTING -----------------
+// Inject database leads array safely into Javascript state
+let allLeads = <?php echo json_encode($leads); ?>;
+let filteredLeads = [...allLeads];
+let currentLeadsPage = 1;
+let leadsPerPageLimit = 10;
+let activeLeadDeletionTarget = null;
+let activeLeadDeletionType = 'single'; // 'single' or 'bulk'
+
+// Initialize dashboard display on load
+document.addEventListener("DOMContentLoaded", function() {
+    renderLeadsTable();
+});
+
+// Render dynamic table rows based on filters, pagination
+function renderLeadsTable() {
+    const tableBody = document.getElementById("leads-table-body");
+    const selectAllCheckbox = document.getElementById("select-all-leads");
+    tableBody.innerHTML = "";
+    
+    // Clear select all checkbox state on render
+    selectAllCheckbox.checked = false;
+    
+    if (filteredLeads.length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="7" style="text-align: center; color: var(--fg2); padding: 40px; font-size: 13px;">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 24px; color: var(--border); display: block; margin-bottom: 10px;"></i>
+                    No leads match your search criteria.
+                </td>
+            </tr>
+        `;
+        document.getElementById("leads-pagination-info").textContent = "Showing 0 to 0 of 0 leads";
+        document.getElementById("leads-pagination-controls").innerHTML = "";
+        updateBulkBanner();
+        return;
+    }
+    
+    // Paginate visible array indices
+    const totalLeadsCount = filteredLeads.length;
+    const totalPagesCount = Math.ceil(totalLeadsCount / leadsPerPageLimit);
+    
+    // Safety check on active page bounds
+    if (currentLeadsPage > totalPagesCount) {
+        currentLeadsPage = totalPagesCount || 1;
+    }
+    
+    const startIndex = (currentLeadsPage - 1) * leadsPerPageLimit;
+    const endIndex = Math.min(startIndex + leadsPerPageLimit, totalLeadsCount);
+    
+    const paginatedLeads = filteredLeads.slice(startIndex, endIndex);
+    
+    // Format and append rows
+    paginatedLeads.forEach(lead => {
+        const tr = document.createElement("tr");
+        tr.id = "lead-row-" + lead.id;
+        
+        // Date formatting helper
+        const rawDate = new Date(lead.created_at);
+        const formattedDate = rawDate.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: '2-digit', 
+            year: 'numeric' 
+        }) + " " + rawDate.toLocaleTimeString('en-US', { 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            hour12: true 
+        });
+        
+        // Escape content helpers
+        const nameEscaped = escapeHtml(lead.name || 'Chat User');
+        const emailEscaped = escapeHtml(lead.email || '');
+        const phoneEscaped = escapeHtml(lead.phone || '');
+        const contextEscaped = escapeHtml(lead.context || '');
+        
+        tr.innerHTML = `
+            <td style="text-align: center; padding: 12px;">
+                <input type="checkbox" class="lead-checkbox select-lead-item" data-id="${lead.id}" onchange="handleSelectLeadItem()">
+            </td>
+            <td style="padding: 12px; font-size: 12px; white-space: nowrap; color: var(--fg2);">${formattedDate}</td>
+            <td style="padding: 12px; font-size: 13px; font-weight: 700; color: var(--fg);">${nameEscaped}</td>
+            <td style="padding: 12px; font-size: 13px; color: var(--fg);"><a href="mailto:${emailEscaped}" style="color: var(--info); font-weight: 600; text-decoration: none;">${emailEscaped}</a></td>
+            <td style="padding: 12px; font-size: 13px; color: var(--fg); font-weight: 600;">${phoneEscaped}</td>
+            <td style="padding: 12px; font-size: 12px; color: var(--fg2); max-width: 300px; word-break: break-word;">${contextEscaped}</td>
+            <td style="padding: 12px; text-align: center;">
+                <button type="button" class="btn-delete-lead" title="Delete Lead" onclick="confirmDeleteSingle(${lead.id}, '${nameEscaped.replace(/'/g, "\\'")}')">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(tr);
+    });
+    
+    // Update pagination details text
+    document.getElementById("leads-pagination-info").textContent = `Showing ${startIndex + 1} to ${endIndex} of ${totalLeadsCount} leads`;
+    
+    // Generate beautiful pagination buttons
+    renderPaginationButtons(totalPagesCount);
+    updateBulkBanner();
+}
+
+// Generate pagination controls buttons
+function renderPaginationButtons(totalPages) {
+    const controlsContainer = document.getElementById("leads-pagination-controls");
+    controlsContainer.innerHTML = "";
+    
+    if (totalPages <= 1) return;
+    
+    // Previous Page Button
+    const prevBtn = document.createElement("button");
+    prevBtn.type = "button";
+    prevBtn.className = "page-link" + (currentLeadsPage === 1 ? " disabled" : "");
+    prevBtn.innerHTML = '<i class="fa-solid fa-angle-left"></i>';
+    if (currentLeadsPage > 1) {
+        prevBtn.onclick = () => { currentLeadsPage--; renderLeadsTable(); };
+    }
+    controlsContainer.appendChild(prevBtn);
+    
+    // Page Numbers
+    for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement("button");
+        pageBtn.type = "button";
+        pageBtn.className = "page-link" + (currentLeadsPage === i ? " active" : "");
+        pageBtn.textContent = i;
+        pageBtn.onclick = () => { currentLeadsPage = i; renderLeadsTable(); };
+        controlsContainer.appendChild(pageBtn);
+    }
+    
+    // Next Page Button
+    const nextBtn = document.createElement("button");
+    nextBtn.type = "button";
+    nextBtn.className = "page-link" + (currentLeadsPage === totalPages ? " disabled" : "");
+    nextBtn.innerHTML = '<i class="fa-solid fa-angle-right"></i>';
+    if (currentLeadsPage < totalPages) {
+        nextBtn.onclick = () => { currentLeadsPage++; renderLeadsTable(); };
+    }
+    controlsContainer.appendChild(nextBtn);
+}
+
+// Handle live search text matching
+function handleLeadsSearch() {
+    const query = document.getElementById("leads-search").value.toLowerCase().trim();
+    if (query === "") {
+        filteredLeads = [...allLeads];
+    } else {
+        filteredLeads = allLeads.filter(lead => {
+            return (lead.name && lead.name.toLowerCase().includes(query)) ||
+                   (lead.email && lead.email.toLowerCase().includes(query)) ||
+                   (lead.phone && lead.phone.includes(query)) ||
+                   (lead.context && lead.context.toLowerCase().includes(query));
+        });
+    }
+    currentLeadsPage = 1; // Reset to page 1
+    renderLeadsTable();
+}
+
+// Handle limit size change
+function changeLeadsLimit() {
+    leadsPerPageLimit = parseInt(document.getElementById("leads-limit").value);
+    currentLeadsPage = 1; // Reset to page 1
+    renderLeadsTable();
+}
+
+// Toggle Select All Visible Leads Checkbox
+function toggleSelectAllLeads(masterCheckbox) {
+    const rowCheckboxes = document.querySelectorAll(".select-lead-item");
+    rowCheckboxes.forEach(cb => {
+        cb.checked = masterCheckbox.checked;
+    });
+    updateBulkBanner();
+}
+
+// Handle row checkbox changes
+function handleSelectLeadItem() {
+    const selectAllCheckbox = document.getElementById("select-all-leads");
+    const rowCheckboxes = document.querySelectorAll(".select-lead-item");
+    const checkedCount = Array.from(rowCheckboxes).filter(cb => cb.checked).length;
+    
+    selectAllCheckbox.checked = (checkedCount === rowCheckboxes.length && rowCheckboxes.length > 0);
+    updateBulkBanner();
+}
+
+// Display or update Bulk Selection Banner
+function updateBulkBanner() {
+    const rowCheckboxes = document.querySelectorAll(".select-lead-item");
+    const checkedBoxes = Array.from(rowCheckboxes).filter(cb => cb.checked);
+    const banner = document.getElementById("leads-bulk-banner");
+    const countSpan = document.getElementById("selected-leads-count");
+    
+    if (checkedBoxes.length > 0) {
+        banner.style.display = "flex";
+        countSpan.textContent = checkedBoxes.length;
+    } else {
+        banner.style.display = "none";
+        countSpan.textContent = "0";
+    }
+}
+
+// ----------------- MODAL DIALOG POPUPS SCRIPT -----------------
+function openConfirmModal(title, text, confirmCallback) {
+    const overlay = document.getElementById("custom-confirm-modal");
+    document.getElementById("confirm-modal-title").textContent = title;
+    document.getElementById("confirm-modal-text").textContent = text;
+    
+    const yesBtn = document.getElementById("confirm-modal-yes-btn");
+    // Clear old click event listeners
+    const newYesBtn = yesBtn.cloneNode(true);
+    yesBtn.parentNode.replaceChild(newYesBtn, yesBtn);
+    
+    newYesBtn.onclick = function() {
+        confirmCallback();
+        closeConfirmModal();
+    };
+    
+    overlay.classList.add("show");
+}
+
+function closeConfirmModal() {
+    document.getElementById("custom-confirm-modal").classList.remove("show");
+}
+
+// Confirm Delete Single Lead (with name highlight)
+function confirmDeleteSingle(id, name) {
+    activeLeadDeletionTarget = id;
+    activeLeadDeletionType = 'single';
+    
+    openConfirmModal(
+        "Delete Lead?", 
+        `Are you sure you want to permanently delete lead details of "${name}"? This will delete it from the database forever!`,
+        executeDeleteAction
+    );
+}
+
+// Confirm Bulk Delete Selected Leads
+function confirmBulkDelete() {
+    activeLeadDeletionType = 'bulk';
+    const rowCheckboxes = document.querySelectorAll(".select-lead-item");
+    const checkedIds = Array.from(rowCheckboxes).filter(cb => cb.checked).map(cb => cb.getAttribute("data-id"));
+    
+    if (checkedIds.length === 0) return;
+    
+    openConfirmModal(
+        "Delete Selected Leads?", 
+        `Are you sure you want to permanently delete all ${checkedIds.length} selected proposal leads? This will clear them from your database forever!`,
+        executeDeleteAction
+    );
+}
+
+// ----------------- AJAX BACKEND CALLS -----------------
+function executeDeleteAction() {
+    // Show loading alerts
+    hideAlerts();
+    
+    const formData = new FormData();
+    
+    if (activeLeadDeletionType === 'single') {
+        formData.append("action", "delete_lead");
+        formData.append("lead_id", activeLeadDeletionTarget);
+    } else {
+        const rowCheckboxes = document.querySelectorAll(".select-lead-item");
+        const checkedIds = Array.from(rowCheckboxes).filter(cb => cb.checked).map(cb => cb.getAttribute("data-id")).join(",");
+        formData.append("action", "bulk_delete_leads");
+        formData.append("lead_ids", checkedIds);
+    }
+    
+    fetch("", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) throw new Error("HTTP error " + response.status);
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            // Success! Sync JavaScript State local array
+            if (activeLeadDeletionType === 'single') {
+                allLeads = allLeads.filter(lead => lead.id !== activeLeadDeletionTarget);
+            } else {
+                const rowCheckboxes = document.querySelectorAll(".select-lead-item");
+                const checkedIds = Array.from(rowCheckboxes).filter(cb => cb.checked).map(cb => parseInt(cb.getAttribute("data-id")));
+                allLeads = allLeads.filter(lead => !checkedIds.includes(lead.id));
+            }
+            
+            // Re-sync filtered states
+            filteredLeads = [...allLeads];
+            handleLeadsSearch(); // Keep existing query matching if searching
+            
+            // Render beautiful custom alert success toast banner
+            showToastSuccess(data.message || "Action executed successfully!");
+        } else {
+            showToastError(data.error || "An error occurred while deleting database entries.");
+        }
+    })
+    .catch(err => {
+        showToastError("Connection error: Could not reach backend server to delete rows.");
+        console.error(err);
+    });
+}
+
+// ----------------- TOAST ALERTS HELPERS -----------------
+function hideAlerts() {
+    document.getElementById("leads-alert-success").style.display = "none";
+    document.getElementById("leads-alert-error").style.display = "none";
+}
+
+function showToastSuccess(msg) {
+    const el = document.getElementById("leads-alert-success");
+    el.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${msg}`;
+    el.style.display = "block";
+    setTimeout(() => {
+        el.style.animation = "fadeIn 0.3s reverse";
+        setTimeout(() => { el.style.display = "none"; el.style.animation = ""; }, 300);
+    }, 4500);
+}
+
+function showToastError(msg) {
+    const el = document.getElementById("leads-alert-error");
+    el.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> ${msg}`;
+    el.style.display = "block";
+}
+
+// Simple HTML Escaping to prevent XSS script executions
+function escapeHtml(text) {
+    if (!text) return "";
+    return text.toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 </script>
 
