@@ -240,21 +240,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add("northai-message", sender);
         
-        const avatarDiv = document.createElement("div");
-        avatarDiv.classList.add("northai-msg-avatar");
-        const logoImg = sitePath + 'assets/img/nothai.png';
-        if (sender === 'agent') {
-            avatarDiv.innerHTML = `<img src="${logoImg}" alt="North AI">`;
-        } else {
-            avatarDiv.style.background = "transparent";
-            avatarDiv.innerHTML = `<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #F1F5F9; border-radius: 50%; border: 1px solid #E2E8F0;"><i class="fa-solid fa-user" style="color: #64748B; font-size: 14px;"></i></div>`;
-        }
-        
         const bubbleDiv = document.createElement("div");
         bubbleDiv.classList.add("northai-msg-bubble");
         bubbleDiv.innerHTML = formatMarkdownText(text);
 
-        messageDiv.appendChild(avatarDiv);
+        if (sender === 'agent') {
+            const avatarDiv = document.createElement("div");
+            avatarDiv.classList.add("northai-msg-avatar");
+            const logoImg = sitePath + 'assets/img/nothai.png';
+            avatarDiv.innerHTML = `<img src="${logoImg}" alt="North AI">`;
+            messageDiv.appendChild(avatarDiv);
+        }
+        
         messageDiv.appendChild(bubbleDiv);
         messagesBox.appendChild(messageDiv);
     }
