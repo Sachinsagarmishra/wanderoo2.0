@@ -91,76 +91,130 @@ $pricing_context .= "- International Destinations (e.g. Phuket, Bali, Swiss Alps
 
 $full_system_prompt = $base_prompt . "\n\n" . $custom_k . "\n\n" . $pricing_context . "\n\n" . $dest_context . "\n\n" . $case_context;
 
-// 4. Formulate the Gemini API request
-$gemini_contents = [];
+// 4. Determine Routing (Native Gemini vs OpenRouter)
+$is_openrouter = (strpos($api_key, 'sk-') === 0);
 
-// Convert history to Gemini API format if present
-foreach ($history as $h) {
-    $role = $h['role'] === 'user' ? 'user' : 'model';
-    $gemini_contents[] = [
-        'role' => $role,
-        'parts' => [['text' => $h['text']]]
+if ($is_openrouter) {
+    // OpenRouter / OpenAI compatible endpoint integration
+    $messages = [
+        ['role' => 'system', 'content' => $full_system_prompt]
     ];
-}
+    
+    foreach ($history as $h) {
+        $role = $h['role'] === 'user' ? 'user' : 'assistant';
+        $messages[] = [
+            'role' => $role,
+            'content' => $h['text']
+        ];
+    }
+    
+    $messages[] = [
+        'role' => 'user',
+        'content' => $user_message
+    ];
 
-// Append current user message
-$gemini_contents[] = [
-    'role' => 'user',
-    'parts' => [['text' => $user_message]]
-];
+    $post_fields = [
+        'model' => 'google/gemini-2.5-flash:free',
+        'messages' => $messages,
+        'temperature' => 0.4
+    ];
 
-$post_fields = [
-    'contents' => $gemini_contents,
-    'systemInstruction' => [
-        'parts' => [['text' => $full_system_prompt]]
-    ],
-    'safetySettings' => [
-        [
-            'category' => 'HARM_CATEGORY_DANGEROUS_CONTENT',
-            'threshold' => 'BLOCK_NONE'
-        ],
-        [
-            'category' => 'HARM_CATEGORY_HATE_SPEECH',
-            'threshold' => 'BLOCK_NONE'
-        ],
-        [
-            'category' => 'HARM_CATEGORY_HARASSMENT',
-            'threshold' => 'BLOCK_NONE'
-        ],
-        [
-            'category' => 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
-            'threshold' => 'BLOCK_NONE'
-        ]
-    ],
-    'generationConfig' => [
-        'temperature' => 0.4,
-        'maxOutputTokens' => 1024
-    ]
-];
-
-// 5. Send cURL request to Gemini
-$ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $api_key);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_fields));
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-
-$response = curl_exec($ch);
-$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-if ($http_code !== 200) {
-    $error_resp = json_decode($response, true);
-    $error_msg = $error_resp['error']['message'] ?? 'Unknown API Error';
-    echo json_encode([
-        'reply' => "⚠️ **Google Gemini API Connection Error ($http_code)**\n\n*Details: $error_msg*\n\nPlease make sure your API Key is active and has no billing restrictions."
+    $ch = curl_init("https://openrouter.ai/api/v1/chat/completions");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_fields));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $api_key
     ]);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($http_code !== 200) {
+        $error_resp = json_decode($response, true);
+        $error_msg = $error_resp['error']['message'] ?? 'Unknown OpenRouter Error';
+        echo json_encode([
+            'reply' => "⚠️ **OpenRouter API Connection Error ($http_code)**\n\n*Details: $error_msg*\n\nPlease verify your OpenRouter API key inside the settings panel."
+        ]);
+        exit;
+    }
+
+    $response_data = json_decode($response, true);
+    $bot_reply = $response_data['choices'][0]['message']['content'] ?? "I'm sorry, I couldn't formulate a suggestion. Let's try again!";
+    
+    echo json_encode(['reply' => $bot_reply]);
+    exit;
+} else {
+    // Native Google Gemini API integration
+    $gemini_contents = [];
+    foreach ($history as $h) {
+        $role = $h['role'] === 'user' ? 'user' : 'model';
+        $gemini_contents[] = [
+            'role' => $role,
+            'parts' => [['text' => $h['text']]]
+        ];
+    }
+    
+    $gemini_contents[] = [
+        'role' => 'user',
+        'parts' => [['text' => $user_message]]
+    ];
+
+    $post_fields = [
+        'contents' => $gemini_contents,
+        'systemInstruction' => [
+            'parts' => [['text' => $full_system_prompt]]
+        ],
+        'safetySettings' => [
+            [
+                'category' => 'HARM_CATEGORY_DANGEROUS_CONTENT',
+                'threshold' => 'BLOCK_NONE'
+            ],
+            [
+                'category' => 'HARM_CATEGORY_HATE_SPEECH',
+                'threshold' => 'BLOCK_NONE'
+            ],
+            [
+                'category' => 'HARM_CATEGORY_HARASSMENT',
+                'threshold' => 'BLOCK_NONE'
+            ],
+            [
+                'category' => 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
+                'threshold' => 'BLOCK_NONE'
+            ]
+        ],
+        'generationConfig' => [
+            'temperature' => 0.4,
+            'maxOutputTokens' => 1024
+        ]
+    ];
+
+    $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $api_key);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_fields));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+
+    $response = curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($http_code !== 200) {
+        $error_resp = json_decode($response, true);
+        $error_msg = $error_resp['error']['message'] ?? 'Unknown API Error';
+        echo json_encode([
+            'reply' => "⚠️ **Google Gemini API Connection Error ($http_code)**\n\n*Details: $error_msg*\n\nPlease make sure your API Key is active and has no billing restrictions."
+        ]);
+        exit;
+    }
+
+    $response_data = json_decode($response, true);
+    $bot_reply = $response_data['candidates'][0]['content']['parts'][0]['text'] ?? "I'm sorry, I couldn't formulate a suggestion. Let's try again!";
+    
+    echo json_encode(['reply' => $bot_reply]);
     exit;
 }
-
-$response_data = json_decode($response, true);
-$bot_reply = $response_data['candidates'][0]['content']['parts'][0]['text'] ?? "I'm sorry, I couldn't formulate a suggestion. Let's try again!";
-
-echo json_encode(['reply' => $bot_reply]);
-exit;
