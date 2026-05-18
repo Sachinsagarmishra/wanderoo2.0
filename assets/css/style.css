@@ -3116,7 +3116,8 @@ p {
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
+    right: auto;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
@@ -3161,7 +3162,8 @@ p {
 @media (max-width: 768px) {
     .whatsapp-float {
         bottom: 25px;
-        right: 25px;
+        left: 25px;
+        right: auto;
         height: 55px;
         width: 55px;
         padding: 0;

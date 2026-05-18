@@ -129,7 +129,7 @@
         </div>
         <div class="northai-header-badges">
             <span class="northai-badge-encrypted"><i class="fa-solid fa-lock" style="font-size: 8px;"></i> Encrypted</span>
-            <span class="northai-badge-new">New</span>
+            <button class="northai-badge-new" id="northaiNewChatBtn" style="cursor: pointer; border: none; font-family: inherit; font-size: 9px; font-weight: 800; color: #64748B; background: #F1F5F9; padding: 3px 8px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; justify-content: center; height: auto; transition: all 0.2s;">New</button>
             <button class="northai-close-btn" id="northaiCloseChat" aria-label="Close Chat"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
