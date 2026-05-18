@@ -528,7 +528,7 @@ $active_tab = isset($_GET['tab']) ? htmlspecialchars($_GET['tab']) : 'tab-hero';
     </div>
 
     <!-- MAIN FORM FOR STATIC SECTIONS -->
-    <form id="homepageForm" action="homepage-editor.php" method="POST" enctype="multipart/form-data">
+    <form id="homepageForm" action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="action" value="save_homepage_settings">
 
         <!-- TAB 1: HERO & STATS -->
@@ -965,7 +965,7 @@ $active_tab = isset($_GET['tab']) ? htmlspecialchars($_GET['tab']) : 'tab-hero';
                     <a href="homepage-editor.php?tab=tab-case" class="btn-edit" style="margin-right: 0;">Back to Portfolio List</a>
                 </div>
                 
-                <form action="homepage-editor.php?tab=tab-case" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="<?php echo $subaction === 'edit' ? 'edit_case' : 'add_case'; ?>">
                     <?php if ($subaction === 'edit'): ?>
                         <input type="hidden" name="case_id" value="<?php echo $edit_study['id']; ?>">
