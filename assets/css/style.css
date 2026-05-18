@@ -3118,30 +3118,33 @@ p {
     bottom: 30px;
     left: 30px;
     right: auto;
+    width: 60px;
+    height: 60px;
     background-color: #25d366;
     color: #FFF;
-    border-radius: 50px;
-    text-align: center;
+    border-radius: 50%;
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0 20px;
-    height: 60px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
 }
 
 .whatsapp-float i {
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .whatsapp-float span {
     font-size: 15px;
     font-family: var(--font-body);
     font-weight: 700;
-    margin-left: 10px;
+    margin-left: 0;
     max-width: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -3152,11 +3155,13 @@ p {
     background-color: #128c7e;
     transform: translateY(-5px) scale(1.05);
     color: #fff;
+    width: 180px;
+    border-radius: 50px;
 }
 
 .whatsapp-float:hover span {
     max-width: 150px;
-    margin-left: 12px;
+    margin-left: 10px;
 }
 
 @media (max-width: 768px) {
