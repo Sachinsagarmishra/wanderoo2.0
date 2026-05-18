@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/../../config.php';
-// Add authentication check here in the future
+
+// Authentication Check: Redirect to login if session is not active
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header("Location: login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
