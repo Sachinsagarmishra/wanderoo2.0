@@ -49,6 +49,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <a href="homepage-editor.php" class="nav-item <?php echo $current_page == 'homepage-editor.php' ? 'active' : ''; ?>">
                     <i class="fa-solid fa-house" style="margin-right: 8px;"></i> Edit Homepage
                 </a>
+                <a href="agent-settings.php" class="nav-item <?php echo $current_page == 'agent-settings.php' ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px;"></i> North AI Agent
+                </a>
                 <a href="settings.php" class="nav-item <?php echo $current_page == 'settings.php' ? 'active' : ''; ?>">
                     <i class="fa-solid fa-gear" style="margin-right: 8px;"></i> Settings
                 </a>

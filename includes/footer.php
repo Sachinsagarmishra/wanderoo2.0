@@ -98,10 +98,101 @@
   });
 </script>
 
+<!-- North AI Chat Agent Widget -->
+<link rel="stylesheet" href="<?php echo SITE_PATH; ?>/assets/css/ai-chatbot.css">
+
+<!-- Background Blur Overlay -->
+<div class="northai-overlay-blur" id="northaiOverlayBlur"></div>
+
+<!-- Floating Trigger Button -->
+<div class="northai-widget-container">
+    <div class="northai-greeting-bubble" id="northaiGreetBubble">
+        <span class="close-bubble" id="northaiCloseBubble"><i class="fa-solid fa-xmark"></i></span>
+        Got a team in mind? I've got pricing in 30 seconds.
+    </div>
+    <button class="northai-floating-btn" id="northaiFloatBtn" title="Chat with North AI">
+        <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_agent_setting('agent_logo', 'assets/img/nothai.png')); ?>" alt="North AI Logo">
+    </button>
+</div>
+
+<!-- Half-Screen Slide-Out Chat Panel -->
+<div class="northai-chat-panel" id="northaiChatPanel">
+    <div class="northai-chat-header">
+        <div class="northai-header-profile">
+            <div class="northai-header-avatar">
+                <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_agent_setting('agent_logo', 'assets/img/nothai.png')); ?>" alt="North AI Avatar">
+            </div>
+            <div class="northai-header-meta">
+                <h3><?php echo htmlspecialchars(get_agent_setting('agent_name', 'North AI')); ?></h3>
+                <p><?php echo htmlspecialchars(get_agent_setting('agent_role', 'Your event planning advisor')); ?></p>
+            </div>
+        </div>
+        <div class="northai-header-badges">
+            <span class="northai-badge-encrypted"><i class="fa-solid fa-lock" style="font-size: 8px;"></i> Encrypted</span>
+            <span class="northai-badge-new">New</span>
+            <button class="northai-close-btn" id="northaiCloseChat" aria-label="Close Chat"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+    
+    <div class="northai-chat-messages" id="northaiMessagesBox">
+        <!-- Welcome Screen -->
+        <div class="northai-welcome-box" id="northaiWelcomeBox">
+            <div class="northai-welcome-avatar">
+                <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_agent_setting('agent_logo', 'assets/img/nothai.png')); ?>" alt="North AI Avatar">
+            </div>
+            <h2>Hey, I'm <?php echo htmlspecialchars(get_agent_setting('agent_name', 'North AI')); ?></h2>
+            <p>Your personal event planning advisor. How can I help?</p>
+            
+            <!-- Suggestion Grid (6 Primary Categories) -->
+            <div class="northai-quick-grid">
+                <div class="northai-quick-card" data-topic="goa">
+                    <h4>🌴 Goa offsite</h4>
+                    <p>50 pax · 3 nights · Premium</p>
+                </div>
+                <div class="northai-quick-card" data-topic="coorg">
+                    <h4>🏔️ Coorg retreat</h4>
+                    <p>30 pax leadership</p>
+                </div>
+                <div class="northai-quick-card" data-topic="phuket">
+                    <h4>✈️ Phuket international</h4>
+                    <p>60 pax · 4 nights</p>
+                </div>
+                <div class="northai-quick-card" data-topic="bali">
+                    <h4>🌴 Bali offsite</h4>
+                    <p>40 pax · Premium</p>
+                </div>
+                <div class="northai-quick-card" data-topic="munnar">
+                    <h4>🏔️ Munnar wellness</h4>
+                    <p>25 pax · 3 nights</p>
+                </div>
+                <div class="northai-quick-card" data-topic="teambuilding">
+                    <h4>🎯 Team building</h4>
+                    <p>Activities & formats</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="northai-input-container">
+        <div class="northai-input-wrapper">
+            <input type="text" class="northai-chat-input" id="northaiMessageInput" placeholder="Ask about events, pricing, destinations..." autocomplete="off">
+            <button class="northai-send-btn" id="northaiSendBtn" aria-label="Send Message">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+        <div class="northai-footer-tag">
+            <span>shared with Wanderoo for planning</span>
+            <span>developed by North AI</span>
+        </div>
+    </div>
+</div>
+
+<script src="<?php echo SITE_PATH; ?>/assets/js/ai-chatbot.js"></script>
+
 <a href="https://wa.me/<?php echo htmlspecialchars(get_site_setting('whatsapp_number', '919113515462')); ?>" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
   <span>Chat with us</span>
-</a>
+ </a>
 <?php echo get_site_setting('footer_scripts'); ?>
 </body>
 </html>

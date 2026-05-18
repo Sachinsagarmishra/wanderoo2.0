@@ -1,0 +1,583 @@
+/**
+ * North AI Chat Agent Stylesheet
+ * Custom Glassmorphism Half-Screen Layout
+ */
+
+/* Floating Widget & Greeting Bubble */
+.northai-widget-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.northai-floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0F172A;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.northai-floating-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.northai-floating-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+}
+
+.northai-floating-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+    animation: northai-pulse 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes northai-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(249, 115, 22, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+    }
+}
+
+.northai-greeting-bubble {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 16px 20px;
+    width: 320px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1E293B;
+    font-weight: 500;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.northai-greeting-bubble.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.northai-greeting-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 25px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+}
+
+.northai-greeting-bubble .close-bubble {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #94A3B8;
+    transition: color 0.2s;
+}
+
+.northai-greeting-bubble .close-bubble:hover {
+    color: #64748B;
+}
+
+/* Half-Screen Blur Overlay & Chat Panel */
+.northai-overlay-blur {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.25);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.northai-overlay-blur.active {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    pointer-events: auto;
+}
+
+.northai-chat-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48%;
+    background: #FFFFFF;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: -10px 0 50px rgba(15, 23, 42, 0.1);
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.northai-chat-panel.active {
+    transform: translateX(0);
+}
+
+/* Chat Header */
+.northai-chat-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.northai-header-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.northai-header-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #0F172A;
+    border: 1px solid #E2E8F0;
+    position: relative;
+}
+
+.northai-header-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.northai-header-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22C55E;
+    border: 1.5px solid #FFFFFF;
+}
+
+.northai-header-meta h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.northai-header-meta p {
+    font-size: 11px;
+    color: #64748B;
+    margin: 2px 0 0 0 !important;
+}
+
+.northai-header-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.northai-badge-encrypted {
+    font-size: 9px;
+    font-weight: 800;
+    color: #059669;
+    background: #ECFDF5;
+    padding: 3px 8px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.northai-badge-new {
+    font-size: 9px;
+    font-weight: 800;
+    color: #64748B;
+    background: #F1F5F9;
+    padding: 3px 8px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.northai-close-btn {
+    font-size: 20px;
+    color: #94A3B8;
+    cursor: pointer;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.northai-close-btn:hover {
+    color: #1E293B;
+}
+
+/* Chat Messages */
+.northai-chat-messages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background: #FCFCFC;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.northai-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+.northai-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+.northai-chat-messages::-webkit-scrollbar-thumb {
+    background: #E2E8F0;
+    border-radius: 10px;
+}
+
+/* Conversation Welcome Screen */
+.northai-welcome-box {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.northai-welcome-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    background: #0F172A;
+    border: 2px solid #F1F5F9;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.northai-welcome-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.northai-welcome-box h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0 0 6px 0;
+}
+
+.northai-welcome-box p {
+    font-size: 13px;
+    color: #64748B;
+    margin: 0 0 25px 0 !important;
+}
+
+/* Suggestion Grid */
+.northai-quick-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.northai-quick-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 14px 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.northai-quick-card:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+    transform: translateY(-2px);
+}
+
+.northai-quick-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+    margin: 0;
+}
+
+.northai-quick-card p {
+    font-size: 11px;
+    color: #64748B;
+    margin: 4px 0 0 0 !important;
+}
+
+/* Message Bubbles */
+.northai-message {
+    display: flex;
+    gap: 12px;
+    max-width: 85%;
+}
+
+.northai-message.agent {
+    align-self: flex-start;
+}
+
+.northai-message.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.northai-msg-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #0F172A;
+    flex-shrink: 0;
+}
+
+.northai-msg-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.northai-msg-bubble {
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.northai-message.agent .northai-msg-bubble {
+    background: #F1F5F9;
+    color: #1E293B;
+    border-top-left-radius: 4px;
+}
+
+.northai-message.user .northai-msg-bubble {
+    background: #0B1B2B;
+    color: #FFFFFF;
+    border-top-right-radius: 4px;
+}
+
+/* Typing Indicator Animation */
+.northai-typing-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+}
+
+.northai-typing-dots span {
+    width: 6px;
+    height: 6px;
+    background: #94A3B8;
+    border-radius: 50%;
+    display: inline-block;
+    animation: northai-bounce 1.4s infinite ease-in-out both;
+}
+
+.northai-typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.northai-typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes northai-bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+
+/* Chat Input Bar */
+.northai-input-container {
+    padding: 20px 24px;
+    border-top: 1px solid #F1F5F9;
+    background: #FFFFFF;
+}
+
+.northai-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 100px;
+    padding: 4px 6px 4px 16px;
+    transition: all 0.2s;
+}
+
+.northai-input-wrapper:focus-within {
+    border-color: #94A3B8;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.northai-chat-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #1E293B;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.northai-chat-input:focus {
+    outline: none;
+}
+
+.northai-send-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #E2E8F0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #64748B;
+}
+
+.northai-send-btn.active {
+    background: #D97706; /* Amber on active content */
+    color: #FFFFFF;
+}
+
+.northai-send-btn.active:hover {
+    background: #B45309;
+}
+
+.northai-footer-tag {
+    text-align: center;
+    font-size: 9px;
+    color: #94A3B8;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+/* Captured Lead Form Layout inside messages */
+.northai-lead-form {
+    background: #FFFFFF;
+    border: 1.5px solid #F1F5F9;
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.northai-lead-form h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.northai-lead-form input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 12px;
+    background: #FCFCFC;
+    font-family: inherit;
+}
+
+.northai-lead-form input:focus {
+    outline: none;
+    border-color: #D97706;
+}
+
+.northai-lead-form button {
+    background: #D97706;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+}
+
+.northai-lead-form button:hover {
+    background: #B45309;
+}
+
+/* Dynamic styling for lists in bot replies */
+.northai-msg-bubble ul, .northai-msg-bubble ol {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 20px;
+}
+
+.northai-msg-bubble li {
+    margin-bottom: 4px;
+}
+
+.northai-msg-bubble p {
+    margin-bottom: 8px;
+}
+.northai-msg-bubble p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsiveness Split Screen overrides */
+@media (max-width: 1024px) {
+    .northai-chat-panel {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .northai-chat-panel {
+        width: 100%;
+    }
+    .northai-quick-grid {
+        grid-template-columns: 1fr;
+    }
+}

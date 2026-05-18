@@ -376,6 +376,49 @@ try {
             $stmt_case->execute($c);
         }
     }
+
+    // 6. Create agent_settings table if not exists
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `agent_settings` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `setting_key` varchar(255) NOT NULL UNIQUE,
+        `setting_value` text DEFAULT NULL,
+        `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
+    // Seed default agent settings if empty
+    $agent_settings_count = $pdo->query("SELECT COUNT(*) FROM `agent_settings`")->fetchColumn();
+    if ($agent_settings_count == 0) {
+        $default_agent_settings = [
+            'agent_name' => 'North AI',
+            'agent_role' => 'Your event planning advisor',
+            'agent_logo' => 'assets/img/nothai.png',
+            'gemini_api_key' => '',
+            'default_pricing_rates' => json_encode([
+                'domestic' => ['standard' => 4500, 'deluxe' => 6500, 'premium' => 9500],
+                'international' => ['standard' => 5500, 'deluxe' => 7150, 'premium' => 10725]
+            ]),
+            'custom_knowledge' => "Wanderoo is India's #1 corporate incentive travel platform. We design offsites, distributor trips, employee incentives, and annual offsites.\n\nLeadership Profile:\nHimanshu Singla: Co-Founder. IIT-BHU Varanasi Alumnus. Trade corporate climb for Himalayan wilderness in 2014. Leads wilderness communities.\n\nTrips Stats:\n500+ Trips Executed\n48K+ Happy Travellers\n250+ Enterprise Clients\n4.9/5 Average Rating",
+            'system_prompt' => "You are North AI, the lead travel advisor at Wanderoo. You are professional, knowledgeable about corporate logistics, and enthusiastic about travel. You provide indicative pricing and travel ideas based ONLY on Wanderoo's official offerings. Never mention being an AI; act as a human team member.\n\nKeep your tone crisp, business-oriented, and highly consultative. When users ask for pricing estimates for offsites, ALWAYS perform a step-by-step mathematical breakdown for Standard, Deluxe, and Premium options. Show the math clearly, for example:\n- Standard: ₹5,500 x 60 people x 4 nights = ₹13,20,000\n- Deluxe: ₹7,150 x 60 people x 4 nights = ₹17,16,000\n- Premium: ₹10,725 x 60 people x 4 nights = ₹25,74,000\n\nUse standard pricing per night per person based on the region:\n- Domestic: Standard ₹4,500, Deluxe ₹6,500, Premium ₹9,500.\n- International: Standard ₹5,500, Deluxe ₹7,150, Premium ₹10,725.\nIf the destination name is provided, classify it correctly (e.g. Bali, Phuket are International; Goa, Coorg, Munnar are Domestic).\n\nIf the user requests a 'real proposal' or asks to be contacted, ask for three key details: their name, work email, and WhatsApp number. Do not make up fake prices or destinations. If a destination is not in our catalog, suggest our beautiful curated ones."
+        ];
+
+        $stmt_agent = $pdo->prepare("INSERT INTO `agent_settings` (`setting_key`, `setting_value`) VALUES (:key, :value)");
+        foreach ($default_agent_settings as $k => $v) {
+            $stmt_agent->execute(['key' => $k, 'value' => $v]);
+        }
+    }
+
+    // 7. Create captured_leads table if not exists
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `captured_leads` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(255) DEFAULT NULL,
+        `email` varchar(255) DEFAULT NULL,
+        `phone` varchar(50) DEFAULT NULL,
+        `context` text DEFAULT NULL,
+        `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
 } catch (PDOException $e) {
     // Graceful fallback
 }
@@ -442,5 +485,31 @@ function get_all_case_studies() {
  */
 function get_about_setting($key, $default = '') {
     return get_site_setting($key, $default);
+}
+
+/**
+ * Get setting value from agent_settings database
+ */
+$agent_settings_cache = null;
+function get_agent_setting($key, $default = '') {
+    global $pdo, $agent_settings_cache;
+
+    if ($agent_settings_cache === null) {
+        $agent_settings_cache = [];
+        try {
+            $stmt = $pdo->query("SELECT `setting_key`, `setting_value` FROM `agent_settings`");
+            while ($row = $stmt->fetch()) {
+                $agent_settings_cache[$row['setting_key']] = $row['setting_value'];
+            }
+        } catch (PDOException $e) {
+            // Suppress fallback error
+        }
+    }
+
+    if (isset($agent_settings_cache[$key])) {
+        return $agent_settings_cache[$key];
+    }
+
+    return $default;
 }
 ?>
