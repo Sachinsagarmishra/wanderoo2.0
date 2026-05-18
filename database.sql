@@ -1,8 +1,8 @@
 -- Wanderoo Database Schema
 -- Created on: 2026-04-26
 
-CREATE DATABASE IF NOT EXISTS `wanderoo_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `wanderoo_db`;
+-- CREATE DATABASE IF NOT EXISTS `wanderoo_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE `wanderoo_db`;
 
 -- Users table for Admin Panel
 CREATE TABLE IF NOT EXISTS `users` (

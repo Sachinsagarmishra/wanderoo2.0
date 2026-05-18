@@ -20,9 +20,9 @@ define('SITE_PATH', $base_dir);
 
 // Database Credentials
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'wanderoo_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_NAME', 'u829703776_crzc8');
+define('DB_USER', 'u829703776_TSeP6');
+define('DB_PASS', 'vLEeZl3Tup');
 
 // Error Reporting (Set to 0 in production)
 error_reporting(E_ALL);
