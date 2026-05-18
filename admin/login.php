@@ -205,8 +205,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit" class="btn-login">Login Securely <i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 8px;"></i></button>
     </form>
-    
-    <a href="create-admin.php" class="setup-link"><i class="fa-solid fa-user-plus"></i> Create Admin Credentials</a>
 </div>
 
 </body>
