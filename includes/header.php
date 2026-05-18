@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/functions.php';
 $pageTitle = isset($pageTitle) ? $pageTitle . " | " . SITE_NAME : SITE_NAME . " — Incentive Travel Platform";
 $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform - Motivate employees, energise dealers, and retain your best people.";
 ?>
@@ -17,6 +17,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="<?php echo SITE_PATH; ?>/assets/css/style.css?v=<?php echo time(); ?>">
+    <?php echo get_site_setting('header_scripts'); ?>
 </head>
 <body>
 
@@ -28,7 +29,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
   <a href="<?php echo SITE_PATH; ?>/index#case-studies" onclick="toggleMenu()">Case Studies</a>
   <a href="<?php echo SITE_PATH; ?>/index#how" onclick="toggleMenu()">How It Works</a>
   <a href="<?php echo SITE_PATH; ?>/about" onclick="toggleMenu()">About Us</a>
-  <a href="https://wa.me/919113515462" target="_blank" class="nav-cta" style="margin-top: 20px;">Get Proposal →</a>
+  <a href="https://wa.me/<?php echo htmlspecialchars(get_site_setting('whatsapp_number', '919113515462')); ?>" target="_blank" class="nav-cta" style="margin-top: 20px;">Get Proposal →</a>
 </div>
 
 <!-- NAV -->
@@ -45,7 +46,7 @@ $pageDesc = isset($pageDesc) ? $pageDesc : "India's #1 Incentive Travel Platform
       <li><a href="<?php echo SITE_PATH; ?>/about">About Us</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="https://wa.me/919113515462" target="_blank" class="nav-cta">Get Proposal →</a>
+      <a href="https://wa.me/<?php echo htmlspecialchars(get_site_setting('whatsapp_number', '919113515462')); ?>" target="_blank" class="nav-cta">Get Proposal →</a>
       <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
     </div>
   </div>

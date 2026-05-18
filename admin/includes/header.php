@@ -49,7 +49,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <a href="#" class="nav-item">
                     <i class="fa-solid fa-users" style="margin-right: 8px;"></i> Users
                 </a>
-                <a href="#" class="nav-item">
+                <a href="settings.php" class="nav-item <?php echo $current_page == 'settings.php' ? 'active' : ''; ?>">
                     <i class="fa-solid fa-gear" style="margin-right: 8px;"></i> Settings
                 </a>
             </nav>
