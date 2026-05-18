@@ -510,6 +510,17 @@ function get_agent_setting($key, $default = '') {
         return $agent_settings_cache[$key];
     }
 
+    if ($key === 'agent_suggestions') {
+        return json_encode([
+            ["id" => "goa", "title" => "🌴 Goa offsite", "subtitle" => "50 pax · 3 nights · Premium", "prompt" => "Plan an offsite in Goa for 50 people, 3 nights Standard pricing"],
+            ["id" => "coorg", "title" => "🏔️ Coorg retreat", "subtitle" => "30 pax leadership", "prompt" => "Plan a Coorg retreat for 30 pax leadership team"],
+            ["id" => "phuket", "title" => "✈️ Phuket international", "subtitle" => "60 pax · 4 nights", "prompt" => "Plan an international offsite in Phuket for 60 people, 4 nights Premium package"],
+            ["id" => "bali", "title" => "🌴 Bali offsite", "subtitle" => "40 pax · Premium", "prompt" => "Plan an international offsite in Bali for 40 people, 5 nights"],
+            ["id" => "munnar", "title" => "🏔️ Munnar wellness", "subtitle" => "25 pax · 3 nights", "prompt" => "We want a Munnar wellness retreat for 25 pax, 3 nights"],
+            ["id" => "teambuilding", "title" => "🎯 Team building", "subtitle" => "Activities & formats", "prompt" => "What team building formats do you offer at Wanderoo?"]
+        ]);
+    }
+
     return $default;
 }
 ?>

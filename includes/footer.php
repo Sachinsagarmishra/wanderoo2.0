@@ -144,31 +144,27 @@
             <p>Your personal event planning advisor. How can I help?</p>
             
             <!-- Suggestion Grid (6 Primary Categories) -->
+            <?php 
+            $suggestions_json = get_agent_setting('agent_suggestions', '[]');
+            $suggestions = json_decode($suggestions_json, true);
+            if (!is_array($suggestions) || count($suggestions) === 0) {
+                $suggestions = [
+                    ["id" => "goa", "title" => "🌴 Goa offsite", "subtitle" => "50 pax · 3 nights · Premium", "prompt" => "Plan an offsite in Goa for 50 people, 3 nights Standard pricing"],
+                    ["id" => "coorg", "title" => "🏔️ Coorg retreat", "subtitle" => "30 pax leadership", "prompt" => "Plan a Coorg retreat for 30 pax leadership team"],
+                    ["id" => "phuket", "title" => "✈️ Phuket international", "subtitle" => "60 pax · 4 nights", "prompt" => "Plan an international offsite in Phuket for 60 people, 4 nights Premium package"],
+                    ["id" => "bali", "title" => "🌴 Bali offsite", "subtitle" => "40 pax · Premium", "prompt" => "Plan an international offsite in Bali for 40 people, 5 nights"],
+                    ["id" => "munnar", "title" => "🏔️ Munnar wellness", "subtitle" => "25 pax · 3 nights", "prompt" => "We want a Munnar wellness retreat for 25 pax, 3 nights"],
+                    ["id" => "teambuilding", "title" => "🎯 Team building", "subtitle" => "Activities & formats", "prompt" => "What team building formats do you offer at Wanderoo?"]
+                ];
+            }
+            ?>
             <div class="northai-quick-grid">
-                <div class="northai-quick-card" data-topic="goa">
-                    <h4>🌴 Goa offsite</h4>
-                    <p>50 pax · 3 nights · Premium</p>
+                <?php foreach ($suggestions as $s): ?>
+                <div class="northai-quick-card" data-topic="<?php echo htmlspecialchars($s['id']); ?>" data-prompt="<?php echo htmlspecialchars($s['prompt']); ?>">
+                    <h4><?php echo htmlspecialchars($s['title']); ?></h4>
+                    <p><?php echo htmlspecialchars($s['subtitle']); ?></p>
                 </div>
-                <div class="northai-quick-card" data-topic="coorg">
-                    <h4>🏔️ Coorg retreat</h4>
-                    <p>30 pax leadership</p>
-                </div>
-                <div class="northai-quick-card" data-topic="phuket">
-                    <h4>✈️ Phuket international</h4>
-                    <p>60 pax · 4 nights</p>
-                </div>
-                <div class="northai-quick-card" data-topic="bali">
-                    <h4>🌴 Bali offsite</h4>
-                    <p>40 pax · Premium</p>
-                </div>
-                <div class="northai-quick-card" data-topic="munnar">
-                    <h4>🏔️ Munnar wellness</h4>
-                    <p>25 pax · 3 nights</p>
-                </div>
-                <div class="northai-quick-card" data-topic="teambuilding">
-                    <h4>🎯 Team building</h4>
-                    <p>Activities & formats</p>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

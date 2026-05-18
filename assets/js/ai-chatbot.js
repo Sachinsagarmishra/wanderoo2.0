@@ -72,37 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function bindSuggestionCards() {
         document.querySelectorAll(".northai-quick-card").forEach(card => {
             card.addEventListener("click", () => {
-                const topic = card.getAttribute("data-topic");
-                let predefinedPrompt = "";
-
-                switch (topic) {
-                    case 'goa':
-                        predefinedPrompt = "Plan an offsite in Goa for 50 people, 3 nights Standard pricing";
-                        break;
-                    case 'coorg':
-                        predefinedPrompt = "Plan a Coorg retreat for 30 pax leadership team";
-                        break;
-                    case 'phuket':
-                        predefinedPrompt = "Plan an international offsite in Phuket for 60 people, 4 nights Premium package";
-                        break;
-                    case 'bali':
-                        predefinedPrompt = "Plan an international offsite in Bali for 40 people, 5 nights";
-                        break;
-                    case 'munnar':
-                        predefinedPrompt = "We want a Munnar wellness retreat for 25 pax, 3 nights";
-                        break;
-                    case 'teambuilding':
-                        predefinedPrompt = "What team building formats do you offer at Wanderoo?";
-                        break;
-                }
-
-                if (predefinedPrompt !== "") {
+                const prompt = card.getAttribute("data-prompt") || "";
+                if (prompt !== "") {
                     // Clear welcome layout and submit
                     const currentWelcomeBox = document.getElementById("northaiWelcomeBox");
                     if (currentWelcomeBox) {
                         currentWelcomeBox.style.display = "none";
                     }
-                    submitUserMessage(predefinedPrompt);
+                    submitUserMessage(prompt);
                 }
             });
         });
@@ -116,48 +93,18 @@ document.addEventListener("DOMContentLoaded", () => {
             e.stopPropagation();
             chatHistory = [];
             
-            // Re-render only the welcome box
-            messagesBox.innerHTML = `
-                <div class="northai-welcome-box" id="northaiWelcomeBox" style="display: block;">
-                    <div class="northai-welcome-avatar">
-                        <img src="${sitePath}assets/img/nothai.png" alt="North AI Avatar">
-                    </div>
-                    <h2>Hey, I'm North AI</h2>
-                    <p>Your personal event planning advisor. How can I help?</p>
-                    
-                    <div class="northai-quick-grid">
-                        <div class="northai-quick-card" data-topic="goa">
-                            <h4>🌴 Goa offsite</h4>
-                            <p>50 pax · 3 nights · Premium</p>
-                        </div>
-                        <div class="northai-quick-card" data-topic="coorg">
-                            <h4>🏔️ Coorg retreat</h4>
-                            <p>30 pax leadership</p>
-                        </div>
-                        <div class="northai-quick-card" data-topic="phuket">
-                            <h4>✈️ Phuket international</h4>
-                            <p>60 pax · 4 nights</p>
-                        </div>
-                        <div class="northai-quick-card" data-topic="bali">
-                            <h4>🌴 Bali offsite</h4>
-                            <p>40 pax · Premium</p>
-                        </div>
-                        <div class="northai-quick-card" data-topic="munnar">
-                            <h4>🏔️ Munnar wellness</h4>
-                            <p>25 pax · 3 nights</p>
-                        </div>
-                        <div class="northai-quick-card" data-topic="teambuilding">
-                            <h4>🎯 Team building</h4>
-                            <p>Activities & formats</p>
-                        </div>
-                    </div>
-                </div>
-            `;
+            // Clear message bubbles, retaining the welcome structure
+            const messages = messagesBox.querySelectorAll(".northai-message");
+            messages.forEach(msg => msg.remove());
+            
+            const currentWelcomeBox = document.getElementById("northaiWelcomeBox");
+            if (currentWelcomeBox) {
+                currentWelcomeBox.style.display = "block";
+            }
             
             messagesBox.scrollTop = 0;
             messageInput.value = "";
             sendBtn.classList.remove("active");
-            bindSuggestionCards();
         });
     }
 

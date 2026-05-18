@@ -61,8 +61,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_agent_settings']
             ]);
         }
 
+        // Handle suggestions dynamic cards updates
+        if (isset($_POST['sug_title']) && is_array($_POST['sug_title'])) {
+            $suggestions_to_save = [];
+            for ($i = 0; $i < count($_POST['sug_title']); $i++) {
+                $suggestions_to_save[] = [
+                    'id' => $_POST['sug_id'][$i] ?? ('sug_' . ($i + 1)),
+                    'title' => $_POST['sug_title'][$i] ?? '',
+                    'subtitle' => $_POST['sug_subtitle'][$i] ?? '',
+                    'prompt' => $_POST['sug_prompt'][$i] ?? ''
+                ];
+            }
+            $suggestions_json_to_save = json_encode($suggestions_to_save);
+            $stmt->execute([
+                'key' => 'agent_suggestions',
+                'val' => $suggestions_json_to_save,
+                'val2' => $suggestions_json_to_save
+            ]);
+        }
+
         $pdo->commit();
-        $success_msg = "North AI Agent knowledge settings saved successfully!";
+        $success_msg = "North AI Agent settings and pre-questions saved successfully!";
         
         // Reset query cache
         $agent_settings_cache = null;
@@ -83,6 +102,20 @@ $custom_knowledge = get_agent_setting('custom_knowledge', '');
 $default_pricing_rates = json_decode(get_agent_setting('default_pricing_rates', '{}'), true);
 $dom_rates = $default_pricing_rates['domestic'] ?? ['standard' => 4500, 'deluxe' => 6500, 'premium' => 9500];
 $intl_rates = $default_pricing_rates['international'] ?? ['standard' => 5500, 'deluxe' => 7150, 'premium' => 10725];
+
+// Fetch agent suggestion pre-questions
+$agent_suggestions_json = get_agent_setting('agent_suggestions', '[]');
+$admin_suggestions = json_decode($agent_suggestions_json, true);
+if (!is_array($admin_suggestions) || count($admin_suggestions) === 0) {
+    $admin_suggestions = [
+        ["id" => "goa", "title" => "🌴 Goa offsite", "subtitle" => "50 pax · 3 nights · Premium", "prompt" => "Plan an offsite in Goa for 50 people, 3 nights Standard pricing"],
+        ["id" => "coorg", "title" => "🏔️ Coorg retreat", "subtitle" => "30 pax leadership", "prompt" => "Plan a Coorg retreat for 30 pax leadership team"],
+        ["id" => "phuket", "title" => "✈️ Phuket international", "subtitle" => "60 pax · 4 nights", "prompt" => "Plan an international offsite in Phuket for 60 people, 4 nights Premium package"],
+        ["id" => "bali", "title" => "🌴 Bali offsite", "subtitle" => "40 pax · Premium", "prompt" => "Plan an international offsite in Bali for 40 people, 5 nights"],
+        ["id" => "munnar", "title" => "🏔️ Munnar wellness", "subtitle" => "25 pax · 3 nights", "prompt" => "We want a Munnar wellness retreat for 25 pax, 3 nights"],
+        ["id" => "teambuilding", "title" => "🎯 Team building", "subtitle" => "Activities & formats", "prompt" => "What team building formats do you offer at Wanderoo?"]
+    ];
+}
 
 // Fetch dynamic captured leads
 $leads = [];
@@ -276,6 +309,7 @@ try {
         <div class="tab-nav">
             <button type="button" class="tab-btn active" onclick="switchSection('persona', this)">Persona & Configuration</button>
             <button type="button" class="tab-btn" onclick="switchSection('knowledge', this)">Agent Prompt & Knowledge Base</button>
+            <button type="button" class="tab-btn" onclick="switchSection('suggestions', this)">Pre-Questions Grid</button>
             <button type="button" class="tab-btn" onclick="switchSection('leads', this)">Captured Proposal Leads (<?php echo count($leads); ?>)</button>
         </div>
 
@@ -378,9 +412,43 @@ try {
                 </div>
             </div>
         </div>
+
+        <!-- 3. PRE-QUESTIONS TAB -->
+        <div id="section-suggestions" class="editor-section">
+            <div class="form-card">
+                <div class="form-card-title"><i class="fa-solid fa-list-check" style="color: var(--accent);"></i> Pre-Questions Suggestion Chips Grid (6 Cards Option)</div>
+                <p style="font-size: 13px; color: var(--fg2); margin-bottom: 25px;">These are the 6 suggestion chips presented to users when they first load North AI. They make starting conversations quick and effortless!</p>
+                
+                <div class="parameters-grid" style="grid-template-columns: 1fr 1fr; gap: 24px;">
+                    <?php foreach ($admin_suggestions as $index => $s): ?>
+                        <div class="form-card" style="background: var(--bg2); border: 1.5px dashed var(--border); padding: 18px; margin-bottom: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+                                <h4 style="font-size: 13px; font-weight: 700; color: var(--accent); margin: 0;">📍 Card Option #<?php echo ($index + 1); ?></h4>
+                                <input type="hidden" name="sug_id[]" value="<?php echo htmlspecialchars($s['id']); ?>">
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 12px;">
+                                <label class="form-label" style="font-size: 11px;">Card Icon & Title Label</label>
+                                <input type="text" class="form-control" name="sug_title[]" value="<?php echo htmlspecialchars($s['title']); ?>" required placeholder="e.g. 🌴 Goa offsite">
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 12px;">
+                                <label class="form-label" style="font-size: 11px;">Card Subtitle Description</label>
+                                <input type="text" class="form-control" name="sug_subtitle[]" value="<?php echo htmlspecialchars($s['subtitle']); ?>" required placeholder="e.g. 50 pax · 3 nights">
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="font-size: 11px;">Click-Submit AI Prompt Message</label>
+                                <textarea class="form-control" name="sug_prompt[]" rows="2" style="font-size: 12px; line-height: 1.4;" required placeholder="What prompt message should this button execute in AI chat?"><?php echo htmlspecialchars($s['prompt']); ?></textarea>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
     </form>
 
-    <!-- 3. LEADS TAB -->
+    <!-- 4. LEADS TAB -->
     <div id="section-leads" class="editor-section">
         <div class="form-card">
             <div class="form-card-title"><i class="fa-solid fa-id-card-clip" style="color: var(--accent);"></i> Captured Corporate Proposal Leads</div>
