@@ -25,7 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="mobile-logo">
-            Wander<span>oo</span> Admin
+            <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo" style="height: 24px; display: block;">
         </div>
         <div style="width: 24px;"></div>
     </header>
@@ -33,7 +33,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <div class="admin-layout">
         <aside class="admin-sidebar">
             <div class="sidebar-logo">
-                Wander<span>oo</span> Admin
+                <img src="<?php echo SITE_PATH; ?>/assets/img/wanderoo.svg" alt="Wanderoo Logo" style="height: 30px; display: block;">
                 <button class="sidebar-close" id="mobileSidebarClose"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <nav class="admin-nav">
