@@ -171,6 +171,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .setup-link:hover {
             color: var(--accent);
         }
+        .toggle-password:hover {
+            color: var(--accent) !important;
+        }
     </style>
 </head>
 <body>
@@ -199,13 +202,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label class="form-label" for="password">Password</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-lock input-icon"></i>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required style="padding-right: 42px;">
+                <i class="fa-solid fa-eye toggle-password" id="togglePassword" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--fg3); transition: color 0.2s;"></i>
             </div>
         </div>
 
         <button type="submit" class="btn-login">Login Securely <i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 8px;"></i></button>
     </form>
 </div>
+
+<script>
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password');
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    
+    // Toggle icon
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
 
 </body>
 </html>

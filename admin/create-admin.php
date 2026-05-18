@@ -187,6 +187,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .back-link:hover {
             color: var(--accent);
         }
+        .toggle-password:hover {
+            color: var(--accent) !important;
+        }
     </style>
 </head>
 <body>
@@ -230,7 +233,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label class="form-label" for="password">Password</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-lock input-icon"></i>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Create a strong password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Create a strong password" required style="padding-right: 42px;">
+                <i class="fa-solid fa-eye toggle-password" id="togglePassword" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--fg3); transition: color 0.2s;"></i>
             </div>
         </div>
 
@@ -238,7 +242,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label class="form-label" for="confirm_password">Confirm Password</label>
             <div class="input-wrapper">
                 <i class="fa-solid fa-shield-halved input-icon"></i>
-                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required style="padding-right: 42px;">
+                <i class="fa-solid fa-eye toggle-password" id="toggleConfirmPassword" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--fg3); transition: color 0.2s;"></i>
             </div>
         </div>
 
@@ -247,6 +252,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <a href="login.php" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Login Page</a>
 </div>
+
+<script>
+document.getElementById('togglePassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('password');
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+});
+
+document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+    const confirmInput = document.getElementById('confirm_password');
+    const type = confirmInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    confirmInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
 
 </body>
 </html>
