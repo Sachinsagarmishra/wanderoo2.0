@@ -205,6 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let html = text;
         // Escape HTML entities to prevent scripts injection
         html = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+        // Auto-bold request for contact details variations to ensure consistent styling
+        html = html.replace(/(please share your\s+)?name,\s*work\s*email,\s*(?:and\s+)?WhatsApp\s+number\??/gi, '<strong>$&</strong>');
         
         // Bold tags **text** -> <strong>text</strong>
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
