@@ -8,12 +8,16 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 }
 ?>
 <!DOCTYPE html>
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | <?php echo SITE_NAME; ?></title>
     <link rel="stylesheet" href="<?php echo SITE_PATH; ?>/admin/assets/css/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="admin-layout">
@@ -22,14 +26,29 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 Wander<span>oo</span> Admin
             </div>
             <nav class="admin-nav">
-                <a href="dashboard.php" class="nav-item active">Dashboard</a>
-                <a href="#" class="nav-item">Pages</a>
-                <a href="#" class="nav-item">Users</a>
-                <a href="#" class="nav-item">Settings</a>
+                <a href="dashboard.php" class="nav-item <?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-chart-line" style="margin-right: 8px;"></i> Dashboard
+                </a>
+                <a href="about-editor.php" class="nav-item <?php echo $current_page == 'about-editor.php' ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> Edit About Us
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-file-lines" style="margin-right: 8px;"></i> Pages
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-users" style="margin-right: 8px;"></i> Users
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-gear" style="margin-right: 8px;"></i> Settings
+                </a>
             </nav>
             <nav class="admin-nav nav-spacer">
-                <a href="<?php echo SITE_PATH; ?>/" class="nav-item" target="_blank">View Site</a>
-                <a href="logout.php" class="nav-item" style="color: var(--danger);">Logout</a>
+                <a href="<?php echo SITE_PATH; ?>/" class="nav-item" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 8px;"></i> View Site
+                </a>
+                <a href="logout.php" class="nav-item" style="color: var(--danger);">
+                    <i class="fa-solid fa-power-off" style="margin-right: 8px;"></i> Logout
+                </a>
             </nav>
         </aside>
         
