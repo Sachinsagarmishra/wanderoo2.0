@@ -119,7 +119,82 @@ $default_settings = [
     
     // CTA TITLE & DETAILS
     'dest_cta_title' => 'Not sure where to go?<br>We\'ll help you find the perfect fit.',
-    'dest_cta_desc' => 'Share your goals and we\'ll recommend destinations that align with your team, budget and objectives.'
+    'dest_cta_desc' => 'Share your goals and we\'ll recommend destinations that align with your team, budget and objectives.',
+
+    // HOME HERO
+    'home_hero_badge' => "INDIA'S #1 INCENTIVE TRAVEL PLATFORM",
+    'home_hero_title' => 'Make Performance<br><span class="accent">Worth Chasing</span>',
+    'home_hero_desc' => 'Incentive travel programs that motivate employees, energise dealers, and retain your best people — planned and executed end-to-end.',
+    'home_stat1_num' => '98%',
+    'home_stat1_label' => 'Retention',
+    'home_stat2_num' => '15k',
+    'home_stat2_label' => 'Happy Travellers',
+    'home_stat3_num' => '4.9★',
+    'home_stat3_label' => 'Avg. Rating',
+
+    // HOME SOLUTIONS
+    'home_solutions_label' => 'Solutions',
+    'home_solutions_title' => 'Built for every<br>corporate use case',
+    'home_solutions_desc' => 'From HR incentives to dealer trips — we handle the complexity so you can focus on performance.',
+    
+    // SOLUTIONS CARDS
+    'sol1_img' => 'assets/img/logos/leadership.png',
+    'sol1_title' => 'Leadership Offsites',
+    'sol1_desc' => 'Retreats designed for strategy, alignment, and executive team bonding.',
+    'sol1_tag' => 'FOR CXOS & ADMINS',
+
+    'sol2_img' => 'assets/img/logos/dealer.png',
+    'sol2_title' => 'Dealer & Distributor Trips',
+    'sol2_desc' => 'Motivate your channel partners with incentive travel tied to sales milestones.',
+    'sol2_tag' => 'FOR SALES LEADERS',
+
+    'sol3_img' => 'assets/img/logos/empolyee.png',
+    'sol3_title' => 'Employee Incentives',
+    'sol3_desc' => 'Reward top performers with curated travel experiences that drive retention and loyalty.',
+    'sol3_tag' => 'FOR HR & PEOPLE TEAMS',
+
+    'sol4_img' => 'assets/img/logos/college.png',
+    'sol4_title' => 'Annual Team Offsites',
+    'sol4_desc' => 'Bring teams together through immersive retreats that strengthen culture and alignment.',
+    'sol4_tag' => 'FOR PEOPLE OPS',
+
+    // HOME WHY WANDEROO
+    'home_why_label' => 'Why Wanderoo',
+    'home_why_title' => 'We solve the real<br>problems of corporate travel',
+    'home_why_desc' => 'Because fragmented vendors, opaque pricing, and generic rewards are costing you more than you think.',
+
+    // COMPARISON ROWS
+    'comp_p1' => 'Too many vendors, too much coordination',
+    'comp_w1' => 'One platform, one point of contact',
+    'comp_p2' => 'Time-consuming trip planning',
+    'comp_w2' => 'Done-for-you itineraries, ready in 48h',
+    'comp_p3' => 'Generic rewards with low engagement',
+    'comp_w3' => 'Experience-driven travel that employees remember',
+    'comp_p4' => 'Budget confusion and hidden costs',
+    'comp_w4' => 'Transparent per-person pricing, always',
+
+    // METRICS COLUMN
+    'metric1_num' => '35%',
+    'metric1_desc' => 'Average performance boost post incentive trips',
+    'metric2_num' => '12h',
+    'metric2_desc' => 'Custom itinerary delivered to your inbox',
+    'metric3_num' => '30%',
+    'metric3_desc' => 'Average savings vs. booking independently',
+
+    // HOW IT WORKS
+    'how_label' => 'How It Works',
+    'how_title' => 'From idea to journey<br>in 4 steps',
+    'how_desc' => 'We\'ve simplified corporate travel planning so you can focus on what matters — your people.',
+    
+    // HOW STEPS
+    'step1_title' => 'Tell us your goal',
+    'step1_desc' => 'Share your team size, budget, destination preference, and what you want to achieve.',
+    'step2_title' => 'We design your trip',
+    'step2_desc' => 'Our experts craft a custom itinerary — flights, hotels, activities, and logistics.',
+    'step3_title' => 'You approve & relax',
+    'step3_desc' => 'Review the proposal, make tweaks, and give the go-ahead. We handle the rest.',
+    'step4_title' => 'End-to-end execution',
+    'step4_desc' => 'From airport transfers to farewell dinner — every detail managed by our team on the ground.',
 ];
 
 // Automatic Table Setup and Seeding for Site Settings
@@ -206,6 +281,101 @@ try {
             $stmt_dest->execute($d);
         }
     }
+
+    // 5. Create case studies table if not exists
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `case_studies` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `client_name` varchar(255) NOT NULL,
+        `client_logo` varchar(255) DEFAULT NULL,
+        `badge_text` varchar(255) DEFAULT NULL,
+        `badge_flag` varchar(100) DEFAULT NULL,
+        `badge_color` varchar(100) DEFAULT 'orange',
+        `case_type` varchar(255) DEFAULT NULL,
+        `stat1_num` varchar(100) DEFAULT NULL,
+        `stat1_label` varchar(255) DEFAULT NULL,
+        `stat2_num` varchar(100) DEFAULT NULL,
+        `stat2_label` varchar(255) DEFAULT NULL,
+        `stat3_num` varchar(100) DEFAULT NULL,
+        `stat3_label` varchar(255) DEFAULT NULL,
+        `outcome` text DEFAULT NULL,
+        `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
+    // Seed default case studies if empty
+    $case_count = $pdo->query("SELECT COUNT(*) FROM `case_studies`")->fetchColumn();
+    if ($case_count == 0) {
+        $stmt_case = $pdo->prepare("INSERT INTO `case_studies` 
+        (client_name, client_logo, badge_text, badge_flag, badge_color, case_type, stat1_num, stat1_label, stat2_num, stat2_label, stat3_num, stat3_label, outcome) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        $default_cases = [
+            [
+                'Dunzo',
+                'assets/img/logos/dunzo.svg',
+                'Thailand',
+                '🇹🇭',
+                'orange',
+                'Growth Team Offsite · 80 Employees',
+                '80',
+                'Employees',
+                '4D',
+                'Duration',
+                '+25%',
+                'Efficiency',
+                'Improved cross-team collaboration for logistics and ops. Post-trip productivity metrics showed a 25% steady rise.'
+            ],
+            [
+                'Tata 1mg',
+                'assets/img/logos/tata1mg.svg',
+                'Rishikesh',
+                '🌿',
+                'green',
+                'Product Design Retreat · 60 Employees',
+                '60',
+                'Designers',
+                '3D',
+                'Duration',
+                '98%',
+                'Creative Output',
+                'The design team finalized the new app UI in record time. 98% satisfaction score on retreat quality.'
+            ],
+            [
+                'Videocon',
+                'assets/img/logos/videocon.svg',
+                'Singapore',
+                '🇸🇬',
+                'red',
+                'Sales Incentive Trip · 150 Employees',
+                '150',
+                'Distributors',
+                '5D',
+                'Duration',
+                '+40%',
+                'Sales Boost',
+                'Incentivized the top distributor network across India. Resulted in a 40% jump in festive season inventory.'
+            ],
+            [
+                'ISB',
+                'assets/img/logos/isb.svg',
+                'Sri Lanka',
+                '🏔️',
+                'purple',
+                'Leadership Retreat · Senior Faculty',
+                '45',
+                'Leaders',
+                '4D',
+                'Duration',
+                '100%',
+                'Satisfaction',
+                'Full strategy realignment achieved. Faculty returned energised with a clear institutional roadmap.'
+            ]
+        ];
+
+        foreach ($default_cases as $c) {
+            $stmt_case->execute($c);
+        }
+    }
 } catch (PDOException $e) {
     // Graceful fallback
 }
@@ -248,6 +418,19 @@ function get_all_destinations() {
     global $pdo;
     try {
         $stmt = $pdo->query("SELECT * FROM `destinations` ORDER BY `id` DESC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        return [];
+    }
+}
+
+/**
+ * Fetch all active case studies
+ */
+function get_all_case_studies() {
+    global $pdo;
+    try {
+        $stmt = $pdo->query("SELECT * FROM `case_studies` ORDER BY `id` ASC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         return [];

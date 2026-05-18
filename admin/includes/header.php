@@ -46,8 +46,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <a href="destination-editor.php" class="nav-item <?php echo $current_page == 'destination-editor.php' ? 'active' : ''; ?>">
                     <i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i> Edit Destinations
                 </a>
-                <a href="#" class="nav-item">
-                    <i class="fa-solid fa-users" style="margin-right: 8px;"></i> Users
+                <a href="homepage-editor.php" class="nav-item <?php echo $current_page == 'homepage-editor.php' ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-house" style="margin-right: 8px;"></i> Edit Homepage
                 </a>
                 <a href="settings.php" class="nav-item <?php echo $current_page == 'settings.php' ? 'active' : ''; ?>">
                     <i class="fa-solid fa-gear" style="margin-right: 8px;"></i> Settings

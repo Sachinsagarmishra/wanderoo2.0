@@ -7,13 +7,12 @@ include_once 'includes/header.php';
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">INDIA'S #1 INCENTIVE TRAVEL PLATFORM</div>
-            <h1>Make Performance<br><span class="accent">Worth Chasing</span></h1>
-            <p>Incentive travel programs that motivate employees, energise dealers, and retain your best people —
-                planned and executed end-to-end.</p>
+            <div class="hero-badge"><?php echo htmlspecialchars(get_site_setting('home_hero_badge')); ?></div>
+            <h1><?php echo get_site_setting('home_hero_title'); ?></h1>
+            <p><?php echo htmlspecialchars(get_site_setting('home_hero_desc')); ?></p>
             <div class="hero-actions">
-                <button class="btn-primary">Plan a Trip →</button>
-                <button class="btn-secondary">View Destinations</button>
+                <button class="btn-primary" onclick="window.open('https://wa.me/<?php echo htmlspecialchars(get_site_setting('whatsapp_number', '919113515462')); ?>', '_blank')">Plan a Trip →</button>
+                <button class="btn-secondary" onclick="window.location.href='destinations.php'">View Destinations</button>
             </div>
 
             <div class="hero-trust">
@@ -32,22 +31,37 @@ include_once 'includes/header.php';
             <div class="stat-card">
                 <div class="stat-icon purple"><i class="fa-solid fa-plane-departure"></i></div>
                 <div class="stat-info">
-                    <div class="num">98<span>%</span></div>
-                    <div class="label">Retention</div>
+                    <div class="num"><?php 
+                        $val1 = get_site_setting('home_stat1_num');
+                        $num1 = preg_replace('/[^0-9.]/', '', $val1);
+                        $suffix1 = str_replace($num1, '', $val1);
+                        echo htmlspecialchars($num1);
+                    ?><span><?php echo htmlspecialchars($suffix1); ?></span></div>
+                    <div class="label"><?php echo htmlspecialchars(get_site_setting('home_stat1_label')); ?></div>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon green"><i class="fa-solid fa-users"></i></div>
                 <div class="stat-info">
-                    <div class="num">15<span>k</span></div>
-                    <div class="label">Happy Travellers</div>
+                    <div class="num"><?php 
+                        $val2 = get_site_setting('home_stat2_num');
+                        $num2 = preg_replace('/[^0-9.]/', '', $val2);
+                        $suffix2 = str_replace($num2, '', $val2);
+                        echo htmlspecialchars($num2);
+                    ?><span><?php echo htmlspecialchars($suffix2); ?></span></div>
+                    <div class="label"><?php echo htmlspecialchars(get_site_setting('home_stat2_label')); ?></div>
                 </div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon blue"><i class="fa-solid fa-star"></i></div>
                 <div class="stat-info">
-                    <div class="num">4.9<span>★</span></div>
-                    <div class="label">Avg. Rating</div>
+                    <div class="num"><?php 
+                        $val3 = get_site_setting('home_stat3_num');
+                        $num3 = preg_replace('/[^0-9.]/', '', $val3);
+                        $suffix3 = str_replace($num3, '', $val3);
+                        echo htmlspecialchars($num3);
+                    ?><span><?php echo htmlspecialchars($suffix3); ?></span></div>
+                    <div class="label"><?php echo htmlspecialchars(get_site_setting('home_stat3_label')); ?></div>
                 </div>
             </div>
         </div>
@@ -57,53 +71,52 @@ include_once 'includes/header.php';
     <section class="use-cases reveal-section" id="solutions">
         <div class="use-cases-header">
             <div class="header-left">
-                <div class="section-label">Solutions</div>
-                <div class="section-title">Built for every<br>corporate use case</div>
+                <div class="section-label"><?php echo htmlspecialchars(get_site_setting('home_solutions_label')); ?></div>
+                <div class="section-title"><?php echo get_site_setting('home_solutions_title'); ?></div>
             </div>
             <div class="header-right">
-                <p class="section-sub">From HR incentives to dealer trips — we handle the complexity so you can focus on
-                    performance.</p>
+                <p class="section-sub"><?php echo htmlspecialchars(get_site_setting('home_solutions_desc')); ?></p>
             </div>
         </div>
         <div class="use-grid">
             <!-- 1. Leadership Offsites -->
             <div class="use-card theme-purple">
                 <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/leadership.png" alt="Leadership">
+                    <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_site_setting('sol1_img')); ?>" alt="Leadership">
                 </div>
-                <h3>Leadership Offsites</h3>
-                <p>Retreats designed for strategy, alignment, and executive team bonding.</p>
-                <span class="tag">FOR CXOS & ADMINS</span>
+                <h3><?php echo htmlspecialchars(get_site_setting('sol1_title')); ?></h3>
+                <p><?php echo htmlspecialchars(get_site_setting('sol1_desc')); ?></p>
+                <span class="tag"><?php echo htmlspecialchars(get_site_setting('sol1_tag')); ?></span>
             </div>
 
             <!-- 2. Dealer & Distributor Trips -->
             <div class="use-card theme-green">
                 <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dealer.png" alt="Dealer">
+                    <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_site_setting('sol2_img')); ?>" alt="Dealer">
                 </div>
-                <h3>Dealer & Distributor Trips</h3>
-                <p>Motivate your channel partners with incentive travel tied to sales milestones.</p>
-                <span class="tag">FOR SALES LEADERS</span>
+                <h3><?php echo htmlspecialchars(get_site_setting('sol2_title')); ?></h3>
+                <p><?php echo htmlspecialchars(get_site_setting('sol2_desc')); ?></p>
+                <span class="tag"><?php echo htmlspecialchars(get_site_setting('sol2_tag')); ?></span>
             </div>
 
             <!-- 3. Employee Incentives -->
             <div class="use-card theme-orange">
                 <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/empolyee.png" alt="Employee">
+                    <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_site_setting('sol3_img')); ?>" alt="Employee">
                 </div>
-                <h3>Employee Incentives</h3>
-                <p>Reward top performers with curated travel experiences that drive retention and loyalty.</p>
-                <span class="tag">FOR HR & PEOPLE TEAMS</span>
+                <h3><?php echo htmlspecialchars(get_site_setting('sol3_title')); ?></h3>
+                <p><?php echo htmlspecialchars(get_site_setting('sol3_desc')); ?></p>
+                <span class="tag"><?php echo htmlspecialchars(get_site_setting('sol3_tag')); ?></span>
             </div>
 
             <!-- 4. Annual Team Offsites -->
             <div class="use-card theme-blue">
                 <div class="use-icon">
-                    <img src="<?php echo SITE_PATH; ?>/assets/img/logos/college.png" alt="Annual">
+                    <img src="<?php echo SITE_PATH; ?>/<?php echo htmlspecialchars(get_site_setting('sol4_img')); ?>" alt="Annual">
                 </div>
-                <h3>Annual Team Offsites</h3>
-                <p>Bring teams together through immersive retreats that strengthen culture and alignment.</p>
-                <span class="tag">FOR PEOPLE OPS</span>
+                <h3><?php echo htmlspecialchars(get_site_setting('sol4_title')); ?></h3>
+                <p><?php echo htmlspecialchars(get_site_setting('sol4_desc')); ?></p>
+                <span class="tag"><?php echo htmlspecialchars(get_site_setting('sol4_tag')); ?></span>
             </div>
         </div>
     </section>
@@ -112,60 +125,57 @@ include_once 'includes/header.php';
     <section class="category-section reveal-section" id="destinations">
         <div class="category-grid">
             <!-- 01 SOUTH EAST ASIA (Large Card) -->
-            <div class="cat-card cat-large" style="background-image: url('assets/img/cat-sea.png');">
+            <div class="cat-card cat-large" style="background-image: url('<?php echo htmlspecialchars(get_site_setting('region1_img')); ?>');">
                 <div class="cat-overlay"></div>
                 <div class="cat-header-top">
-                    <div class="cat-index">01</div>
+                    <div class="cat-index"><?php echo htmlspecialchars(get_site_setting('region1_index')); ?></div>
                     <div class="cat-circle-btn">→</div>
                 </div>
                 <div class="cat-body">
                     <div class="cat-label">FOR</div>
-                    <h2 class="cat-title">South East<br>Asia</h2>
-                    <p class="cat-desc">The ultimate blend of tropical retreats, vibrant street food, and high-energy
-                        cities for team bonding.</p>
+                    <h2 class="cat-title"><?php echo get_site_setting('region1_title'); ?></h2>
+                    <p class="cat-desc"><?php echo htmlspecialchars(get_site_setting('region1_desc')); ?></p>
                 </div>
                 <div class="cat-footer">
-                    <div class="cat-meta">5 TO 7 DAYS · 20 TO 100 PAX · FLIGHTS & VISAS HANDLED</div>
-                    <a href="#" class="cat-open">OPEN →</a>
+                    <div class="cat-meta"><?php echo htmlspecialchars(get_site_setting('region1_meta')); ?></div>
+                    <a href="destinations.php" class="cat-open">OPEN →</a>
                 </div>
             </div>
 
             <div class="cat-right-stack">
                 <!-- 02 EUROPE (Small Card) -->
-                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-europe.png');">
+                <div class="cat-card cat-small" style="background-image: url('<?php echo htmlspecialchars(get_site_setting('region2_img')); ?>');">
                     <div class="cat-overlay"></div>
                     <div class="cat-header-top">
-                        <div class="cat-index">02</div>
+                        <div class="cat-index"><?php echo htmlspecialchars(get_site_setting('region2_index')); ?></div>
                         <div class="cat-circle-btn">→</div>
                     </div>
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
-                        <h2 class="cat-title">Europe</h2>
-                        <p class="cat-desc">Old-world charm meets modern work culture. From Swiss Alps to Mediterranean
-                            escapes.</p>
+                        <h2 class="cat-title"><?php echo get_site_setting('region2_title'); ?></h2>
+                        <p class="cat-desc"><?php echo htmlspecialchars(get_site_setting('region2_desc')); ?></p>
                     </div>
                     <div class="cat-footer">
-                        <div class="cat-meta">7 TO 10 DAYS · 15 TO 40 PAX · LUXURY STAYS</div>
-                        <a href="#" class="cat-open">OPEN →</a>
+                        <div class="cat-meta"><?php echo htmlspecialchars(get_site_setting('region2_meta')); ?></div>
+                        <a href="destinations.php" class="cat-open">OPEN →</a>
                     </div>
                 </div>
 
                 <!-- 03 DOMESTIC (Small Card) -->
-                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-domestic.png');">
+                <div class="cat-card cat-small" style="background-image: url('<?php echo htmlspecialchars(get_site_setting('region3_img')); ?>');">
                     <div class="cat-overlay"></div>
                     <div class="cat-header-top">
-                        <div class="cat-index">03</div>
+                        <div class="cat-index"><?php echo htmlspecialchars(get_site_setting('region3_index')); ?></div>
                         <div class="cat-circle-btn">→</div>
                     </div>
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
-                        <h2 class="cat-title">Domestic</h2>
-                        <p class="cat-desc">Uncover the gems closer to home. Mountain retreats, coastal escapes, and
-                            heritage stays.</p>
+                        <h2 class="cat-title"><?php echo get_site_setting('region3_title'); ?></h2>
+                        <p class="cat-desc"><?php echo htmlspecialchars(get_site_setting('region3_desc')); ?></p>
                     </div>
                     <div class="cat-footer">
-                        <div class="cat-meta">3 TO 5 DAYS · 30 TO 200 PAX · 12 DESTINATIONS</div>
-                        <a href="#" class="cat-open">OPEN →</a>
+                        <div class="cat-meta"><?php echo htmlspecialchars(get_site_setting('region3_meta')); ?></div>
+                        <a href="destinations.php" class="cat-open">OPEN →</a>
                     </div>
                 </div>
             </div>
@@ -177,10 +187,9 @@ include_once 'includes/header.php';
         <div class="why-container">
             <!-- Left: Title & Subtext -->
             <div class="why-left">
-                <div class="section-label">Why Wanderoo</div>
-                <h2 class="section-title">We solve the real<br>problems of corporate travel</h2>
-                <p class="section-sub">Because fragmented vendors, opaque pricing, and generic rewards are costing you
-                    more than you think.</p>
+                <div class="section-label"><?php echo htmlspecialchars(get_site_setting('home_why_label')); ?></div>
+                <h2 class="section-title"><?php echo get_site_setting('home_why_title'); ?></h2>
+                <p class="section-sub"><?php echo htmlspecialchars(get_site_setting('home_why_desc')); ?></p>
                 <img src="<?php echo SITE_PATH; ?>/assets/img/arrow.png" alt="Decorative Arrow" class="why-arrow">
             </div>
 
@@ -192,20 +201,20 @@ include_once 'includes/header.php';
                         <div class="comp-col-label wanderoo"><i class="fa-solid fa-circle-check"></i> WANDEROO</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comp-problem">Too many vendors, too much coordination</div>
-                        <div class="comp-wanderoo">One platform, one point of contact</div>
+                        <div class="comp-problem"><?php echo htmlspecialchars(get_site_setting('comp_p1')); ?></div>
+                        <div class="comp-wanderoo"><?php echo htmlspecialchars(get_site_setting('comp_w1')); ?></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comp-problem">Time-consuming trip planning</div>
-                        <div class="comp-wanderoo">Done-for-you itineraries, ready in 48h</div>
+                        <div class="comp-problem"><?php echo htmlspecialchars(get_site_setting('comp_p2')); ?></div>
+                        <div class="comp-wanderoo"><?php echo htmlspecialchars(get_site_setting('comp_w2')); ?></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comp-problem">Generic rewards with low engagement</div>
-                        <div class="comp-wanderoo">Experience-driven travel that employees remember</div>
+                        <div class="comp-problem"><?php echo htmlspecialchars(get_site_setting('comp_p3')); ?></div>
+                        <div class="comp-wanderoo"><?php echo htmlspecialchars(get_site_setting('comp_w3')); ?></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comp-problem">Budget confusion and hidden costs</div>
-                        <div class="comp-wanderoo">Transparent per-person pricing, always</div>
+                        <div class="comp-problem"><?php echo htmlspecialchars(get_site_setting('comp_p4')); ?></div>
+                        <div class="comp-wanderoo"><?php echo htmlspecialchars(get_site_setting('comp_w4')); ?></div>
                     </div>
                 </div>
             </div>
@@ -215,22 +224,37 @@ include_once 'includes/header.php';
                 <div class="metric-card theme-orange">
                     <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
                     <div class="metric-content">
-                        <div class="metric-num">35<span>%</span></div>
-                        <div class="metric-desc">Average performance boost post incentive trips</div>
+                        <div class="metric-num"><?php 
+                            $m1 = get_site_setting('metric1_num');
+                            $num_m1 = preg_replace('/[^0-9.]/', '', $m1);
+                            $suff_m1 = str_replace($num_m1, '', $m1);
+                            echo htmlspecialchars($num_m1);
+                        ?><span><?php echo htmlspecialchars($suff_m1); ?></span></div>
+                        <div class="metric-desc"><?php echo htmlspecialchars(get_site_setting('metric1_desc')); ?></div>
                     </div>
                 </div>
                 <div class="metric-card theme-purple">
                     <div class="metric-icon"><i class="fa-solid fa-clock"></i></div>
                     <div class="metric-content">
-                        <div class="metric-num">12<span>h</span></div>
-                        <div class="metric-desc">Custom itinerary delivered to your inbox</div>
+                        <div class="metric-num"><?php 
+                            $m2 = get_site_setting('metric2_num');
+                            $num_m2 = preg_replace('/[^0-9.]/', '', $m2);
+                            $suff_m2 = str_replace($num_m2, '', $m2);
+                            echo htmlspecialchars($num_m2);
+                        ?><span><?php echo htmlspecialchars($suff_m2); ?></span></div>
+                        <div class="metric-desc"><?php echo htmlspecialchars(get_site_setting('metric2_desc')); ?></div>
                     </div>
                 </div>
                 <div class="metric-card theme-green">
                     <div class="metric-icon"><i class="fa-solid fa-piggy-bank"></i></div>
                     <div class="metric-content">
-                        <div class="metric-num">30<span>%</span></div>
-                        <div class="metric-desc">Average savings vs. booking independently</div>
+                        <div class="metric-num"><?php 
+                            $m3 = get_site_setting('metric3_num');
+                            $num_m3 = preg_replace('/[^0-9.]/', '', $m3);
+                            $suff_m3 = str_replace($num_m3, '', $m3);
+                            echo htmlspecialchars($num_m3);
+                        ?><span><?php echo htmlspecialchars($suff_m3); ?></span></div>
+                        <div class="metric-desc"><?php echo htmlspecialchars(get_site_setting('metric3_desc')); ?></div>
                     </div>
                 </div>
             </div>
@@ -245,141 +269,74 @@ include_once 'includes/header.php';
             <p class="section-sub">See how leading brands use Wanderoo to drive performance through experience.</p>
         </div>
         <div class="case-grid">
-            <!-- Dunzo -->
+            <?php 
+            $case_studies = get_all_case_studies();
+            if (empty($case_studies)):
+            ?>
+                <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
+                    No case studies found. Please add some from the Admin Panel.
+                </div>
+            <?php 
+            else:
+                foreach ($case_studies as $cs):
+            ?>
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/dunzo.svg" alt="Dunzo">
+                        <img src="<?php echo htmlspecialchars($cs['client_logo']); ?>" alt="<?php echo htmlspecialchars($cs['client_name']); ?>">
                     </div>
-                    <div class="case-dest-badge badge-orange">
-                        <span>🇹🇭</span> Thailand
+                    <div class="case-dest-badge badge-<?php echo htmlspecialchars($cs['badge_color']); ?>">
+                        <span><?php echo htmlspecialchars($cs['badge_flag']); ?></span> <?php echo htmlspecialchars($cs['badge_text']); ?>
                     </div>
                 </div>
-                <div class="case-type">Growth Team Offsite · 80 Employees</div>
+                <div class="case-type"><?php echo htmlspecialchars($cs['case_type']); ?></div>
                 <div class="case-stats">
                     <div>
-                        <div class="case-stat-num">80</div>
-                        <div class="case-stat-label">Employees</div>
+                        <div class="case-stat-num"><?php 
+                            $s1 = $cs['stat1_num'];
+                            $num_s1 = preg_replace('/[^0-9.+-]/', '', $s1);
+                            $suff_s1 = str_replace($num_s1, '', $s1);
+                            echo htmlspecialchars($num_s1);
+                        ?><span><?php echo htmlspecialchars($suff_s1); ?></span></div>
+                        <div class="case-stat-label"><?php echo htmlspecialchars($cs['stat1_label']); ?></div>
                     </div>
                     <div>
-                        <div class="case-stat-num">4<span>D</span></div>
-                        <div class="case-stat-label">Duration</div>
+                        <div class="case-stat-num"><?php 
+                            $s2 = $cs['stat2_num'];
+                            $num_s2 = preg_replace('/[^0-9.+-]/', '', $s2);
+                            $suff_s2 = str_replace($num_s2, '', $s2);
+                            echo htmlspecialchars($num_s2);
+                        ?><span><?php echo htmlspecialchars($suff_s2); ?></span></div>
+                        <div class="case-stat-label"><?php echo htmlspecialchars($cs['stat2_label']); ?></div>
                     </div>
                     <div>
-                        <div class="case-stat-num">+25<span>%</span></div>
-                        <div class="case-stat-label">Efficiency</div>
+                        <div class="case-stat-num"><?php 
+                            $s3 = $cs['stat3_num'];
+                            $num_s3 = preg_replace('/[^0-9.+-]/', '', $s3);
+                            $suff_s3 = str_replace($num_s3, '', $s3);
+                            echo htmlspecialchars($num_s3);
+                        ?><span><?php echo htmlspecialchars($suff_s3); ?></span></div>
+                        <div class="case-stat-label"><?php echo htmlspecialchars($cs['stat3_label']); ?></div>
                     </div>
                 </div>
                 <div class="case-outcome">
                     <strong>Outcome</strong>
-                    Improved cross-team collaboration for logistics and ops. Post-trip productivity metrics showed a 25%
-                    steady rise.
+                    <?php echo htmlspecialchars($cs['outcome']); ?>
                 </div>
             </div>
-
-            <!-- Tata 1mg -->
-            <div class="case-card">
-                <div class="case-header">
-                    <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/tata1mg.svg" alt="Tata 1mg">
-                    </div>
-                    <div class="case-dest-badge badge-green">
-                        <span>🌿</span> Rishikesh
-                    </div>
-                </div>
-                <div class="case-type">Product Design Retreat · 60 Employees</div>
-                <div class="case-stats">
-                    <div>
-                        <div class="case-stat-num">60</div>
-                        <div class="case-stat-label">Designers</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">3<span>D</span></div>
-                        <div class="case-stat-label">Duration</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">98<span>%</span></div>
-                        <div class="case-stat-label">Creative Output</div>
-                    </div>
-                </div>
-                <div class="case-outcome">
-                    <strong>Outcome</strong>
-                    The design team finalized the new app UI in record time. 98% satisfaction score on retreat quality.
-                </div>
-            </div>
-
-            <!-- Videocon -->
-            <div class="case-card">
-                <div class="case-header">
-                    <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/videocon.svg" alt="Videocon">
-                    </div>
-                    <div class="case-dest-badge badge-red">
-                        <span>🇸🇬</span> Singapore
-                    </div>
-                </div>
-                <div class="case-type">Sales Incentive Trip · 150 Employees</div>
-                <div class="case-stats">
-                    <div>
-                        <div class="case-stat-num">150</div>
-                        <div class="case-stat-label">Distributors</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">5<span>D</span></div>
-                        <div class="case-stat-label">Duration</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">+40<span>%</span></div>
-                        <div class="case-stat-label">Sales Boost</div>
-                    </div>
-                </div>
-                <div class="case-outcome">
-                    <strong>Outcome</strong>
-                    Incentivized the top distributor network across India. Resulted in a 40% jump in festive season
-                    inventory.
-                </div>
-            </div>
-
-            <!-- ISB -->
-            <div class="case-card">
-                <div class="case-header">
-                    <div class="case-client">
-                        <img src="<?php echo SITE_PATH; ?>/assets/img/logos/isb.svg" alt="ISB">
-                    </div>
-                    <div class="case-dest-badge badge-purple">
-                        <span>🏔️</span> Sri Lanka
-                    </div>
-                </div>
-                <div class="case-type">Leadership Retreat · Senior Faculty</div>
-                <div class="case-stats">
-                    <div>
-                        <div class="case-stat-num">45</div>
-                        <div class="case-stat-label">Leaders</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">4<span>D</span></div>
-                        <div class="case-stat-label">Duration</div>
-                    </div>
-                    <div>
-                        <div class="case-stat-num">100<span>%</span></div>
-                        <div class="case-stat-label">Satisfaction</div>
-                    </div>
-                </div>
-                <div class="case-outcome">
-                    <strong>Outcome</strong>
-                    Full strategy realignment achieved. Faculty returned energised with a clear institutional roadmap.
-                </div>
-            </div>
+            <?php 
+                endforeach;
+            endif;
+            ?>
         </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="how reveal-section" id="how">
         <div class="how-header">
-            <div class="section-label">How It Works</div>
-            <h2 class="section-title">From idea to journey<br>in 4 steps</h2>
-            <p class="section-sub">We've simplified corporate travel planning so you can focus on what matters — your
-                people.</p>
+            <div class="section-label"><?php echo htmlspecialchars(get_site_setting('how_label')); ?></div>
+            <h2 class="section-title"><?php echo get_site_setting('how_title'); ?></h2>
+            <p class="section-sub"><?php echo htmlspecialchars(get_site_setting('how_desc')); ?></p>
         </div>
         <div class="how-steps-container">
             <div class="how-step theme-orange">
@@ -388,8 +345,8 @@ include_once 'includes/header.php';
                     <div class="step-icon"><i class="fa-solid fa-bullseye"></i></div>
                 </div>
                 <div class="step-text">
-                    <h3>Tell us your goal</h3>
-                    <p>Share your team size, budget, destination preference, and what you want to achieve.</p>
+                    <h3><?php echo htmlspecialchars(get_site_setting('step1_title')); ?></h3>
+                    <p><?php echo htmlspecialchars(get_site_setting('step1_desc')); ?></p>
                 </div>
             </div>
 
@@ -401,8 +358,8 @@ include_once 'includes/header.php';
                     <div class="step-icon"><i class="fa-solid fa-map-location-dot"></i></div>
                 </div>
                 <div class="step-text">
-                    <h3>We design your trip</h3>
-                    <p>Our experts craft a custom itinerary — flights, hotels, activities, and logistics.</p>
+                    <h3><?php echo htmlspecialchars(get_site_setting('step2_title')); ?></h3>
+                    <p><?php echo htmlspecialchars(get_site_setting('step2_desc')); ?></p>
                 </div>
             </div>
 
@@ -414,8 +371,8 @@ include_once 'includes/header.php';
                     <div class="step-icon"><i class="fa-solid fa-handshake-simple"></i></div>
                 </div>
                 <div class="step-text">
-                    <h3>You approve & relax</h3>
-                    <p>Review the proposal, make tweaks, and give the go-ahead. We handle the rest.</p>
+                    <h3><?php echo htmlspecialchars(get_site_setting('step3_title')); ?></h3>
+                    <p><?php echo htmlspecialchars(get_site_setting('step3_desc')); ?></p>
                 </div>
             </div>
 
@@ -427,14 +384,12 @@ include_once 'includes/header.php';
                     <div class="step-icon"><i class="fa-solid fa-plane-up"></i></div>
                 </div>
                 <div class="step-text">
-                    <h3>End-to-end execution</h3>
-                    <p>From airport transfers to farewell dinner — every detail managed by our team on the ground.</p>
+                    <h3><?php echo htmlspecialchars(get_site_setting('step4_title')); ?></h3>
+                    <p><?php echo htmlspecialchars(get_site_setting('step4_desc')); ?></p>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- NORTH AI PLANNER -->
     <section class="ai-planner-section reveal-section">
