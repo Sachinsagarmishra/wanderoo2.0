@@ -20,10 +20,21 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <header class="admin-mobile-header">
+        <button class="sidebar-toggle" id="mobileSidebarToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="mobile-logo">
+            Wander<span>oo</span> Admin
+        </div>
+        <div style="width: 24px;"></div>
+    </header>
+
     <div class="admin-layout">
         <aside class="admin-sidebar">
             <div class="sidebar-logo">
                 Wander<span>oo</span> Admin
+                <button class="sidebar-close" id="mobileSidebarClose"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <nav class="admin-nav">
                 <a href="dashboard.php" class="nav-item <?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">

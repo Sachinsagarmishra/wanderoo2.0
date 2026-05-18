@@ -276,7 +276,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 </style>
 
-<div class="main-content" style="margin-left: var(--sidebar-width); padding: var(--padding-shell); background: var(--bg2); min-height: 100vh;">
     <div class="editor-container">
         
         <form action="" method="POST" enctype="multipart/form-data">
@@ -669,7 +668,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </form>
     </div>
-</div>
 
 <script>
 /**
