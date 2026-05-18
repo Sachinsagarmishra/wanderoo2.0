@@ -2469,7 +2469,7 @@ p {
 /* ── DESTINATIONS PAGE ── */
 
 .dest-hero {
-    padding: 50px 60px;
+    padding: 140px 60px 60px;
     background: #FFFFFF;
 }
 
@@ -3032,7 +3032,7 @@ p {
 
 @media (max-width: 768px) {
     .dest-hero {
-        padding: 60px 20px;
+        padding: 110px 20px 40px;
     }
     .dest-hero-container {
         flex-direction: column;
