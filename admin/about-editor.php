@@ -28,7 +28,7 @@ function upload_about_image($file_key, $setting_key, $prefix) {
 
         if (move_uploaded_file($tmp_name, $dest_path)) {
             $db_path = 'assets/img/' . $new_name;
-            $stmt = $pdo->prepare("UPDATE about_settings SET setting_value = :val WHERE setting_key = :key");
+            $stmt = $pdo->prepare("UPDATE site_settings SET setting_value = :val WHERE setting_key = :key");
             $stmt->execute(['val' => $db_path, 'key' => $setting_key]);
             return $db_path;
         } else {
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo->beginTransaction();
         
-        $stmt = $pdo->prepare("UPDATE about_settings SET setting_value = :val WHERE setting_key = :key");
+        $stmt = $pdo->prepare("UPDATE site_settings SET setting_value = :val WHERE setting_key = :key");
         foreach ($settings_to_update as $key) {
             if (isset($_POST[$key])) {
                 $stmt->execute([
