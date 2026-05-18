@@ -8,20 +8,20 @@ include_once 'includes/header.php';
     <section class="dest-hero reveal-section">
         <div class="dest-hero-container">
             <div class="dest-hero-left">
-                <div class="section-label">DESTINATIONS</div>
-                <h1>Extraordinary places.<br><span class="accent">Meaningful impact.</span></h1>
-                <p>From vibrant cities to serene escapes, we bring you the world's most inspiring destinations — curated for performance, connection, and unforgettable experiences.</p>
+                <div class="section-label"><?php echo htmlspecialchars(get_site_setting('dest_hero_label')); ?></div>
+                <h1><?php echo get_site_setting('dest_hero_title'); ?></h1>
+                <p><?php echo htmlspecialchars(get_site_setting('dest_hero_desc')); ?></p>
                 <div class="dest-search-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search destinations, cities or countries">
+                    <input type="text" id="destSearchInput" placeholder="Search destinations, cities or countries" onkeyup="filterDestinations()">
                 </div>
             </div>
             <div class="dest-hero-right">
                 <div class="hero-image-wrapper">
-                    <img src="assets/img/dest-hero-main.png" alt="Tropical Resort">
+                    <img src="<?php echo htmlspecialchars(get_site_setting('dest_hero_img')); ?>" alt="Tropical Resort">
                     <div class="hero-image-badge">
                         <div class="badge-icon-bg"><i class="fa-solid fa-award"></i></div>
-                        <span>Curated with expertise. Delivered with precision.</span>
+                        <span><?php echo htmlspecialchars(get_site_setting('dest_hero_badge')); ?></span>
                     </div>
                 </div>
             </div>
@@ -30,62 +30,59 @@ include_once 'includes/header.php';
 
     <!-- EXPLORE BY REGION (Bento Grid) -->
     <section class="category-section reveal-section" id="destinations">
-        <h2 class="section-title centered" style="margin-bottom: 50px;">Explore by Region</h2>
+        <h2 class="section-title centered" style="margin-bottom: 50px;"><?php echo htmlspecialchars(get_site_setting('dest_region_title')); ?></h2>
         <div class="category-grid">
             <!-- 01 SOUTH EAST ASIA (Large Card) -->
-            <div class="cat-card cat-large" style="background-image: url('assets/img/cat-sea.png');">
+            <div class="cat-card cat-large" style="background-image: url('<?php echo htmlspecialchars(get_site_setting('region1_img')); ?>');">
                 <div class="cat-overlay"></div>
                 <div class="cat-header-top">
-                    <div class="cat-index">01</div>
+                    <div class="cat-index"><?php echo htmlspecialchars(get_site_setting('region1_index')); ?></div>
                     <div class="cat-circle-btn">→</div>
                 </div>
                 <div class="cat-body">
                     <div class="cat-label">FOR</div>
-                    <h2 class="cat-title">South East<br>Asia</h2>
-                    <p class="cat-desc">The ultimate blend of tropical retreats, vibrant street food, and high-energy
-                        cities for team bonding.</p>
+                    <h2 class="cat-title"><?php echo get_site_setting('region1_title'); ?></h2>
+                    <p class="cat-desc"><?php echo htmlspecialchars(get_site_setting('region1_desc')); ?></p>
                 </div>
                 <div class="cat-footer">
-                    <div class="cat-meta">5 TO 7 DAYS · 20 TO 100 PAX · FLIGHTS & VISAS HANDLED</div>
+                    <div class="cat-meta"><?php echo htmlspecialchars(get_site_setting('region1_meta')); ?></div>
                     <a href="#" class="cat-open">OPEN →</a>
                 </div>
             </div>
 
             <div class="cat-right-stack">
                 <!-- 02 EUROPE (Small Card) -->
-                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-europe.png');">
+                <div class="cat-card cat-small" style="background-image: url('<?php echo htmlspecialchars(get_site_setting('region2_img')); ?>');">
                     <div class="cat-overlay"></div>
                     <div class="cat-header-top">
-                        <div class="cat-index">02</div>
+                        <div class="cat-index"><?php echo htmlspecialchars(get_site_setting('region2_index')); ?></div>
                         <div class="cat-circle-btn">→</div>
                     </div>
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
-                        <h2 class="cat-title">Europe</h2>
-                        <p class="cat-desc">Old-world charm meets modern work culture. From Swiss Alps to Mediterranean
-                            escapes.</p>
+                        <h2 class="cat-title"><?php echo get_site_setting('region2_title'); ?></h2>
+                        <p class="cat-desc"><?php echo htmlspecialchars(get_site_setting('region2_desc')); ?></p>
                     </div>
                     <div class="cat-footer">
-                        <div class="cat-meta">7 TO 10 DAYS · 15 TO 40 PAX · LUXURY STAYS</div>
+                        <div class="cat-meta"><?php echo htmlspecialchars(get_site_setting('region2_meta')); ?></div>
                         <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
 
                 <!-- 03 DOMESTIC (Small Card) -->
-                <div class="cat-card cat-small" style="background-image: url('assets/img/cat-domestic.png');">
+                <div class="cat-card cat-small" style="background-image: url('<?php echo htmlspecialchars(get_site_setting('region3_img')); ?>');">
                     <div class="cat-overlay"></div>
                     <div class="cat-header-top">
-                        <div class="cat-index">03</div>
+                        <div class="cat-index"><?php echo htmlspecialchars(get_site_setting('region3_index')); ?></div>
                         <div class="cat-circle-btn">→</div>
                     </div>
                     <div class="cat-body">
                         <div class="cat-label">FOR</div>
-                        <h2 class="cat-title">Domestic</h2>
-                        <p class="cat-desc">Uncover the gems closer to home. Mountain retreats, coastal escapes, and
-                            heritage stays.</p>
+                        <h2 class="cat-title"><?php echo get_site_setting('region3_title'); ?></h2>
+                        <p class="cat-desc"><?php echo htmlspecialchars(get_site_setting('region3_desc')); ?></p>
                     </div>
                     <div class="cat-footer">
-                        <div class="cat-meta">3 TO 5 DAYS · 30 TO 200 PAX · 12 DESTINATIONS</div>
+                        <div class="cat-meta"><?php echo htmlspecialchars(get_site_setting('region3_meta')); ?></div>
                         <a href="#" class="cat-open">OPEN →</a>
                     </div>
                 </div>
@@ -104,106 +101,60 @@ include_once 'includes/header.php';
                 <a href="#" class="btn-outline">View all destinations →</a>
             </div>
 
-            <div class="dest-card-grid">
-                <!-- Bali -->
-                <div class="dest-card">
+            <div class="dest-card-grid" id="destinationsCardGrid">
+                <?php 
+                $dest_cards = get_all_destinations();
+                if (empty($dest_cards)):
+                ?>
+                    <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--fg2);">
+                        <i class="fa-solid fa-map-location-dot" style="font-size: 48px; margin-bottom: 15px; display: block; color: var(--accent);"></i>
+                        No destinations found. Please add some from the Admin Panel.
+                    </div>
+                <?php 
+                else:
+                    foreach ($dest_cards as $dest):
+                        $tags_arr = array_map('trim', explode(',', $dest['tags']));
+                        
+                        $tag_icon_map = [
+                            'beach' => 'fa-umbrella-beach',
+                            'culture' => 'fa-masks-theater',
+                            'wellness' => 'fa-spa',
+                            'adventure' => 'fa-person-hiking',
+                            'nightlife' => 'fa-martini-glass-citrus',
+                            'mountains' => 'fa-mountain',
+                            'luxury' => 'fa-gem',
+                            'food' => 'fa-utensils',
+                            'architecture' => 'fa-archway',
+                            'leisure' => 'fa-cocktail',
+                            'fun' => 'fa-face-smile'
+                        ];
+                ?>
+                <div class="dest-card" data-title="<?php echo htmlspecialchars(strtolower($dest['title'])); ?>" data-desc="<?php echo htmlspecialchars(strtolower($dest['description'])); ?>">
                     <div class="d-img">
-                        <img src="assets/img/dest/bali.png" alt="Bali, Indonesia">
+                        <img src="<?php echo htmlspecialchars($dest['image_path']); ?>" alt="<?php echo htmlspecialchars($dest['title']); ?>">
                     </div>
                     <div class="d-content">
                         <div class="d-meta">
-                            <h4>Bali, Indonesia</h4>
-                            <span class="duration">4N / 5D</span>
+                            <h4><?php echo htmlspecialchars($dest['title']); ?></h4>
+                            <span class="duration"><?php echo htmlspecialchars($dest['duration']); ?></span>
                         </div>
-                        <p>Perfect blend of relaxation and cultural immersion.</p>
+                        <p><?php echo htmlspecialchars($dest['description']); ?></p>
                         <div class="d-tags">
-                            <span><i class="fa-solid fa-umbrella-beach"></i> Beach</span>
-                            <span><i class="fa-solid fa-masks-theater"></i> Culture</span>
-                            <span><i class="fa-solid fa-spa"></i> Wellness</span>
+                            <?php foreach ($tags_arr as $t): 
+                                if (empty($t)) continue;
+                                $lower_t = strtolower($t);
+                                $icon_class = isset($tag_icon_map[$lower_t]) ? $tag_icon_map[$lower_t] : 'fa-tag';
+                            ?>
+                                <span><i class="fa-solid <?php echo $icon_class; ?>"></i> <?php echo htmlspecialchars($t); ?></span>
+                            <?php endforeach; ?>
                         </div>
                         <a href="#" class="btn-explore">Explore</a>
                     </div>
                 </div>
-
-                <!-- Phuket -->
-                <div class="dest-card">
-                    <div class="d-img">
-                        <img src="assets/img/dest/phuket.png" alt="Phuket, Thailand">
-                    </div>
-                    <div class="d-content">
-                        <div class="d-meta">
-                            <h4>Phuket, Thailand</h4>
-                            <span class="duration">4N / 5D</span>
-                        </div>
-                        <p>Tropical paradise with luxury resorts and exciting activities.</p>
-                        <div class="d-tags">
-                            <span><i class="fa-solid fa-umbrella-beach"></i> Beach</span>
-                            <span><i class="fa-solid fa-person-hiking"></i> Adventure</span>
-                            <span><i class="fa-solid fa-martini-glass-citrus"></i> Nightlife</span>
-                        </div>
-                        <a href="#" class="btn-explore">Explore</a>
-                    </div>
-                </div>
-
-                <!-- Swiss Alps -->
-                <div class="dest-card">
-                    <div class="d-img">
-                        <img src="assets/img/dest/swiss.png" alt="Swiss Alps">
-                    </div>
-                    <div class="d-content">
-                        <div class="d-meta">
-                            <h4>Swiss Alps, Switzerland</h4>
-                            <span class="duration">5N / 6D</span>
-                        </div>
-                        <p>Breathtaking landscapes and world-class experiences.</p>
-                        <div class="d-tags">
-                            <span><i class="fa-solid fa-mountain"></i> Mountains</span>
-                            <span><i class="fa-solid fa-person-skiing"></i> Adventure</span>
-                            <span><i class="fa-solid fa-gem"></i> Luxury</span>
-                        </div>
-                        <a href="#" class="btn-explore">Explore</a>
-                    </div>
-                </div>
-
-                <!-- Barcelona -->
-                <div class="dest-card">
-                    <div class="d-img">
-                        <img src="assets/img/dest/barcelona.png" alt="Barcelona">
-                    </div>
-                    <div class="d-content">
-                        <div class="d-meta">
-                            <h4>Barcelona, Spain</h4>
-                            <span class="duration">4N / 5D</span>
-                        </div>
-                        <p>Vibrant city, iconic architecture and Mediterranean charm.</p>
-                        <div class="d-tags">
-                            <span><i class="fa-solid fa-landmark"></i> Culture</span>
-                            <span><i class="fa-solid fa-utensils"></i> Food</span>
-                            <span><i class="fa-solid fa-archway"></i> Architecture</span>
-                        </div>
-                        <a href="#" class="btn-explore">Explore</a>
-                    </div>
-                </div>
-
-                <!-- Goa -->
-                <div class="dest-card">
-                    <div class="d-img">
-                        <img src="assets/img/dest/goa.png" alt="Goa">
-                    </div>
-                    <div class="d-content">
-                        <div class="d-meta">
-                            <h4>Goa, India</h4>
-                            <span class="duration">3N / 4D</span>
-                        </div>
-                        <p>Sun, sand and soulful experiences for teams.</p>
-                        <div class="d-tags">
-                            <span><i class="fa-solid fa-umbrella-beach"></i> Beach</span>
-                            <span><i class="fa-solid fa-cocktail"></i> Leisure</span>
-                            <span><i class="fa-solid fa-face-smile"></i> Fun</span>
-                        </div>
-                        <a href="#" class="btn-explore">Explore</a>
-                    </div>
-                </div>
+                <?php 
+                    endforeach; 
+                endif;
+                ?>
             </div>
         </div>
     </section>
@@ -212,7 +163,7 @@ include_once 'includes/header.php';
     <section class="why-dest-section reveal-section">
         <div class="section-container why-dest-flex">
             <div class="why-dest-left">
-                <h2 class="why-title">Why Our Destinations Deliver More</h2>
+                <h2 class="why-title"><?php echo htmlspecialchars(get_site_setting('dest_why_title')); ?></h2>
             </div>
             <div class="why-dest-right">
                 <div class="why-dest-grid">
@@ -287,13 +238,30 @@ include_once 'includes/header.php';
         <div class="section-container">
             <div class="dest-cta-card">
                 <div class="cta-text">
-                    <h3>Not sure where to go?<br>We'll help you find the perfect fit.</h3>
-                    <p>Share your goals and we'll recommend destinations that align with your team, budget and objectives.</p>
+                    <h3><?php echo get_site_setting('dest_cta_title'); ?></h3>
+                    <p><?php echo htmlspecialchars(get_site_setting('dest_cta_desc')); ?></p>
                 </div>
-                <button class="btn-primary">Talk to an Expert →</button>
+                <button class="btn-primary" onclick="window.open('https://wa.me/<?php echo htmlspecialchars(get_site_setting('whatsapp_number', '919113515462')); ?>', '_blank')">Talk to an Expert →</button>
             </div>
         </div>
     </section>
 </main>
+
+<script>
+function filterDestinations() {
+    const input = document.getElementById('destSearchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('#destinationsCardGrid .dest-card');
+    
+    cards.forEach(card => {
+        const title = card.getAttribute('data-title') || '';
+        const desc = card.getAttribute('data-desc') || '';
+        if (title.includes(input) || desc.includes(input)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
 
 <?php include_once 'includes/footer.php'; ?>

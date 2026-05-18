@@ -81,7 +81,45 @@ $default_settings = [
     'social_facebook' => '#',
     'social_youtube' => '#',
     'header_scripts' => '<!-- Custom Header Scripts (Google Analytics, Search Console, etc.) -->',
-    'footer_scripts' => '<!-- Custom Footer Scripts (Marketing Pixels, Chatbots, etc.) -->'
+    'footer_scripts' => '<!-- Custom Footer Scripts (Marketing Pixels, Chatbots, etc.) -->',
+
+    // DESTINATIONS HERO
+    'dest_hero_label' => 'DESTINATIONS',
+    'dest_hero_title' => 'Extraordinary places.<br><span class="accent">Meaningful impact.</span>',
+    'dest_hero_desc' => 'From vibrant cities to serene escapes, we bring you the world\'s most inspiring destinations — curated for performance, connection, and unforgettable experiences.',
+    'dest_hero_img' => 'assets/img/dest-hero-main.png',
+    'dest_hero_badge' => 'Curated with expertise. Delivered with precision.',
+    
+    // REGIONS TITLE
+    'dest_region_title' => 'Explore by Region',
+    
+    // REGION 1 SEA
+    'region1_img' => 'assets/img/cat-sea.png',
+    'region1_index' => '01',
+    'region1_title' => 'South East<br>Asia',
+    'region1_desc' => 'The ultimate blend of tropical retreats, vibrant street food, and high-energy cities for team bonding.',
+    'region1_meta' => '5 TO 7 DAYS · 20 TO 100 PAX · FLIGHTS & VISAS HANDLED',
+
+    // REGION 2 EUROPE
+    'region2_img' => 'assets/img/cat-europe.png',
+    'region2_index' => '02',
+    'region2_title' => 'Europe',
+    'region2_desc' => 'Old-world charm meets modern work culture. From Swiss Alps to Mediterranean escapes.',
+    'region2_meta' => '7 TO 10 DAYS · 15 TO 40 PAX · LUXURY STAYS',
+
+    // REGION 3 DOMESTIC
+    'region3_img' => 'assets/img/cat-domestic.png',
+    'region3_index' => '03',
+    'region3_title' => 'Domestic',
+    'region3_desc' => 'Uncover the gems closer to home. Mountain retreats, coastal escapes, and heritage stays.',
+    'region3_meta' => '3 TO 5 DAYS · 30 TO 200 PAX · 12 DESTINATIONS',
+
+    // WHY TITLE & DETAILS
+    'dest_why_title' => 'Why Our Destinations Deliver More',
+    
+    // CTA TITLE & DETAILS
+    'dest_cta_title' => 'Not sure where to go?<br>We\'ll help you find the perfect fit.',
+    'dest_cta_desc' => 'Share your goals and we\'ll recommend destinations that align with your team, budget and objectives.'
 ];
 
 // Automatic Table Setup and Seeding for Site Settings
@@ -107,6 +145,66 @@ try {
     $stmt = $pdo->prepare("INSERT IGNORE INTO `site_settings` (`setting_key`, `setting_value`) VALUES (:key, :value)");
     foreach ($default_settings as $key => $value) {
         $stmt->execute(['key' => $key, 'value' => $value]);
+    }
+
+    // 4. Create destinations list table if not exists
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `destinations` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `title` varchar(255) NOT NULL,
+        `duration` varchar(100) DEFAULT NULL,
+        `description` text DEFAULT NULL,
+        `image_path` varchar(255) DEFAULT NULL,
+        `tags` varchar(255) DEFAULT NULL,
+        `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
+    // Seed default destinations if table is empty
+    $dest_count = $pdo->query("SELECT COUNT(*) FROM `destinations`")->fetchColumn();
+    if ($dest_count == 0) {
+        $stmt_dest = $pdo->prepare("INSERT INTO `destinations` (`title`, `duration`, `description`, `image_path`, `tags`) VALUES (:title, :duration, :description, :image_path, :tags)");
+        
+        $default_dests = [
+            [
+                'title' => 'Bali, Indonesia',
+                'duration' => '4N / 5D',
+                'description' => 'Perfect blend of relaxation and cultural immersion.',
+                'image_path' => 'assets/img/dest/bali.png',
+                'tags' => 'Beach, Culture, Wellness'
+            ],
+            [
+                'title' => 'Phuket, Thailand',
+                'duration' => '4N / 5D',
+                'description' => 'Tropical paradise with luxury resorts and exciting activities.',
+                'image_path' => 'assets/img/dest/phuket.png',
+                'tags' => 'Beach, Adventure, Nightlife'
+            ],
+            [
+                'title' => 'Swiss Alps, Switzerland',
+                'duration' => '5N / 6D',
+                'description' => 'Breathtaking landscapes and world-class experiences.',
+                'image_path' => 'assets/img/dest/swiss.png',
+                'tags' => 'Mountains, Adventure, Luxury'
+            ],
+            [
+                'title' => 'Barcelona, Spain',
+                'duration' => '4N / 5D',
+                'description' => 'Vibrant city, iconic architecture and Mediterranean charm.',
+                'image_path' => 'assets/img/dest/barcelona.png',
+                'tags' => 'Culture, Food, Architecture'
+            ],
+            [
+                'title' => 'Goa, India',
+                'duration' => '3N / 4D',
+                'description' => 'Sun, sand and soulful experiences for teams.',
+                'image_path' => 'assets/img/dest/goa.png',
+                'tags' => 'Beach, Leisure, Fun'
+            ]
+        ];
+
+        foreach ($default_dests as $d) {
+            $stmt_dest->execute($d);
+        }
     }
 } catch (PDOException $e) {
     // Graceful fallback
@@ -141,6 +239,19 @@ function get_site_setting($key, $default = '') {
     }
 
     return $default;
+}
+
+/**
+ * Fetch all dynamic destination cards
+ */
+function get_all_destinations() {
+    global $pdo;
+    try {
+        $stmt = $pdo->query("SELECT * FROM `destinations` ORDER BY `id` DESC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        return [];
+    }
 }
 
 /**

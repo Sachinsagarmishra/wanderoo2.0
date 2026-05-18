@@ -43,8 +43,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <a href="about-editor.php" class="nav-item <?php echo $current_page == 'about-editor.php' ? 'active' : ''; ?>">
                     <i class="fa-solid fa-circle-info" style="margin-right: 8px;"></i> Edit About Us
                 </a>
-                <a href="#" class="nav-item">
-                    <i class="fa-solid fa-file-lines" style="margin-right: 8px;"></i> Pages
+                <a href="destination-editor.php" class="nav-item <?php echo $current_page == 'destination-editor.php' ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i> Edit Destinations
                 </a>
                 <a href="#" class="nav-item">
                     <i class="fa-solid fa-users" style="margin-right: 8px;"></i> Users
