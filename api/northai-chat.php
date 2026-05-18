@@ -114,7 +114,7 @@ if ($is_openrouter) {
     ];
 
     $post_fields = [
-        'model' => 'google/gemini-2.5-flash:free',
+        'model' => 'openrouter/free',
         'messages' => $messages,
         'temperature' => 0.4
     ];
@@ -192,7 +192,7 @@ if ($is_openrouter) {
         ]
     ];
 
-    $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $api_key);
+    $ch = curl_init("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" . $api_key);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_fields));
