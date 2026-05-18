@@ -14,17 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Read raw body input
 $input_data = json_decode(file_get_contents('php://input'), true);
-$user_message = trim($input_data['message'] ?? '');
-$history = $input_data['history'] ?? []; // Past conversation messages
 
-if (empty($user_message)) {
-    http_response_code(400);
-    echo json_encode(['error' => 'Query message cannot be empty']);
-    exit;
-}
-
-// 1. Check for Lead Capture Submission
-// If user message is a lead submission JSON block
+// 1. Check for Lead Capture Submission FIRST
 if (isset($input_data['lead_submission']) && $input_data['lead_submission'] === true) {
     $lead_name = trim($input_data['name'] ?? '');
     $lead_email = trim($input_data['email'] ?? '');
@@ -52,6 +43,16 @@ if (isset($input_data['lead_submission']) && $input_data['lead_submission'] === 
         echo json_encode(['error' => 'All lead capture fields are required']);
         exit;
     }
+}
+
+// 2. Validate standard chat query message
+$user_message = trim($input_data['message'] ?? '');
+$history = $input_data['history'] ?? []; // Past conversation messages
+
+if (empty($user_message)) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Query message cannot be empty']);
+    exit;
 }
 
 // 2. Fetch API key and settings
