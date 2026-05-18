@@ -3078,6 +3078,17 @@ p {
         height: 220px;
     }
     
+    .why-dest-section {
+        padding: 50px 20px;
+    }
+    .why-dest-flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .why-dest-left {
+        flex: 0 0 auto;
+        width: 100%;
+    }
     .why-dest-grid {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -3086,10 +3097,18 @@ p {
         border-left: none;
         padding: 0;
     }
-    
-
+    .dest-cta-section {
+        padding: 50px 20px;
+    }
     .dest-cta-card {
+        flex-direction: column;
+        text-align: center;
         padding: 40px 20px;
+        gap: 30px;
+    }
+    .dest-cta-card .btn-primary {
+        width: 100%;
+        justify-content: center;
     }
 }
 
